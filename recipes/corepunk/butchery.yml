@@ -13,7 +13,6 @@
     Large Bone: 3
 
 - name: Leather
-  buy_from_vendor: 19.59 # Buy from Eadric Barrow
   source: Wolf
   items:
     Wolf Skin: 2
@@ -25,3 +24,6 @@
 - name: Neurotoxin
   items:
     Poisonous Gland: 3
+
+- name: Wolf Skin
+  buy_from_vendor: 19.59 # Buy from Eadric Barrow

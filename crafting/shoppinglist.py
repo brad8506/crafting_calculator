@@ -19,8 +19,8 @@ class ShoppingList:
     def __init__(self, inventory: List[Dict[str, Any]], item: str, amount: int):
         self.items: Dict[str, int] = {}
         self.crafting_cost: Dict[str, float] = {}
+        self.buy_from_vendor: Dict[str, float] = {}
         self.sell_to_vendor: float = 0.0
-        self.buy_from_vendor: float = 0.0
         self.target_items: Dict[str, int] = {}
         self.target_amount: int = amount
         self.intermediate_steps: Dict[str, int] = {}
@@ -69,43 +69,44 @@ class ShoppingList:
             "Summing item crafting_cost for %s item/s in shopping list.", item
         )
 
-    def calculate_buy_from_vendor(self) -> None:
-        """Calculate the total cost to buy items from vendors."""
-        self.buy_from_vendor = 0.0  # Initialize as a float
+    def calculate_buy_from_vendor(self) -> Dict[str, float]:
+        """Calculate the cost to buy each item from vendors and return a dictionary."""
+        buy_from_vendor = {}  # Initialize as an empty dictionary
 
         # Process target items
         for item in self.target_items:
             buy_cost = get_buy_from_vendor(item, self.inventory)
             if buy_cost is not None:
-                self.buy_from_vendor += (
-                    self.target_items[item] * buy_cost * self.target_amount
-                )
+                total_cost = self.target_items[item] * buy_cost * self.target_amount
+                buy_from_vendor[item] = total_cost
 
         # Process items
         for item in self.items:
             buy_cost = get_buy_from_vendor(item, self.inventory)
             if buy_cost is not None:
-                self.buy_from_vendor += self.items[item] * buy_cost * self.target_amount
+                buy_from_vendor[item] = buy_cost
 
         # Process intermediate steps
         for item in self.intermediate_steps:
             buy_cost = get_buy_from_vendor(item, self.inventory)
             if buy_cost is not None:
-                self.buy_from_vendor += (
-                    self.intermediate_steps[item] * buy_cost * self.target_amount
-                )
+                total_cost = self.intermediate_steps[item] * buy_cost * self.target_amount
+                buy_from_vendor[item] = total_cost
 
-        logging.debug("Total buy_from_vendor cost: %s", self.buy_from_vendor)
+        logging.debug("Buy from vendor costs: %s", buy_from_vendor)
+
+        self.buy_from_vendor = buy_from_vendor
+        return buy_from_vendor
 
     def calculate_sell_to_vendor(self) -> None:
         """Calculate the total revenue from selling items to vendors."""
-        self.sell_to_vendor_cost = 0.0  # Initialize as a float
+        self.sell_to_vendor = 0.0  # Initialize as a float
 
         # Process target items
         for item in self.target_items:
             sell_cost = get_sell_to_vendor(item, self.inventory)
             if sell_cost is not None:
-                self.sell_to_vendor_cost += (
+                self.sell_to_vendor += (
                     self.target_items[item] * sell_cost * self.target_amount
                 )
 
@@ -113,7 +114,7 @@ class ShoppingList:
         for item in self.items:
             sell_cost = get_sell_to_vendor(item, self.inventory)
             if sell_cost is not None:
-                self.sell_to_vendor_cost += (
+                self.sell_to_vendor += (
                     self.items[item] * sell_cost * self.target_amount
                 )
 
@@ -121,11 +122,11 @@ class ShoppingList:
         for item in self.intermediate_steps:
             sell_cost = get_sell_to_vendor(item, self.inventory)
             if sell_cost is not None:
-                self.sell_to_vendor_cost += (
+                self.sell_to_vendor += (
                     self.intermediate_steps[item] * sell_cost * self.target_amount
                 )
 
-        logging.debug("Total sell_to_vendor revenue: %s", self.sell_to_vendor_cost)
+        logging.debug("Total sell_to_vendor revenue: %s", self.sell_to_vendor)
 
     def add_step(self, item: str, amount: int) -> None:
         """Add intermediate items to the crafting tree."""
@@ -182,7 +183,7 @@ class ShoppingList:
             "target_amount": self.target_amount,
         }
         return dumps(output, sort_keys=True, indent=2)
-
+    
     def format_for_display(self) -> str:
         """Format the ShoppingList for printing to stdout."""
         total_crafting_cost = sum(self.crafting_cost.values())
@@ -201,37 +202,31 @@ class ShoppingList:
 
         # Conditionally add the total crafting cost section.
         if total_crafting_cost > 0:
-            message_parts.extend(
-                [
-                    "",
-                    f"It will cost a total of {total_crafting_cost_formatted} to craft the intermediate items:",
-                    safe_dump(
-                        self.crafting_cost, default_flow_style=False, sort_keys=True
-                    ),
-                ]
-            )
+            message_parts.extend([
+                "",
+                f"It will cost a total of {total_crafting_cost_formatted} to craft the intermediate items:",
+                safe_dump(self.crafting_cost, default_flow_style=False, sort_keys=True),
+            ])
 
+        # Conditionally add the buy from vendor section.
+        if self.buy_from_vendor:
+            message_parts.append("")
+            message_parts.append("The following items can be bought from a vendor:")
+            for item, cost in self.buy_from_vendor.items():
+                if cost > 0:  # Only include items with a cost greater than 0
+                    cost_formatted = f"{cost:,.2f}"  # Format cost with thousands separator and 2 decimal places
+                    message_parts.append(f"{item}: {cost_formatted}")
+            
         # Conditionally add the sell to vendor section.
         if self.sell_to_vendor > 0:
             sell_to_vendor_formatted = f"{self.sell_to_vendor:,}"
-            message_parts.extend(
-                [
-                    "",
-                    f"{self.target_items} sells to a vendor for: {sell_to_vendor_formatted}",
-                ]
-            )
-
-        # Conditionally add the buy from vendor section.
-        if self.buy_from_vendor > 0:
-            buy_from_vendor_formatted = f"{self.buy_from_vendor:,}"
-            message_parts.extend(
-                [
-                    "",
-                    f"{self.target_items} can be bought from a vendor for: {self.buy_from_vendor}",
-                ]
-            )
+            message_parts.extend([
+                "",
+                f"{self.target_items} sells to a vendor for: {sell_to_vendor_formatted}",
+            ])
 
         # Join all parts into the final message.
         message = "\n".join(message_parts)
 
         return message
+    

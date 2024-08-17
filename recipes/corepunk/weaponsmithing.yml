@@ -1,5 +1,6 @@
 - name: Assault Launcher
   buy_from_vendor: 139.66 # Buy from Ratchet
+  sell_to_vendor: 10 # Buy from Ratchet
   items:
     Iron Ingot: 1
     Jewellery Wood: 2

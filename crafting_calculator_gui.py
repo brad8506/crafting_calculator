@@ -17,7 +17,6 @@ from crafting_calculator import load_recipes
 from crafting.shoppinglist import ShoppingList
 from crafting.common import *
 
-
 def discover_games() -> Tuple[Dict[str, Any]]:
     games = []
     path = Path("recipes")
@@ -131,8 +130,8 @@ def main():
 
                 shopping_list.simplify()
                 shopping_list.calculate_crafting_costs()
-                shopping_list.calculate_sell_to_vendor()
                 shopping_list.calculate_buy_from_vendor()
+                shopping_list.calculate_sell_to_vendor()
                 output(output_element, shopping_list.format_for_display())
 
         if event == "clear_items":
