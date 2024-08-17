@@ -1,0 +1,26 @@
+- name: Bio-compatible Material
+  items:
+    Xiphoid Process: 3
+
+- name: Cosmetic Fat
+  source: Boar
+  items:
+    Animal Fat: 3
+
+- name: Jewellery Bone
+  source: Turtle
+  items:
+    Large Bone: 3
+
+- name: Leather
+  source: Wolf
+  items:
+    Wolf Skin: 2
+
+- name: Nerve Endings
+  items:
+    Spine: 3
+
+- name: Neurotoxin
+  items:
+    Poisonous Gland: 3

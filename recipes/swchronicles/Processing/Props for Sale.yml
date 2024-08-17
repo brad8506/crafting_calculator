@@ -1,20 +1,20 @@
 ---
 - name: Shiny Dice
-  cost: 500
+  crafting_cost: 500
   sell_to_vendor: 25000
   items:
     Zircon: 8
     Iron Ingot: 8
 
 - name: Ruby Brooch
-  cost: 1000
+  crafting_cost: 1000
   sell_to_vendor: 50000
   items:
     Ruby: 15
     Silver Ingot: 12
 
 - name: Chess Piece
-  cost: 2000
+  crafting_cost: 2000
   sell_to_vendor: 100000
   items:
     Gold Ingot: 10
@@ -24,7 +24,7 @@
 
 - name: Shiny Feather
   sell_to_vendor: 150000
-  cost: 3000
+  crafting_cost: 3000
   items:
     Emerald: 10
     Peridot: 8
@@ -33,7 +33,7 @@
 
 - name: Colorful Sea Dragon
   sell_to_vendor: 200000
-  cost: 5000
+  crafting_cost: 5000
   items:
     Sapphire: 10
     Aquamarine: 10
@@ -42,7 +42,7 @@
 
 - name: Flame Peacock
   sell_to_vendor: 300000
-  cost: 10000
+  crafting_cost: 10000
   items:
     Red Diamond: 20
     Ruby: 12
@@ -50,7 +50,7 @@
     Premium Handwork Craft Tool: 5
 
 - name: Ancient Kingdom Golden Statue
-  cost: 10000
+  crafting_cost: 10000
   items:
     Gold Ingot: 20
     Oricalchum Ingot: 10
@@ -58,7 +58,7 @@
     Premium Handwork Craft Tool: 5
 
 - name: Fancy Handmade Doll
-  cost: 15000
+  crafting_cost: 15000
   items:
     Tritium: 12
     Yarn Ball: 5

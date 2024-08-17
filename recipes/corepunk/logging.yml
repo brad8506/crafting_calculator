@@ -1,0 +1,15 @@
+- name: Jewellery Wood
+  items:
+    Tree Root: 3
+
+- name: Silica
+  items:
+    Stone Bark: 3
+
+- name: Tissue Paper
+  items:
+    Wood: 3
+
+- name: Treated Wood
+  items:
+    Heartwood: 3

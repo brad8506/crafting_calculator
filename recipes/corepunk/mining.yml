@@ -1,0 +1,19 @@
+- name: Ceramics
+  items:
+    Ancient Fossils: 3
+
+- name: Iron Ingot
+  items:
+    Iron Ore: 3
+
+- name: Meteoric Ingot
+  items:
+    Meteoric Metal: 3
+
+- name: Powder Filler
+  items:
+    Soft Crystal: 3
+
+- name: Star Energy
+  items:
+    Meteoric Metal: 3

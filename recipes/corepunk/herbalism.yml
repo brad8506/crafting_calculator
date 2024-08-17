@@ -1,0 +1,19 @@
+- name: Cloth
+  items:
+    Silkworm Caterpillar: 3
+
+- name: Composite Material
+  items:
+    Jute: 3
+
+- name: Natural Oil
+  items:
+    Hazelnut: 3
+
+- name: Organic Gel
+  items:
+    Fragrant Root: 3
+
+- name: Strong Thread
+  items:
+    Jute: 3

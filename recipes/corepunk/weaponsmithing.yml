@@ -1,0 +1,15 @@
+# Buy from Ratchet
+- name: Assault Launcher
+  buy_from_vendor: 139.66
+  items:
+    Iron Ingot: 1
+    Jewellery Wood: 2
+    Leather: 1
+    Amber: 1
+
+# Buy from Ratchet
+- name: Plasma Launcher
+  buy_from_vendor: 59.85
+  items:
+    Iron Ingot: 4
+    Amber: 1
