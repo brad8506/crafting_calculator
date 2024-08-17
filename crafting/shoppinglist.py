@@ -77,7 +77,7 @@ class ShoppingList:
         for item in self.target_items:
             buy_cost = get_buy_from_vendor(item, self.inventory)
             if buy_cost is not None:
-                total_cost = self.target_items[item] * buy_cost * self.target_amount
+                total_cost = buy_cost * self.target_amount
                 buy_from_vendor[item] = total_cost
 
         # Process items
@@ -108,23 +108,7 @@ class ShoppingList:
         for item in self.target_items:
             sell_cost = get_sell_to_vendor(item, self.inventory)
             if sell_cost is not None:
-                self.sell_to_vendor += (
-                    self.target_items[item] * sell_cost * self.target_amount
-                )
-
-        # Process items
-        for item in self.items:
-            sell_cost = get_sell_to_vendor(item, self.inventory)
-            if sell_cost is not None:
-                self.sell_to_vendor += self.items[item] * sell_cost * self.target_amount
-
-        # Process intermediate steps
-        for item in self.intermediate_steps:
-            sell_cost = get_sell_to_vendor(item, self.inventory)
-            if sell_cost is not None:
-                self.sell_to_vendor += (
-                    self.intermediate_steps[item] * sell_cost * self.target_amount
-                )
+                self.sell_to_vendor += sell_cost * self.target_amount
 
         logging.debug("Total sell_to_vendor revenue: %s", self.sell_to_vendor)
 
