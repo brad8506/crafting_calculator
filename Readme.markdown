@@ -1,3 +1,14 @@
+# crafting_calculator_gui.py
+
+This is a simple GUI wrapper around the original crafting_calculator.py by Stephen Voss that uses [PySimpleGUI](https://www.pysimplegui.org/en/latest/)
+
+## usage
+
+```shell
+python crafting_calculator_gui.py
+```
+<img src="./images/gui.png">
+
 # crafting_calculator.py
 
 This is a generic Python CLI tool for resolving (breaking down) crafting
@@ -144,15 +155,3 @@ poetry install
 
 ## thanks
 - Stephen Voss
-
-
-# crafting_calculator_gui.py
-
-This is a simple GUI wrapper around crafting_calculator.py that uses [PySimpleGUI](https://www.pysimplegui.org/en/latest/)
-
-## usage
-
-```shell
-python crafting_calculator_gui.py
-```
-<img src="./images/gui.png">
