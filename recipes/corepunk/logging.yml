@@ -1,3 +1,6 @@
+# https://corepunk.wiki/w/Logging
+# https://corepunk.pro/professions/logging
+
 - name: Jewellery Wood
   items:
     Tree Root: 3
@@ -21,3 +24,16 @@
 - name: Transparent Leaf
   rarity: Green
   source: Magic Tree
+
+- name: Neon Mushroom
+  rarity: Blue
+  source: Magic Tree
+
+- name: Amber
+  rarity: Green
+  source: Magic Tree
+  wiki: https://corepunk.wiki/w/Amber
+
+  - name: Blood Honey
+    rarity: Purple
+    wiki: https://corepunk.wiki/w/Amber

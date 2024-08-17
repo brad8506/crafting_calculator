@@ -1,9 +1,17 @@
+# https://corepunk.wiki/w/Butchering
+# https://corepunk.pro/professions/butchery
+
 - name: Bio-compatible Material
   items:
     Xiphoid Process: 3
 
+- name: Xiphoid Process
+  wiki: https://corepunk.wiki/w/Xiphoid_Process
+
 - name: Cosmetic Fat
   source: Boar
+  rarity: White
+  wiki: https://corepunk.wiki/w/Cosmetic_Fat
   items:
     Animal Fat: 3
 

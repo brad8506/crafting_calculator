@@ -1,3 +1,6 @@
+# https://corepunk.wiki/w/Weaponsmithing
+# https://corepunk.pro/professions/weaponsmithing
+
 - name: Assault Launcher
   buy_from_vendor: 139.66 # Buy from Ratchet
   sell_to_vendor: 10 # Buy from Ratchet
