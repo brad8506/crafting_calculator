@@ -13,6 +13,7 @@
     Large Bone: 3
 
 - name: Leather
+  buy_from_vendor: 19.59 # Buy from Eadric Barrow
   source: Wolf
   items:
     Wolf Skin: 2

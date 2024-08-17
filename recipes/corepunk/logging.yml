@@ -13,3 +13,11 @@
 - name: Treated Wood
   items:
     Heartwood: 3
+
+- name: Mana Resin
+  rarity: Green
+  source: Magic Tree
+
+- name: Transparent Leaf
+  rarity: Green
+  source: Magic Tree

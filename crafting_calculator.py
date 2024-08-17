@@ -13,7 +13,7 @@ from yaml import safe_load
 # internal
 from crafting.shoppinglist import ShoppingList
 from crafting.common import find_recipe
-from crafting.common import get_recipe_cost
+from crafting.common import get_crafting_cost
 
 EXITCODE_NO_RECIPES = 1
 
@@ -126,7 +126,9 @@ def craft_item(item: str, inventory: List[Dict[str, Any]], amount: int) -> Shopp
     shopping_list.simplify()
 
     shopping_list.add_item_costs(shopping_list.intermediate_steps)
-    shopping_list.crafting_cost.update({item: get_recipe_cost(item, inventory) * amount})
+    shopping_list.crafting_cost.update(
+        {item: get_crafting_cost(item, inventory) * amount}
+    )
     for recipe in inventory:
         if recipe.get("name") == item:
             if "sell_to_vendor" in recipe.keys():
