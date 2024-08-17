@@ -8,8 +8,8 @@ from typing import List, Dict, Any
 from yaml import safe_dump
 
 # internal
-from crafting.common import find_recipe
-from crafting.common import get_recipe_cost
+import crafting.common
+from crafting.common import *
 
 
 # Singleton class
@@ -19,8 +19,8 @@ class ShoppingList:
     def __init__(self, inventory: List[Dict[str, Any]], item: str, amount: int):
         self.items: Dict[str, int] = {}
         self.crafting_cost: Dict[str, float] = {}
-        self.sell_to_vendor: float = None
-        self.buy_from_vendor: float = None
+        self.sell_to_vendor: float = 0.0
+        self.buy_from_vendor: float = 0.0
         self.target_items: Dict[str, int] = {}
         self.target_amount: int = amount
         self.intermediate_steps: Dict[str, int] = {}
@@ -42,21 +42,21 @@ class ShoppingList:
     def calculate_crafting_costs(self) -> None:
         """Calculate all costs."""
         for item in self.target_items:
-            recipe_cost = get_recipe_cost(item, self.inventory)
+            recipe_cost = get_crafting_cost(item, self.inventory)
             if recipe_cost is not None:
                 self.crafting_cost.update(
                     {item: self.target_items[item] * recipe_cost * self.target_amount}
                 )
 
         for item in self.items:
-            recipe_cost = get_recipe_cost(item, self.inventory)
+            recipe_cost = get_crafting_cost(item, self.inventory)
             if recipe_cost is not None:
                 self.crafting_cost.update(
                     {item: self.items[item] * recipe_cost * self.target_amount}
                 )
 
         for item in self.intermediate_steps:
-            recipe_cost = get_recipe_cost(item, self.inventory)
+            recipe_cost = get_crafting_cost(item, self.inventory)
             if recipe_cost is not None:
                 self.crafting_cost.update(
                     {
@@ -66,6 +66,54 @@ class ShoppingList:
                     }
                 )
         logging.debug("Summing item crafting_cost for %s item/s in shopping list.", item)
+
+    def calculate_buy_from_vendor(self) -> None:
+        """Calculate the total cost to buy items from vendors."""
+        self.buy_from_vendor = 0.0  # Initialize as a float
+
+        # Process target items
+        for item in self.target_items:
+            buy_cost = get_buy_from_vendor(item, self.inventory)
+            if buy_cost is not None:
+                self.buy_from_vendor += self.target_items[item] * buy_cost * self.target_amount
+
+        # Process items
+        for item in self.items:
+            buy_cost = get_buy_from_vendor(item, self.inventory)
+            if buy_cost is not None:
+                self.buy_from_vendor += self.items[item] * buy_cost * self.target_amount
+
+        # Process intermediate steps
+        for item in self.intermediate_steps:
+            buy_cost = get_buy_from_vendor(item, self.inventory)
+            if buy_cost is not None:
+                self.buy_from_vendor += self.intermediate_steps[item] * buy_cost * self.target_amount
+
+        logging.debug("Total buy_from_vendor cost: %s", self.buy_from_vendor)
+
+    def calculate_sell_to_vendor(self) -> None:
+        """Calculate the total revenue from selling items to vendors."""
+        self.sell_to_vendor_cost = 0.0  # Initialize as a float
+
+        # Process target items
+        for item in self.target_items:
+            sell_cost = get_sell_to_vendor(item, self.inventory)
+            if sell_cost is not None:
+                self.sell_to_vendor_cost += self.target_items[item] * sell_cost * self.target_amount
+
+        # Process items
+        for item in self.items:
+            sell_cost = get_sell_to_vendor(item, self.inventory)
+            if sell_cost is not None:
+                self.sell_to_vendor_cost += self.items[item] * sell_cost * self.target_amount
+
+        # Process intermediate steps
+        for item in self.intermediate_steps:
+            sell_cost = get_sell_to_vendor(item, self.inventory)
+            if sell_cost is not None:
+                self.sell_to_vendor_cost += self.intermediate_steps[item] * sell_cost * self.target_amount
+
+        logging.debug("Total sell_to_vendor revenue: %s", self.sell_to_vendor_cost)
 
     def add_step(self, item: str, amount: int) -> None:
         """Add intermediate items to the crafting tree."""
@@ -122,32 +170,49 @@ class ShoppingList:
             "target_amount": self.target_amount,
         }
         return dumps(output, sort_keys=True, indent=2)
-
+    
     def format_for_display(self) -> str:
         """Format the ShoppingList for printing to stdout."""
-        total_cost = sum(self.crafting_cost.values())
-        total_cost_formatted = f"{total_cost:,}"
-        message = "\n".join(
-            [
+        total_crafting_cost = sum(self.crafting_cost.values())
+        total_crafting_cost_formatted = f"{total_crafting_cost:,}"
+
+        # Base message parts.
+        message_parts = [
+            "",
+            f"You need these items to craft {self.target_amount} of {self.target_items}:",
+            safe_dump(self.items, default_flow_style=False, sort_keys=True),
+            "The following intermediate items need to be crafted:",
+            safe_dump(
+                self.intermediate_steps, default_flow_style=False, sort_keys=True
+            ).rstrip("\n"),
+        ]
+
+        # Conditionally add the total crafting cost section.
+        if total_crafting_cost > 0:
+            message_parts.extend([
                 "",
-                f"You need these items to craft {self.target_amount} of {self.target_items}:",
-                safe_dump(self.items, default_flow_style=False, sort_keys=True),
-                "The following intermediate items need to be crafted:",
-                safe_dump(
-                    self.intermediate_steps, default_flow_style=False, sort_keys=True
-                ).rstrip("\n"),
-                "",
-                f"It will cost a total of {total_cost_formatted} to craft the intermediate items:",
+                f"It will cost a total of {total_crafting_cost_formatted} to craft the intermediate items:",
                 safe_dump(self.crafting_cost, default_flow_style=False, sort_keys=True),
-            ]
-        )
-        if self.sell_to_vendor is not None:
+            ])
+
+        # Conditionally add the sell to vendor section.
+        if self.sell_to_vendor > 0:
             sell_to_vendor_formatted = f"{self.sell_to_vendor:,}"
-            message += (
-                "\n"
-                + self.target_items
-                + " sells to a vendor for: "
-                + sell_to_vendor_formatted
-            )
+            message_parts.extend([
+                "",
+                f"{self.target_items} sells to a vendor for: {sell_to_vendor_formatted}",
+            ])
+
+        # Conditionally add the buy from vendor section.
+        if self.buy_from_vendor > 0:
+            buy_from_vendor_formatted = f"{self.buy_from_vendor:,}"
+            message_parts.extend([
+                "",
+                f"{self.target_items} can be bought from a vendor for: {self.buy_from_vendor}",
+            ])
+
+        # Join all parts into the final message.
+        message = "\n".join(message_parts)
 
         return message
+    

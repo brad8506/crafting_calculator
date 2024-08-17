@@ -15,9 +15,7 @@ from yaml import safe_load
 # internal
 from crafting_calculator import load_recipes
 from crafting.shoppinglist import ShoppingList
-from crafting.common import find_recipe
-from crafting.common import get_recipe_cost
-
+from crafting.common import *
 
 def discover_games() -> Tuple[Dict[str, Any]]:
     games = []
@@ -131,7 +129,9 @@ def main():
                     shopping_list.add_items(required_items, amount)
 
                 shopping_list.simplify()
-                shopping_list.calculate_item_costs()
+                shopping_list.calculate_crafting_costs()
+                shopping_list.calculate_sell_to_vendor()
+                shopping_list.calculate_buy_from_vendor()
                 output(output_element, shopping_list.format_for_display())
 
         if event == "clear_items":
