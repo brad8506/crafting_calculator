@@ -12,6 +12,7 @@ from crafting.common import find_recipe
 from crafting.common import get_recipe_cost
 
 
+# Singleton class
 class ShoppingList:
     """A shopping list holds all items required to craft the given item."""
 
@@ -19,10 +20,17 @@ class ShoppingList:
         self.items: Dict[str, int] = {}
         self.cost: Dict[str, float] = {}
         self.sell_to_vendor: float = None
-        self.target_item: str = item
+        self.target_items: Dict[str, int] = {}
         self.target_amount: int = amount
         self.intermediate_steps: Dict[str, int] = {}
         self.inventory = inventory
+
+    @classmethod
+    def create_empty(cls):
+        inventory = []  # Empty inventory
+        item = ""  # Empty item
+        amount = 0  # Default amount
+        return cls(inventory, item, amount)
 
     def add_items(self, items: Dict[str, int], amount: int) -> None:
         """Add items to the shopping list."""
@@ -30,17 +38,33 @@ class ShoppingList:
             logging.debug("Adding %s to shopping list.", item)
             self.items.update({item: items[item] * amount})
 
-    def add_item_costs(self, items: Dict[str, float]) -> None:
-        """Add items to the shopping list."""
-        cost = None
-        for item in items:
+    def calculate_item_costs(self) -> None:
+        """Calculate all costs."""
+        for item in self.target_items:
             recipe_cost = get_recipe_cost(item, self.inventory)
             if recipe_cost is not None:
-                self.cost.update({item: items[item] * recipe_cost})
+                self.cost.update(
+                    {item: self.target_items[item] * recipe_cost * self.target_amount}
+                )
 
-            logging.debug("Summing item costs for %s item in shopping list.", item)
+        for item in self.items:
+            recipe_cost = get_recipe_cost(item, self.inventory)
+            if recipe_cost is not None:
+                self.cost.update(
+                    {item: self.items[item] * recipe_cost * self.target_amount}
+                )
 
-        return cost
+        for item in self.intermediate_steps:
+            recipe_cost = get_recipe_cost(item, self.inventory)
+            if recipe_cost is not None:
+                self.cost.update(
+                    {
+                        item: self.intermediate_steps[item]
+                        * recipe_cost
+                        * self.target_amount
+                    }
+                )
+        # logging.debug("Summing item costs for %s item in shopping list.", item)
 
     def add_step(self, item: str, amount: int) -> None:
         """Add intermediate items to the crafting tree."""
@@ -93,7 +117,7 @@ class ShoppingList:
         output = {
             "shopping_list": self.items,
             "intermediates": self.intermediate_steps,
-            "target_item": self.target_item,
+            "target_items": self.target_items,
             "target_amount": self.target_amount,
         }
         return dumps(output, sort_keys=True, indent=2)
@@ -105,7 +129,7 @@ class ShoppingList:
         message = "\n".join(
             [
                 "",
-                f"You need these items to craft {self.target_amount} of {self.target_item}:",
+                f"You need these items to craft {self.target_amount} of {self.target_items}:",
                 safe_dump(self.items, default_flow_style=False, sort_keys=True),
                 "The following intermediate items need to be crafted:",
                 safe_dump(
@@ -120,7 +144,7 @@ class ShoppingList:
             sell_to_vendor_formatted = f"{self.sell_to_vendor:,}"
             message += (
                 "\n"
-                + self.target_item
+                + self.target_items
                 + " sells to a vendor for: "
                 + sell_to_vendor_formatted
             )

@@ -14,6 +14,9 @@ from yaml import safe_load
 
 # internal
 from crafting_calculator import load_recipes
+from crafting.shoppinglist import ShoppingList
+from crafting.common import find_recipe
+from crafting.common import get_recipe_cost
 
 
 def discover_games() -> Tuple[Dict[str, Any]]:
@@ -112,20 +115,24 @@ def main():
             window["item"].Update(items)
 
         if event == "calculate":
-            game = values["game"]
-            item = values["item"]
-            if not item:
+            items = values["item"]
+            if not items:
                 output(output_element, "Please select an item")
             else:
+                game = values["game"]
                 amount = int(values["amount"] or 1)
-                output(output_element, "")
-                for i in item:
-                    cmd = Template(
-                        'python crafting_calculator.py --game "$game" "$item" --amount $amount --debug'
-                    )
-                    cmd_substituted = cmd.substitute(game=game, item=i, amount=amount)
-                    result = subprocess.check_output(cmd_substituted, text=True)
-                    output(output_element, result + "\n", True)
+                shopping_list = ShoppingList.create_empty()
+                inventory, meta = _load_recipes(values["game"])
+                shopping_list.inventory = inventory
+                shopping_list.target_amount = amount
+                for item in items:
+                    shopping_list.target_items.update({item: amount})
+                    required_items = find_recipe(item, inventory)
+                    shopping_list.add_items(required_items, amount)
+
+                shopping_list.simplify()
+                shopping_list.calculate_item_costs()
+                output(output_element, shopping_list.format_for_display())
 
         if event == "clear_items":
             window["item"].set_value([])

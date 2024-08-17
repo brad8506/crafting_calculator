@@ -1,0 +1,42 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "python",
+      "interpreter": "(default)",
+      "interpreterArguments": "",
+      "scriptArguments": "--game swchronicles \"Spell Book IV ATK\" --amount 20 --debug",
+      "env": {},
+      "nativeDebug": false,
+      "webBrowserUrl": "",
+      "project": "crafting_calculator.py",
+      "projectTarget": "",
+      "name": "crafting_calculator.py"
+    },
+    {
+      "type": "python",
+      "interpreter": "(default)",
+      "interpreterArguments": "",
+      "scriptArguments": "",
+      "env": {},
+      "nativeDebug": false,
+      "webBrowserUrl": "",
+      "project": "crafting_calculator.py",
+      "projectTarget": "",
+      "name": "crafting_calculator.py(1)"
+    },
+    {
+      "type": "python",
+      "interpreter": "(default)",
+      "interpreterArguments": "",
+      "scriptArguments": "",
+      "env": {},
+      "nativeDebug": false,
+      "webBrowserUrl": "",
+      "project": "crafting_calculator_gui.py",
+      "projectTarget": "",
+      "name": "crafting_calculator_gui.py"
+    }
+  ]
+}
