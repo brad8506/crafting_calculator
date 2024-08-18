@@ -1,5 +1,6 @@
 # https://corepunk.wiki/w/Logging
 # https://corepunk.pro/professions/logging
+# https://corepunkers.com/professions
 
 - name: Jewellery Wood
   items:
@@ -29,11 +30,14 @@
   rarity: Blue
   source: Magic Tree
 
+- name: Mutated Leaf
+  rarity: Blue
+  source: Magic Tree
+
 - name: Amber
   rarity: Green
   source: Magic Tree
   wiki: https://corepunk.wiki/w/Amber
 
-  - name: Blood Honey
-    rarity: Purple
-    wiki: https://corepunk.wiki/w/Amber
+- name: Blood Honey
+  rarity: Purple
