@@ -1,5 +1,6 @@
 # https://corepunk.wiki/w/Herbalism
 # https://corepunk.pro/professions/herbalism
+# https://corepunkers.com/professions
 
 - name: Cloth
   items:
@@ -20,3 +21,27 @@
 - name: Strong Thread
   items:
     Jute: 3
+
+- name: Blue Lotus
+  rarity: Green
+  source: Thick Bush
+
+- name: Carnivorous Plant
+  rarity: Green
+  source: Thick Bush
+
+- name: Magic Weeds
+  rarity: Green
+  source: Thick Bush
+
+- name: Six-leaf Clover
+  rarity: Green
+  source: Thick Bush
+
+- name: Petrified Spike
+  rarity: Blue
+  source: Thick Bush
+
+- name: Rainbow Snail
+  rarity: Purple
+  source: Thick Bush

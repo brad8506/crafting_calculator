@@ -1,2 +1,35 @@
 # https://corepunk.wiki/w/Constructor
 # https://corepunk.pro/professions/construction
+# https://corepunkers.com/professions
+
+- name: Armor Plate
+  items:
+    Titanium Nugget: 1
+    Iron Ingot: 1
+
+- name: Body Scanner
+  items:
+    Composite Material: 1
+    Diamond: 1
+
+- name: Immuno-Stimulating Implant
+  items:
+    Blue Lotus: 1
+    Bio-compatible Material: 1
+
+- name: Nano Tissue
+  items:
+    Amber: 1
+    Cloth: 1
+
+- name: Soldier's Implant
+  items:
+    Immuno-Stimulating Implant: 1
+    Steroid Implant: 1
+    Petrified Spike: 1
+    Forest Berry: 1
+
+- name: Steroid Implant
+  items:
+    Gonad: 1
+    Bio-compatible Material: 1
