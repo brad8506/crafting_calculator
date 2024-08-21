@@ -131,10 +131,18 @@
 
 - name: Vital Nano Bracer
   items:
-    Immuno-Stimulating Implant: 1
-    Nano Tissue: 1
-    Elastic Membrane: 1
-    Forest berry: 1
+    - name: Mana Amulet
+      quantity: 1
+      quality: green
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      quality: green
+    - name: Mutated Leaf
+      quantity: 1
+      quality: blue
+    - name: Forest berry
+      quantity: 1
+      quality: blue
 
 - name: Vitality Augmenter
   items:

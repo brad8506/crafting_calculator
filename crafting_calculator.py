@@ -129,6 +129,7 @@ def craft_item(item: str, inventory: List[Dict[str, Any]], amount: int) -> Shopp
     shopping_list.crafting_cost.update(
         {item: get_crafting_cost(item, inventory) * amount}
     )
+    
     for recipe in inventory:
         if recipe.get("name") == item:
             if "sell_to_vendor" in recipe.keys():

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crafting Calculator GUI</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .table-header-row {
+            display: none;
+        }
+
+        .collapse {
+            display: none;
+        }
+
+        .rarity-green {
+            color: green;
+        }
+
+        .rarity-blue {
+            color: blue;
+        }
+
+        .rarity-purple {
+            color: purple;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .width20 {
+            width: 20%;
+        }
+
+        .pad0 {
+            padding: 0;
+        }
+
+        textarea {
+            border: none;
+            display: block;
+            width: 98%;
+            height: auto;
+            overflow: hidden;
+            resize: none; /* Prevent manual resizing */
+            min-height: 20px; /* Set the minimum height for one row */
+        }
+
+        .sub-table-row > td {
+            padding: 0;
+            padding-left: 2rem;
+            border: none;
+            border-left: 1px solid;
+        }
+
+        .sub-table, .sub-sub-table {
+            /* display: contents; */
+            margin: 0;
+            width: 100%;
+        }
+
+        .sub-table td, .sub-sub-table td {
+            background-color: #f9f9f9;
+        }
+
+        .expandable-content {
+            width: 100%;
+        }
+
+        .expand-icon {
+            margin-left: -12px;
+            padding-right: 6px;
+            color: orangered;
+            font-size: 1.2rem;
+        }
+
+        .product-name-quantity-wrapper,
+        .in-inventory-wrapper {
+            display: inline-block;
+        }
+
+        .product-name-quantity-wrapper {
+            min-width: 250px;
+            margin-right: 100px;
+        }
+
+        .quantity-required {
+            float: right;
+        }
+
+        .accordion-wrapper.level-0,
+        .accordion-wrapper.level-1,
+        .accordion-wrapper.level-2 {
+            margin-bottom: 15px;
+        }
+
+        .accordion--root,
+        .accordion--child {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .accordion--child {
+            padding: 0;
+        }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion--root::before,
+        .accordion--child::before {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .active::before {
+            content: "\2212";
+        }
+
+        .panel {
+            display: none;
+            padding-left: 30px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crafting Calculator GUI</h1>
+    <input type="checkbox" id="hideInventoryCheckbox">
+    <label for="hideInventoryCheckbox">Hide Inventory</label>
+
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Required</th>
+            <th>Quantity Required</th>
+            <th>In Inventory</th>
+            <th>Output</th>
+        </tr>
+        <tr class="expandable-row">
+            <td class="parent width20" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Vital Nano Bracer</td>
+            <td>1</td>
+            <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+            <td><input class="in-inventory" type="text" size="4" /></td>
+            <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
+        </tr>
+        <tr class="sub-table-row .collapse" style="display: none;">
+            <td colspan="5">
+                <!-- Sub-table for Vital Nano Bracer items -->
+                <table class="sub-table">
+                    <tr class="table-header-row">
+                        <th>Sub-Item</th>
+                        <th>Required</th>
+                        <th>Quantity Required</th>
+                        <th>In Inventory</th>
+                        <td>Output</td>
+                    </tr>
+                    <tr class="expandable-row rarity-green">
+                        <td class="parent width20" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Mana Amulet</td>
+                        <td>1</td>
+                        <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+                        <td><input class="in-inventory" type="text" size="4" /></td>
+                        <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
+                    </tr>
+                    <tr class="sub-table-row .collapse" style="display: none;">
+                        <td colspan="5">
+                            <!-- Sub-table for Mana Amulet -->
+                            <table class="sub-table">
+                                <tr class="table-header-row">
+                                    <th>Sub-Item</th>
+                                    <th>Required</th>
+                                    <th>Quantity Required</th>
+                                    <th>In Inventory</th>
+                                    <td>Output</td>
+                                </tr>
+                                <tr class="rarity-green">
+                                    <td class="width20">Mana Resin</td>
+                                    <td>1</td>
+                                    <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+                                    <td><input class="in-inventory" type="text" size="4" /></td>
+                                    <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>Heartwood</td>
+                                    <td>3</td>
+                                    <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+                                    <td><input class="in-inventory" type="text" size="4" /></td>
+                                    <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="expandable-row rarity-green">
+                        <td class="parent width20" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Immuno-Stimulating Implant</td>
+                        <td>1</td>
+                        <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+                        <td><input class="in-inventory" type="text" size="4" /></td>
+                        <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
+                    </tr>
+                    <tr class="sub-table-row .collapse" style="display: none;">
+                        <td colspan="5">
+                            <!-- Sub-table for Immuno-Stimulating Implant -->
+                            <table class="sub-table">
+                                <tr class="table-header-row">
+                                    <th>Sub-Item</th>
+                                    <th>Required</th>
+                                    <th>Quantity Required</th>
+                                    <th>In Inventory</th>
+                                    <td>Output</td>
+                                </tr>
+                                <tr class="rarity-green">
+                                    <td>Blue Lotus</td>
+                                    <td>1</td>
+                                    <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+                                    <td><input class="in-inventory" type="text" size="4" /></td>
+                                    <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
+                                </tr>
+                                <tr class="expandable-row">
+                                    <td class="parent width20" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Bio-compatible Material</td>
+                                    <td>1</td>
+                                    <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+                                    <td><input class="in-inventory" type="text" size="4" /></td>
+                                    <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
+                                </tr>
+                                <tr class="sub-table-row .collapse" style="display: none;">
+                                    <td colspan="5">
+                                        <!-- Sub-table for Bio-compatible Material -->
+                                        <table class="sub-table">
+                                            <tr class="table-header-row">
+                                                <th>Sub-Item</th>
+                                                <th>Required</th>
+                                                <th>Quantity Required</th>
+                                                <th>In Inventory</th>
+                                                <td>Output</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="width20">Xiphoid Process</td>
+                                                <td>3</td>
+                                                <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+                                                <td><input class="in-inventory" type="text" size="4" /></td>
+                                                <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="rarity-blue">
+                        <td>Mutated Leaf</td>
+                        <td>1</td>
+                        <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+                        <td><input class="in-inventory" type="text" size="4" /></td>
+                        <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
+                    </tr>
+                    <tr class="rarity-blue">
+                        <td>Forest Berry</td>
+                        <td>1</td>
+                        <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+                        <td><input class="in-inventory" type="text" size="4" /></td>
+                        <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Required</th>
+            <th>Quantity Required</th>
+            <th>In Inventory</th>
+            <th>Source</th>
+            <th>Wiki</th>
+        </tr>
+        <tr>
+            <td class="rarity-green">Mana Amulet</td>
+            <td>1</td>
+            <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+            <td><input class="in-inventory" type="text" size="4" /></td>
+            <td>Crafting</td>
+            <td>https://wiki/blah</td>
+        </tr>
+        <tr>
+            <td class="rarity-green">Immuno-Stimulating Implant</td>
+            <td>1</td>
+            <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+            <td><input class="in-inventory" type="text" size="4" /></td>
+        </tr>
+        <tr>
+            <td class="rarity-blue">Mutated Leaf</td>
+            <td>1</td>
+            <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+            <td><input class="in-inventory" type="text" size="4" /></td>
+        </tr>
+        <tr>
+            <td class="rarity-blue">Forest Berry</td>
+            <td>1</td>
+            <td><input class="in-inventory" type="text" size="4" value="1"/></td>
+            <td><input class="in-inventory" type="text" size="4" /></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>A1</th>
+            <th>B1</th>
+            <th>C1</th>
+        </tr>
+        <tr>
+            <td onclick="toggleSubTable(this)">Click A1</td>
+            <td>B2</td>
+            <td>C2</td>
+        </tr>
+        <tr class="sub-table-row">
+            <td colspan="3">
+                <div class="sub-table expandable-content">
+                    <table>
+                        <tr>
+                            <th>Sub A1</th>
+                            <th>Sub B1</th>
+                            <th>Sub C1</th>
+                        </tr>
+                        <tr>
+                            <td onclick="toggleSubSubTable(this)">Click Sub A1</td>
+                            <td>Sub B2</td>
+                            <td>Sub C2</td>
+                        </tr>
+                        <tr class="sub-sub-table-row">
+                            <td colspan="3">
+                                <div class="sub-sub-table expandable-content">
+                                    <table>
+                                        <tr>
+                                            <th>Sub Sub A1</th>
+                                            <th>Sub Sub B1</th>
+                                            <th>Sub Sub C1</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Sub Sub A2</td>
+                                            <td>Sub Sub B2</td>
+                                            <td>Sub Sub C2</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Required</th>
+            <th>Quantity Required</th>
+            <th>In Inventory</th>
+        </tr>
+        <tr>
+            <td class="rarity-blue">Elastic Membrane</td>
+            <td>2</td>
+            <td><input class="in-inventory" type="text" size="4" value="2"/></td>
+            <td><input class="in-inventory" type="text" size="4" /></td>
+        </tr>
+        <tr>
+            <td class="rarity-green">Moonstone</td>
+            <td>2</td>
+            <td><input class="in-inventory" type="text" size="4" value="2"/></td>
+            <td><input class="in-inventory" type="text" size="4" /></td>
+        </tr>
+        <tr>
+            <td class="rarity-purple">Blood Honey</td>
+            <td>2</td>
+            <td><input class="in-inventory" type="text" size="4" value="2"/></td>
+            <td><input class="in-inventory" type="text" size="4" /></td>
+        </tr>
+    </table>
+
+    <div class="accordion-wrapper level-0">
+        <button class="accordion--root">Alchemy</button>
+        <div class="panel">
+            <div class="block">
+                <label>Simple label</label>
+                <input type="text" size="4" />
+            </div>
+            <div class="block">
+                <label>Label with more text</label>
+                <input type="text" size="4" />
+            </div>
+            <div class="block">
+                <label>Short</label>
+                <input type="text" size="4" />
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-wrapper level-0">
+        <button class="accordion--root">Blacksmithing</button>
+        <div class="panel">
+            <div class="block">
+                <label>Simple label</label>
+                <input type="text" size="4" />
+            </div>
+            <div class="block">
+                <label>Label with more text</label>
+                <input type="text" size="4" />
+            </div>
+            <div class="block">
+                <label>Short</label>
+                <input type="text" size="4" />
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-wrapper level-0">
+        <button class="accordion--root">Cooking</button>
+        <div class="panel">
+            <div class="accordion-wrapper level-1">
+                <div class="product">
+                    <div class="product-name-quantity-wrapper">
+                        <button class="accordion--child item-name">Crab Gimbap</button>
+                        <input class="quantity-required" type="text" size="4" />
+                    </div>
+                    <div class="in-inventory-wrapper">
+                        <label>In inventory: </label><input class="in-inventory" type="text" size="4" />
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="product">
+                        <div class="product-name-quantity-wrapper">
+                            <label class="item-name">Crab</label>
+                            <label data-base-quantity="6" class="quantity-required-label">6</label>
+                        </div>
+                        <div class="in-inventory-wrapper">
+                            <label>In inventory: </label><input class="in-inventory" type="text" size="4" />
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-name-quantity-wrapper">
+                            <label class="item-name">Chicken</label>
+                            <label data-base-quantity="5" class="quantity-required-label">5</label>
+                        </div>
+                        <div class="in-inventory-wrapper">
+                            <label>In inventory: </label><input class="in-inventory" type="text" size="4" />
+                        </div>
+                    </div>
+                    <div class="accordion-wrapper level-2">
+                        <div class="product">
+                            <div class="product-name-quantity-wrapper">
+                                <button class="accordion--child item-name">Premium All-purpose Ingredient</button>
+                                <label data-base-quantity="2" class="quantity-required-label">2</label>
+                            </div>
+                            <div class="in-inventory-wrapper">
+                                <label>In inventory: </label><input class="in-inventory" type="text" size="4" />
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <table>
+                                <tr>
+                                    <th>Item Name</th>
+                                    <th>Quantity Required</th>
+                                    <th>In Inventory</th>
+                                </tr>
+                                <tr>
+                                    <td>Beef</td>
+                                    <td>2</td>
+                                    <td><input class="in-inventory" type="text" size="4" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Avocado</td>
+                                    <td>2</td>
+                                    <td><input class="in-inventory" type="text" size="4" /></td>
+                                </tr>
+                            </table>                            
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-name-quantity-wrapper">
+                            <label class="item-name">Finest Flour</label>
+                            <label data-base-quantity="3" class="quantity-required-label">3</label>
+                        </div>
+                        <div class="in-inventory-wrapper">
+                            <label>In inventory: </label><input class="in-inventory" type="text" size="4" />
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-name-quantity-wrapper">
+                        <label class="item-name">Fish</label>
+                        <input class="quantity-required" type="text" size="4" />
+                    </div>
+                    <div class="in-inventory-wrapper">
+                        <label>In inventory: </label><input class="in-inventory" type="text" size="4" />
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-name-quantity-wrapper">
+                        <label class="item-name">Mango</label>
+                        <input class="quantity-required" type="text" size="4" />
+                    </div>
+                    <div class="in-inventory-wrapper">
+                        <label>In inventory: </label><input class="in-inventory" type="text" size="4" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="output">
+        <textarea id="outputText" name="w3review" rows="4" cols="50">
+            Output
+        </textarea>
+    </div>
+
+    <input id="inputField" type="text" size="4" placeholder="Enter text">
+    <button id="submitButton" onclick="submitInput()">Submit</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <script>
+        var inputField = document.getElementById('inputField');
+        var submitButton = document.getElementById('submitButton');
+        var outputText = document.getElementById('outputText');
+
+        var socket = io();
+
+        function submitInput() {
+            var inputText = inputField.value;
+            socket.emit('submit', inputText);
+        }
+
+        socket.on('output', function (text) {
+            outputText.textContent = text;
+        });
+    </script>
+
+    <script>
+        function setupAccordion(accordionElements) {
+            accordionElements.forEach(function (accordion) {
+                accordion.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                    var panel = this.nextElementSibling;
+                    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        }
+
+        var accordionRootElements = document.querySelectorAll('.accordion--root');
+        var accordionChildElements = document.querySelectorAll('.accordion--child');
+
+        setupAccordion(accordionRootElements);
+        setupAccordion(accordionChildElements);
+
+        // Add the collapsed state on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            accordionRootElements.forEach(function (accordion) {
+                accordion.classList.add('collapsed');
+                var panel = accordion.nextElementSibling;
+                panel.style.display = 'none';
+            });
+
+            accordionChildElements.forEach(function (accordion) {
+                accordion.classList.add('collapsed');
+                var panel = accordion.nextElementSibling;
+                panel.style.display = 'none';
+            });
+        });
+    </script>
+
+    <script>
+        function toggleSubTable(cell) {
+            const subTableRow = cell.parentElement.nextElementSibling;
+            const subTable = subTableRow.querySelector('.sub-table');
+
+            if (subTableRow.style.display === "none" || subTableRow.style.display === "") {
+                subTableRow.style.display = "contents";
+            } else {
+                subTableRow.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
