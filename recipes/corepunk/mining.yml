@@ -10,6 +10,10 @@
   items:
     Iron Ore: 3
 
+- name: Isotope-238
+  rarity: blue
+  source: Metal Vein
+
 - name: Meteoric Ingot
   items:
     Meteoric Metal: 3
@@ -21,3 +25,10 @@
 - name: Star Energy
   items:
     Meteoric Metal: 3
+
+- name: Thermal Liquidum
+  rarity: purple
+
+- name: Tungsten
+  rarity: blue
+  source: Metal Vein

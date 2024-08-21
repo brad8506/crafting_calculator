@@ -38,6 +38,10 @@
   rarity: Green
   source: Thick Bush
 
+- name: Forest berry
+  rarity: Blue
+  source: Thick Bush
+
 - name: Petrified Spike
   rarity: Blue
   source: Thick Bush

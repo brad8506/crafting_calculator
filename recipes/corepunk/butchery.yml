@@ -6,15 +6,19 @@
   items:
     Xiphoid Process: 3
 
-- name: Xiphoid Process
-  wiki: https://corepunk.wiki/w/Xiphoid_Process
-
 - name: Cosmetic Fat
   source: Boar
   rarity: White
   wiki: https://corepunk.wiki/w/Cosmetic_Fat
   items:
     Animal Fat: 3
+
+- name: Elastic Membrane
+  rarity: Blue
+  source: Wolf
+
+- name: Granulation Tissue
+  rarity: purple
 
 - name: Jewellery Bone
   source: Turtle
@@ -36,3 +40,6 @@
 
 - name: Wolf Skin
   buy_from_vendor: 19.59 # Buy from Eadric Barrow
+
+- name: Xiphoid Process
+  wiki: https://corepunk.wiki/w/Xiphoid_Process
