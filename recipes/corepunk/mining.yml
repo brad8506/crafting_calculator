@@ -6,6 +6,11 @@
   items:
     Ancient Fossils: 3
 
+- name: Diamond
+  rarity: green
+  source: Metal Vein
+
+
 - name: Iron Ingot
   items:
     Iron Ore: 3
@@ -18,16 +23,32 @@
   items:
     Meteoric Metal: 3
 
+- name: Moonstone
+  rarity: green
+  source: Metal Vein
+
 - name: Powder Filler
   items:
     Soft Crystal: 3
+
+- name: Ruby
+  rarity: green
+  source: Metal Vein
 
 - name: Star Energy
   items:
     Meteoric Metal: 3
 
+- name: Soft Crystal
+  rarity: white
+  source: Fossilized Crystal Vein
+
 - name: Thermal Liquidum
   rarity: purple
+
+- name: Titanium Nugget
+  rarity: green
+  source: Metal Vein
 
 - name: Tungsten
   rarity: blue
