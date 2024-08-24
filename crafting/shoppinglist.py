@@ -207,31 +207,14 @@ class ShoppingList:
 
     def replace_items(self, item_name: str, item: Dict[str, Any]) -> None:
         """Replace items in the shopping list with smaller components."""
-        amount_item = item.get('quantity', 1)
+        amount_item = int(item.get('quantity', 1))
         child_items = item.get('items', None)
         if isinstance(child_items, dict):
             for child_item_name, value in child_items.items(): 
-                amount_replaced_item = value.get('quantity', 1)
+                quantity = int(value.get('quantity', 1))
+                amount_replaced_item = quantity * amount_item
                 logging.info("Replacing %s of %s.", amount_replaced_item, item)
-                self.add_items({child_item_name: value}, amount_replaced_item)
-            
-        elif isinstance(item, list):
-            # Handle list of dictionaries case
-            amount_replaced_item = self.items.pop(item_name, 0)
-            logging.info("Replacing %s of %s.", amount_replaced_item, item_name)
-            for sub_items in item:
-                if isinstance(sub_items, dict):
-                    # Ensure the quantity key exists and is a number
-                    if 'quantity' in sub_items and isinstance(sub_items['quantity'], (int, float)):
-                        # Scale the quantities by `amount_replaced_item`
-                        updated_items = {k: v * amount_replaced_item for k, v in sub_items.items() if k != 'quantity'}
-                        # Add items to shopping list
-                        self.add_items(updated_items, 1)  # Use amount 1 as `amount_replaced_item` is handled
-                    else:
-                        logging.warning("Missing or invalid 'quantity' key in sub-items: %s", sub_items)
-                else:
-                    logging.warning("Unexpected list item type: %s", type(sub_items))
-                    
+                self.add_items({child_item_name: value}, amount_replaced_item)        
         else:
             logging.warning("Unexpected type for replacement_items: %s", type(item))
         
