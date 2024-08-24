@@ -33,27 +33,68 @@ class ShoppingList:
         amount = 0  # Default amount
         return cls(inventory, item, amount)
 
+    @staticmethod
+    def move_single_int_to_quantity(data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Iterate over the dictionary and move a single integer value to a 'quantity' property.
+        Ensures each dictionary has only one integer value.
+        
+        Args:
+            data (Dict[str, Any]): The dictionary to process.
+        
+        Returns:
+            Dict[str, Any]: The updated dictionary with the integer value moved to 'quantity'.
+        """
+        updated_data = {}
+        
+        for key, value in data.items():
+            if isinstance(value, dict):
+                # Process nested dictionaries
+                updated_data[key] = ShoppingList.move_single_int_to_quantity(value)
+            elif isinstance(value, int):
+                # If the value is an integer, move it to 'quantity'
+                updated_data[key] = {'quantity': value}
+            else:
+                # Keep other values as they are
+                updated_data[key] = value
+        
+        # Ensure that each dictionary has only one integer value
+        if len(updated_data) == 1 and isinstance(list(updated_data.values())[0], dict) and 'quantity' in list(updated_data.values())[0]:
+            # If there is only one item and it's a dict with a 'quantity' key, return as is
+            return updated_data
+        
+        return updated_data
+
+    def update_quantity(self, item: str, amount: int) -> None:
+        """Update the quantity of an item in the shopping list."""
+        # recipe = self.inventory.get(item, None)
+        # if recipe:
+        #     recipe['quantity'] = recipe.get('quantity', 1) * amount
+        # else:
+        #     recipe = {}
+        #     recipe[item] = {'quantity': amount}
+
+        if item in self.items:
+            current = self.items[item]
+            if isinstance(current, dict):
+                current['quantity'] = current.get('quantity', 1) + amount
+            else:
+                logging.warning(f"Item {item} is not a dictionary.")
+        else:
+            # Handle cases where the item is not in self.items
+            recipe = self.inventory.get(item, None)
+            if recipe:
+                recipe['quantity'] = recipe.get('quantity', 1) * amount
+            else:
+                recipe = {'name': item, 'quantity': amount}
+            self.items.update({item: recipe})
+
     def add_items(self, items: Dict[str, Dict[str, Any]], amount: int) -> None:
         """Add items to the shopping list."""
-        
-        for key, value in items.items():
-            child_items = value.get('items', None)
-            a = True
-        
-        if isinstance(items.get('items'), dict):
-            sub_items['quantity'] = sub_items['quantity'] * amount
-            self.items.update({sub_items['name']: sub_items})
-        elif isinstance(items, list):
-            # If `items` is a list of dictionaries
-            for sub_items in items:
-                if isinstance(sub_items, dict):
-                    sub_items['quantity'] = sub_items['quantity'] * amount
-
-                    self.items.update({sub_items['name']: sub_items})
-                else:
-                    logging.warning("Unexpected list item type: %s", type(sub_items))
-        else:
-            logging.warning("Unexpected type for items: %s", type(items))
+        for item in items:
+            logging.debug("Adding %s to shopping list.", item)
+            self.update_quantity(item, amount)
+            #self.items.update({item: items[item]})
 
     def calculate_crafting_costs(self) -> None:
         """Calculate all costs."""
@@ -131,57 +172,54 @@ class ShoppingList:
     def add_step(self, item: str, amount: int) -> None:
         """Add intermediate items to the crafting tree."""
         logging.debug("Adding %s of %s to crafting tree.", amount, item)
-        self.intermediate_steps.update(
-            {item: self.intermediate_steps.get(item, 0) + amount}
-        )
+        self.intermediate_steps.update({item: self.intermediate_steps.get(item, 0) + amount})
 
     def simplify(self) -> None:
         """Recursively replace intermediate crafted items with their components."""
         logging.info("Simplifying shopping list.")
 
+        rerun_simplify = False
+
         replacements = {}
         for item in self.items:
-            recipe = find_recipe(item, self.inventory)
+            recipe = self.inventory.get(item, None)
             if recipe:
-                replacements.update({item: recipe})
+                if 'items' in recipe:
+                    replacements.update({item: recipe})
 
         if replacements:
-            for item in replacements:
-                self.replace_items(item, replacements[item])
-            self.items.pop(item, None)
+            items_to_delete = []
+            for key, value in replacements.items():
+                self.replace_items(key, value)
+                items_to_delete.append(key) # Mark item for deletion
 
-        if replacements:
+            # Remove items after the loop to avoid resizing dictionary during iteration
+            for item in items_to_delete:
+                del self.items[item]
+                del replacements[item]
+            
+            rerun_simplify = True
+
+        if rerun_simplify:
             self.simplify()
         else:
             logging.info("Nothing to simplify.")
 
-    # def replace_items(self, item: str, replacement_items: Dict[str, int]) -> None:
-    #     """Replace items in the shopping list with smaller components."""
-    #     amount_replaced_item = self.items.pop(item)
-    #     logging.info("Replacing %s of %s.", amount_replaced_item, item)
-    #     for replacement in replacement_items:
-    #         amount_replacement = (
-    #             self.items.get(replacement, 0)
-    #             + replacement_items[replacement] * amount_replaced_item
-    #         )
-    #         self.items.update({replacement: amount_replacement})
-    #     self.add_step(item, amount_replaced_item)
-
-    def replace_items(self, item: str, replacement_items: Union[Dict[str, int], List[Dict[str, int]]]) -> None:
+    def replace_items(self, item_name: str, item: Dict[str, Any]) -> None:
         """Replace items in the shopping list with smaller components."""
-        
-        # Check if `replacement_items` is a dictionary or list of dictionaries
-        if isinstance(replacement_items, dict):
-            # Handle dictionary case
-            amount_replaced_item = self.items.pop(item, 0)
-            logging.info("Replacing %s of %s.", amount_replaced_item, item)
-            self.add_items(replacement_items, amount_replaced_item)
+        amount_item = item.get('quantity', 1)
+        child_items = item.get('items', None)
+        if isinstance(child_items, dict):
+            for child_item_name, value in child_items.items(): 
+                amount_replaced_item = value.get('quantity', 1)
+                logging.info("Replacing %s of %s.", amount_replaced_item, item)
+                self.add_items({child_item_name: value}, amount_replaced_item)
             
-        elif isinstance(replacement_items, list):
+        elif isinstance(item, list):
             # Handle list of dictionaries case
-            amount_replaced_item = self.items.pop(item, 0)
-            logging.info("Replacing %s of %s.", amount_replaced_item, item)
-            for sub_items in replacement_items:
+            amount_replaced_item = self.items.pop(item_name, 0)
+            logging.info("Replacing %s of %s.", amount_replaced_item, item_name)
+            for sub_items in item:
                 if isinstance(sub_items, dict):
                     # Ensure the quantity key exists and is a number
                     if 'quantity' in sub_items and isinstance(sub_items['quantity'], (int, float)):
@@ -195,10 +233,10 @@ class ShoppingList:
                     logging.warning("Unexpected list item type: %s", type(sub_items))
                     
         else:
-            logging.warning("Unexpected type for replacement_items: %s", type(replacement_items))
+            logging.warning("Unexpected type for replacement_items: %s", type(item))
         
         # Record the step of replacement (if applicable)
-        self.add_step(item, amount_replaced_item)
+        self.add_step(item_name, amount_item)
 
     def to_yaml(self) -> str:
         """Return ShoppingList contents as YAML formatted string."""
@@ -223,16 +261,49 @@ class ShoppingList:
         """Format the ShoppingList for printing to stdout."""
         total_crafting_cost = sum(self.crafting_cost.values())
         total_crafting_cost_formatted = f"{total_crafting_cost:,}"
+        target_items = self.target_items.keys()
+        target_items_formatted = '\n'.join([f"- {item}: {self.target_amount}" for item in target_items])
+
+        # Define the desired order of keys
+        key_order = ["quantity", "rarity", "source", 'wiki']
+
+        # Construct the output with each item on a new line
+        items_dump = "\n".join(
+            f"{item}: " + ", ".join(
+                f"{k}: {details[k]}" 
+                for k in key_order 
+                if k in details
+            ) + ", " + ", ".join(
+                f"{k}: {details[k]}" 
+                for k in details 
+                if k not in key_order and k != "name"
+            )
+            for item, details in self.items.items()
+        ).rstrip(", ")
+
+        # Construct the message
+        items_message = (
+            target_items_formatted
+            if items_dump == '{}' or not items_dump
+            else items_dump
+        )
+        
+        intermediate_steps_dump = safe_dump(self.intermediate_steps, default_flow_style=False, sort_keys=True).rstrip("\n")
+        intermediate_steps_message = (
+            "No intermediate steps."
+            if intermediate_steps_dump == '{}' or not intermediate_steps_dump
+            else intermediate_steps_dump
+        )
 
         # Base message parts.
         message_parts = [
+            f"You selected\n{target_items_formatted}",
             "",
-            f"You need these items to craft {self.target_amount} of {self.target_items}:",
-            safe_dump(self.items, default_flow_style=False, sort_keys=True),
+            f"You need these items to craft:",
+            items_message,
+            "",
             "The following intermediate items need to be crafted:",
-            safe_dump(
-                self.intermediate_steps, default_flow_style=False, sort_keys=True
-            ).rstrip("\n"),
+            intermediate_steps_message,
         ]
 
         # Conditionally add the total crafting cost section.

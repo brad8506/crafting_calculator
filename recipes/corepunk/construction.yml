@@ -133,16 +133,16 @@
   items:
     - name: Mana Amulet
       quantity: 1
-      quality: green
+      rarity: green
     - name: Immuno-Stimulating Implant
       quantity: 1
-      quality: green
+      rarity: green
     - name: Mutated Leaf
       quantity: 1
-      quality: blue
+      rarity: blue
     - name: Forest berry
       quantity: 1
-      quality: blue
+      rarity: blue
 
 - name: Vitality Augmenter
   items:

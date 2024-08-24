@@ -34,7 +34,6 @@ def _load_recipes(game):
     inventory, meta = load_recipes(game)
     return (inventory, meta)
 
-
 def get_inventory_values(inventory, key):
     return_array = []
     for item in inventory:
@@ -75,16 +74,17 @@ def windowPySimpleGui():
             ),
         ],
         [
-            sg.Text("", size=(6, 1)),
-            sg.Button("Calculate", key="calculate"),
-        ],
-        [
-            sg.Text("", size=(6, 1)),
-            sg.Button("Clear selected items", key="clear_items"),
-        ],
-        [
             sg.Text("Amount:", size=(6, 1)),
             sg.InputText(key="amount", default_text="1", size=(40, 1)),
+        ],
+        [
+            sg.Text("", size=(5, 1)),
+            sg.Column([
+                [sg.Button("Calculate", key="calculate", size=(15, 1))]
+            ]),
+            sg.Column([
+                [sg.Button("Clear selected items", key="clear_items")]
+            ]),
         ],
         [
             sg.Text(
@@ -93,7 +93,7 @@ def windowPySimpleGui():
             )
         ],
         [sg.Text("Output:", size=(6, 1))],
-        [sg.Multiline(size=(49, 20), key="output", enable_events=True)],
+        [sg.Multiline(size=(100, 20), key="output", enable_events=True)],
     ]
     return sg.Window("Crafting Calculator", layout, resizable=True)
 
@@ -140,15 +140,20 @@ def main():
                 # Sort inventory dictionary alphabetically
                 inventory = {key: inventory[key] for key in sorted(inventory)}
 
+                temp_items = {}
+                for item in items:
+                    temp_items[item] = inventory.get(item)
+                items = temp_items
+
                 shopping_list.inventory = inventory
                 shopping_list.target_amount = amount
                 for item in items:
-                    new_item = inventory.get(item)
-                    new_item['quantity'] = amount
-                    shopping_list.target_items.update({item: new_item})
-                    # required_items = find_recipe(item, inventory)
-                    required_items = {item: new_item}
-                    shopping_list.add_items(required_items, amount)
+                    target_item = inventory.get(item)
+                    target_item['quantity'] = amount
+                    shopping_list.target_items.update({item: target_item})
+                    required_items = target_item.get('items', None)
+                    if required_items:
+                        shopping_list.add_items(required_items, amount)
 
                 shopping_list.simplify()
                 shopping_list.calculate_crafting_costs()

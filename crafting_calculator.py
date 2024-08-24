@@ -81,6 +81,40 @@ def setup_logging(debug: bool, verbose: bool) -> None:
     else:
         logging.basicConfig(format="%(levelname)s: %(message)s")
 
+@staticmethod
+def move_single_int_to_quantity(data: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Iterate over the dictionary and move a single integer value to a 'quantity' property.
+    Ensures each dictionary has only one integer value.
+    
+    Args:
+        data (Dict[str, Any]): The dictionary to process.
+    
+    Returns:
+        Dict[str, Any]: The updated dictionary with the integer value moved to 'quantity'.
+    """
+    # if not 'items' in data:
+    #     return data
+
+    updated_data = {}
+
+    for key, value in data.items():
+        if isinstance(value, dict):
+            # Process nested dictionaries
+            updated_data[key] = ShoppingList.move_single_int_to_quantity(value)
+        elif isinstance(value, int):
+            # If the value is an integer, move it to 'quantity'
+            updated_data[key] = {'name': key, 'quantity': value}
+        else:
+            # Keep other values as they are
+            updated_data[key] = value
+    
+    # Ensure that each dictionary has only one integer value
+    if len(updated_data) == 1 and isinstance(list(updated_data.values())[0], dict) and 'quantity' in list(updated_data.values())[0]:
+        # If there is only one item and it's a dict with a 'quantity' key, return as is
+        return updated_data
+    
+    return updated_data
 
 def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
     """Load all recipes for a given game."""
@@ -107,6 +141,9 @@ def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
     for item in content_list:
         if isinstance(item, dict) and 'name' in item:
             recipe_name = item['name']
+            child_items = item.get('items', None)
+            if isinstance(child_items, dict):
+                item['items'] = move_single_int_to_quantity(child_items)
             inventory[recipe_name] = item
         else:
             # Optionally handle cases where item is not a dictionary or doesn't have a "name" key

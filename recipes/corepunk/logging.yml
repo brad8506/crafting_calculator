@@ -3,27 +3,27 @@
 # https://corepunkers.com/professions
 
 - name: Amber
-  rarity: Green
+  rarity: green
   source: Magic Tree
   wiki: https://corepunk.wiki/w/Amber
 
 - name: Blood Honey
-  rarity: Purple
+  rarity: purple
 
 - name: Jewellery Wood
   items:
     Tree Root: 3
 
 - name: Mana Resin
-  rarity: Green
+  rarity: green
   source: Magic Tree
 
 - name: Mutated Leaf
-  rarity: Blue
+  rarity: blue
   source: Magic Tree
 
 - name: Neon Mushroom
-  rarity: Blue
+  rarity: blue
   source: Magic Tree
 
 - name: Silica
@@ -35,7 +35,7 @@
     Wood: 3
 
 - name: Transparent Leaf
-  rarity: Green
+  rarity: green
   source: Magic Tree
 
 - name: Treated Wood
