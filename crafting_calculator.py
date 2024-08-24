@@ -171,7 +171,7 @@ def craft_item(item: str, inventory: List[Dict[str, Any]], amount: int) -> Shopp
     shopping_list.add_items(required_items, amount)
     shopping_list.simplify()
 
-    shopping_list.add_item_costs(shopping_list.intermediate_steps)
+    #shopping_list.add_item_costs(shopping_list.intermediate_steps)
     shopping_list.crafting_cost.update(
         {item: get_crafting_cost(item, inventory) * amount}
     )

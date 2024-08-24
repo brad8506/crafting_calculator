@@ -21,9 +21,9 @@ class ShoppingList:
         self.crafting_cost: Dict[str, float] = {}
         self.buy_from_vendor: Dict[str, float] = {}
         self.sell_to_vendor: float = 0.0
-        self.target_items: Dict[str, Dict[str, Any]] = {}
+        self.target_items: Dict[str, Any] = {}
         self.target_amount: int = amount
-        self.intermediate_steps: Dict[str, Dict[str, Any]] = {}
+        self.intermediate_steps: Dict[str, Any] = {}
         self.inventory = inventory
 
     @classmethod
@@ -169,10 +169,17 @@ class ShoppingList:
 
         logging.debug("Total sell_to_vendor revenue: %s", self.sell_to_vendor)
 
-    def add_step(self, item: str, amount: int) -> None:
+    def add_step(self, item: Dict[str, Any], amount: int) -> None:
         """Add intermediate items to the crafting tree."""
-        logging.debug("Adding %s of %s to crafting tree.", amount, item)
-        self.intermediate_steps.update({item: self.intermediate_steps.get(item, 0) + amount})
+        item_name = item.get('name')
+        logging.debug("Adding %s of %s to crafting tree.", amount, item_name)
+        intermediate_step = self.intermediate_steps.get(item_name, None);
+        if intermediate_step:
+            intermediate_step['quantity'] = intermediate_step.get('quantity', 0) + amount
+        else:
+            intermediate_step = {item_name: item}
+
+        self.intermediate_steps.update(intermediate_step)
 
     def simplify(self) -> None:
         """Recursively replace intermediate crafted items with their components."""
@@ -219,7 +226,7 @@ class ShoppingList:
             logging.warning("Unexpected type for replacement_items: %s", type(item))
         
         # Record the step of replacement (if applicable)
-        self.add_step(item_name, amount_item)
+        self.add_step(item, amount_item)
 
     def to_yaml(self) -> str:
         """Return ShoppingList contents as YAML formatted string."""
@@ -242,13 +249,17 @@ class ShoppingList:
 
     def format_for_display(self) -> str:
         """Format the ShoppingList for printing to stdout."""
-        total_crafting_cost = sum(self.crafting_cost.values())
-        total_crafting_cost_formatted = f"{total_crafting_cost:,}"
-        target_items = self.target_items.keys()
-        target_items_formatted = '\n'.join([f"- {item}: {self.target_amount}" for item in target_items])
-
+        
         # Define the desired order of keys
         key_order = ["quantity", "rarity", "source", 'wiki']
+
+        total_crafting_cost = sum(self.crafting_cost.values())
+        total_crafting_cost_formatted = f"{total_crafting_cost:,}"
+        target_items = self.target_items
+        target_items_formatted = "\n".join(
+            f"{item}: {details.get('quantity', 0)}"
+            for item, details in self.target_items.items()
+        )
 
         # Construct the output with each item on a new line
         items_dump = "\n".join(
@@ -257,7 +268,7 @@ class ShoppingList:
                 for k in key_order 
                 if k in details
             ) + ", " + ", ".join(
-                f"{k}: {details[k]}" 
+                f"{k}: {details[k]}"
                 for k in details 
                 if k not in key_order and k != "name"
             )
@@ -271,7 +282,19 @@ class ShoppingList:
             else items_dump
         )
         
-        intermediate_steps_dump = safe_dump(self.intermediate_steps, default_flow_style=False, sort_keys=True).rstrip("\n")
+        # intermediate_steps_dump = safe_dump(self.intermediate_steps, default_flow_style=False, sort_keys=True).rstrip("\n")
+        intermediate_steps_dump = "\n".join(
+            f"{item}: " + ", ".join(
+                f"{k}: {details[k]}" 
+                for k in key_order 
+                if k in details
+            ) + ", " + ", ".join(
+                f"{k}: {details[k]}" 
+                for k in details 
+                if k not in key_order and k != "name" and k != "items"
+            )
+            for item, details in self.intermediate_steps.items()
+        ).rstrip(", ")
         intermediate_steps_message = (
             "No intermediate steps."
             if intermediate_steps_dump == '{}' or not intermediate_steps_dump

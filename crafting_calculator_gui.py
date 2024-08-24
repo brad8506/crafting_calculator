@@ -151,6 +151,7 @@ def main():
                     target_item = inventory.get(item)
                     target_item['quantity'] = amount
                     shopping_list.target_items.update({item: target_item})
+                    #shopping_list.add_items({item: target_item}, amount)
                     required_items = target_item.get('items', None)
                     if required_items:
                         shopping_list.add_items(required_items, amount)
