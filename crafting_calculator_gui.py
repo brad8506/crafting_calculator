@@ -42,11 +42,12 @@ def get_inventory_values(inventory, key):
     return return_array
 
 
-def window1():
+def windowPySimpleGui():
     games = discover_games()
     if games[0]:
         inventory, meta = _load_recipes(games[0])
-        items = sorted(get_inventory_values(inventory, "name"))
+        # items = sorted(get_inventory_values(inventory, "name"))
+        items = sorted(list(inventory.keys()))
 
     layout = [
         [
@@ -60,6 +61,10 @@ def window1():
             ),
         ],
         [
+            sg.Text("Search:", size=(6, 1)),
+            sg.InputText(key="search", size=(40, 1), enable_events=True),
+        ],
+        [
             sg.Text("Item:", size=(6, 1)),
             sg.Listbox(
                 items,
@@ -68,6 +73,10 @@ def window1():
                 size=(40, 10),
                 enable_events=False,
             ),
+        ],
+        [
+            sg.Text("", size=(6, 1)),
+            sg.Button("Calculate", key="calculate"),
         ],
         [
             sg.Text("", size=(6, 1)),
@@ -85,7 +94,6 @@ def window1():
         ],
         [sg.Text("Output:", size=(6, 1))],
         [sg.Multiline(size=(49, 20), key="output", enable_events=True)],
-        [sg.Button("Calculate", key="calculate"), sg.Button("Cancel")],
     ]
     return sg.Window("Crafting Calculator", layout, resizable=True)
 
@@ -94,7 +102,7 @@ def main():
     dir_path = os.path.dirname(os.path.realpath(__file__))
     logging.debug(dir_path)
 
-    window = window1()
+    window = windowPySimpleGui()
 
     # Event Loop to process "events" and get the "values" of the inputs
     while True:
@@ -109,8 +117,15 @@ def main():
         if event == "game":
             output(output_element, "")
             inventory, meta = _load_recipes(values["game"])
-            items = sorted(get_inventory_values(inventory, "name"))
-            window["item"].Update(items)
+            items = sorted(inventory.keys())
+            window["item"].update(items)
+
+        if event in ("search", "search_button"):
+            search_query = values.get("search", "").lower()
+            inventory, meta = _load_recipes(values["game"])
+            items = sorted(inventory.keys())
+            filtered_items = [item for item in items if search_query in item.lower()]
+            window["item"].update(filtered_items)
 
         if event == "calculate":
             items = values["item"]
@@ -121,11 +136,18 @@ def main():
                 amount = int(values["amount"] or 1)
                 shopping_list = ShoppingList.create_empty()
                 inventory, meta = _load_recipes(values["game"])
+
+                # Sort inventory dictionary alphabetically
+                inventory = {key: inventory[key] for key in sorted(inventory)}
+
                 shopping_list.inventory = inventory
                 shopping_list.target_amount = amount
                 for item in items:
-                    shopping_list.target_items.update({item: amount})
-                    required_items = find_recipe(item, inventory)
+                    new_item = inventory.get(item)
+                    new_item['quantity'] = amount
+                    shopping_list.target_items.update({item: new_item})
+                    # required_items = find_recipe(item, inventory)
+                    required_items = {item: new_item}
                     shopping_list.add_items(required_items, amount)
 
                 shopping_list.simplify()

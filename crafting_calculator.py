@@ -82,9 +82,9 @@ def setup_logging(debug: bool, verbose: bool) -> None:
         logging.basicConfig(format="%(levelname)s: %(message)s")
 
 
-def load_recipes(game: str) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
     """Load all recipes for a given game."""
-    inventory = []
+    content_list = []
     meta = {"title": "unknown game (meta data incomplete)"}
 
     path = Path("recipes").joinpath(game)
@@ -93,15 +93,24 @@ def load_recipes(game: str) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     for entry in path.rglob("**/*.yml"):
         raw_content = entry.read_text()
         content = safe_load(raw_content)
-
         if content:
             if entry.name == "meta.yml":
                 meta = content
                 if meta.get("title"):
                     logging.debug("Game detected as %s.", meta.get("title"))
             else:
-                inventory.extend(content)
+                content_list.extend(content)
                 logging.debug("Read %s recipes from %s.", len(content), entry)
+
+    inventory = {}
+    # Loop through the content and add each item to the inventory, keyed by the "name" key
+    for item in content_list:
+        if isinstance(item, dict) and 'name' in item:
+            recipe_name = item['name']
+            inventory[recipe_name] = item
+        else:
+            # Optionally handle cases where item is not a dictionary or doesn't have a "name" key
+            print(f"Skipping item: {item}, not a dictionary or missing 'name' key")   
 
     sum_recipes = len(inventory)
     if sum_recipes:

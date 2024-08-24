@@ -16,14 +16,14 @@ from crafting.common import *
 class ShoppingList:
     """A shopping list holds all items required to craft the given item."""
 
-    def __init__(self, inventory: List[Dict[str, Any]], item: str, amount: int):
-        self.items: Dict[str, int] = {}
+    def __init__(self, inventory: Dict[str, Dict[str, Any]], item: str, amount: int):
+        self.items: Dict[str, Dict[str, Any]] = {}
         self.crafting_cost: Dict[str, float] = {}
         self.buy_from_vendor: Dict[str, float] = {}
         self.sell_to_vendor: float = 0.0
-        self.target_items: Dict[str, int] = {}
+        self.target_items: Dict[str, Dict[str, Any]] = {}
         self.target_amount: int = amount
-        self.intermediate_steps: Dict[str, int] = {}
+        self.intermediate_steps: Dict[str, Dict[str, Any]] = {}
         self.inventory = inventory
 
     @classmethod
@@ -33,11 +33,27 @@ class ShoppingList:
         amount = 0  # Default amount
         return cls(inventory, item, amount)
 
-    def add_items(self, items: Dict[str, int], amount: int) -> None:
+    def add_items(self, items: Dict[str, Dict[str, Any]], amount: int) -> None:
         """Add items to the shopping list."""
-        for item in items:
-            logging.debug("Adding %s to shopping list.", item)
-            self.items.update({item: items[item] * amount})
+        
+        for key, value in items.items():
+            child_items = value.get('items', None)
+            a = True
+        
+        if isinstance(items.get('items'), dict):
+            sub_items['quantity'] = sub_items['quantity'] * amount
+            self.items.update({sub_items['name']: sub_items})
+        elif isinstance(items, list):
+            # If `items` is a list of dictionaries
+            for sub_items in items:
+                if isinstance(sub_items, dict):
+                    sub_items['quantity'] = sub_items['quantity'] * amount
+
+                    self.items.update({sub_items['name']: sub_items})
+                else:
+                    logging.warning("Unexpected list item type: %s", type(sub_items))
+        else:
+            logging.warning("Unexpected type for items: %s", type(items))
 
     def calculate_crafting_costs(self) -> None:
         """Calculate all costs."""
@@ -129,24 +145,59 @@ class ShoppingList:
             if recipe:
                 replacements.update({item: recipe})
 
-        for item in replacements:
-            self.replace_items(item, replacements[item])
+        if replacements:
+            for item in replacements:
+                self.replace_items(item, replacements[item])
+            self.items.pop(item, None)
 
         if replacements:
             self.simplify()
         else:
             logging.info("Nothing to simplify.")
 
-    def replace_items(self, item: str, replacement_items: Dict[str, int]) -> None:
+    # def replace_items(self, item: str, replacement_items: Dict[str, int]) -> None:
+    #     """Replace items in the shopping list with smaller components."""
+    #     amount_replaced_item = self.items.pop(item)
+    #     logging.info("Replacing %s of %s.", amount_replaced_item, item)
+    #     for replacement in replacement_items:
+    #         amount_replacement = (
+    #             self.items.get(replacement, 0)
+    #             + replacement_items[replacement] * amount_replaced_item
+    #         )
+    #         self.items.update({replacement: amount_replacement})
+    #     self.add_step(item, amount_replaced_item)
+
+    def replace_items(self, item: str, replacement_items: Union[Dict[str, int], List[Dict[str, int]]]) -> None:
         """Replace items in the shopping list with smaller components."""
-        amount_replaced_item = self.items.pop(item)
-        logging.info("Replacing %s of %s.", amount_replaced_item, item)
-        for replacement in replacement_items:
-            amount_replacement = (
-                self.items.get(replacement, 0)
-                + replacement_items[replacement] * amount_replaced_item
-            )
-            self.items.update({replacement: amount_replacement})
+        
+        # Check if `replacement_items` is a dictionary or list of dictionaries
+        if isinstance(replacement_items, dict):
+            # Handle dictionary case
+            amount_replaced_item = self.items.pop(item, 0)
+            logging.info("Replacing %s of %s.", amount_replaced_item, item)
+            self.add_items(replacement_items, amount_replaced_item)
+            
+        elif isinstance(replacement_items, list):
+            # Handle list of dictionaries case
+            amount_replaced_item = self.items.pop(item, 0)
+            logging.info("Replacing %s of %s.", amount_replaced_item, item)
+            for sub_items in replacement_items:
+                if isinstance(sub_items, dict):
+                    # Ensure the quantity key exists and is a number
+                    if 'quantity' in sub_items and isinstance(sub_items['quantity'], (int, float)):
+                        # Scale the quantities by `amount_replaced_item`
+                        updated_items = {k: v * amount_replaced_item for k, v in sub_items.items() if k != 'quantity'}
+                        # Add items to shopping list
+                        self.add_items(updated_items, 1)  # Use amount 1 as `amount_replaced_item` is handled
+                    else:
+                        logging.warning("Missing or invalid 'quantity' key in sub-items: %s", sub_items)
+                else:
+                    logging.warning("Unexpected list item type: %s", type(sub_items))
+                    
+        else:
+            logging.warning("Unexpected type for replacement_items: %s", type(replacement_items))
+        
+        # Record the step of replacement (if applicable)
         self.add_step(item, amount_replaced_item)
 
     def to_yaml(self) -> str:

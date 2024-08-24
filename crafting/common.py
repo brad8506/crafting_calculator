@@ -4,7 +4,7 @@ import logging
 from typing import List, Dict, Any, Union
 
 
-def find_recipe(item: str, inventory: List[Dict[str, Any]]) -> Dict[str, int]:
+def find_recipe(item: str, inventory: Dict[str, Dict[str, Any]]) -> Dict[str, int]:
     """Find the first matching recipe from the inventory."""
 
     recipe_items: Dict[str, int] = {}
@@ -33,17 +33,15 @@ def get_crafting_cost(item: str, inventory: List[Dict[str, Any]]) -> Union[float
         if recipe.get("name") == item:
             if "crafting_cost" in recipe.keys():
                 recipe_cost = recipe.get("crafting_cost")
-                logging.debug("Found recipe key crafting_cost for %s.", item)
+                #logging.debug("Found recipe key crafting_cost for %s.", item)
             else:
                 recipe_cost = 0
-                logging.warning("No recipe key crafting_cost for %s.", item)
+                #logging.warning("No recipe key crafting_cost for %s.", item)
             break
 
     return recipe_cost
 
-def get_crafting_cost(
-    item: str, inventory: List[Dict[str, Any]], item_key: str = "crafting_cost"
-) -> Union[float, None]:
+def get_crafting_cost(item: str, inventory: List[Dict[str, Any]], item_key: str = "crafting_cost") -> Union[float, None]:
     """Get the first matching recipe value from the inventory based on the provided item key."""
 
     recipe_value = None
@@ -60,28 +58,6 @@ def get_crafting_cost(
             break
 
     return recipe_value
-
-
-def get_crafting_cost(
-    item: str, inventory: List[Dict[str, Any]], item_key: str = "crafting_cost"
-) -> Union[float, None]:
-    """Get the first matching recipe value from the inventory based on the provided item key."""
-
-    recipe_value = None
-
-    logging.debug("Getting recipe %s for %s.", item_key, item)
-    for recipe in inventory:
-        if recipe.get("name") == item:
-            if item_key in recipe.keys():
-                recipe_value = recipe.get(item_key)
-                logging.debug("Found recipe key %s for %s.", item_key, item)
-            else:
-                recipe_value = 0
-                logging.warning("No recipe key %s for %s.", item_key, item)
-            break
-
-    return recipe_value
-
 
 def get_sell_to_vendor(
     item: str, inventory: List[Dict[str, Any]]
