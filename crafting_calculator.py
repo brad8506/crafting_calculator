@@ -144,6 +144,8 @@ def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
             child_items = item.get('items', None)
             if isinstance(child_items, dict):
                 item['items'] = move_single_int_to_quantity(child_items)
+            # else:
+
             inventory[recipe_name] = item
         else:
             # Optionally handle cases where item is not a dictionary or doesn't have a "name" key
@@ -203,7 +205,7 @@ def main() -> None:
     if options.as_json:
         print(shopping_list.to_json())
     else:
-        print(shopping_list.format_for_display())
+        print(shopping_list.format_for_text_display())
 
 
 if __name__ == "__main__":

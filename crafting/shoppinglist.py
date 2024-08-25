@@ -94,7 +94,6 @@ class ShoppingList:
         for item in items:
             logging.debug("Adding %s to shopping list.", item)
             self.update_quantity(item, amount)
-            #self.items.update({item: items[item]})
 
     def calculate_crafting_costs(self) -> None:
         """Calculate all costs."""
@@ -247,7 +246,7 @@ class ShoppingList:
         }
         return dumps(output, sort_keys=True, indent=2)
 
-    def format_for_display(self) -> str:
+    def format_for_text_display(self) -> str:
         """Format the ShoppingList for printing to stdout."""
         
         # Define the desired order of keys
@@ -258,7 +257,7 @@ class ShoppingList:
         target_items = self.target_items
         target_items_formatted = "\n".join(
             f"{item}: {details.get('quantity', 0)}"
-            for item, details in self.target_items.items()
+            for item, details in sorted(self.target_items.items())
         )
 
         # Construct the output with each item on a new line
@@ -268,11 +267,11 @@ class ShoppingList:
                 for k in key_order 
                 if k in details
             ) + ", " + ", ".join(
-                f"{k}: {details[k]}"
+                f"{k}: {details[k]}" 
                 for k in details 
                 if k not in key_order and k != "name"
             )
-            for item, details in self.items.items()
+            for item, details in sorted(self.items.items())
         ).rstrip(", ")
 
         # Construct the message
@@ -282,7 +281,8 @@ class ShoppingList:
             else items_dump
         )
         
-        # intermediate_steps_dump = safe_dump(self.intermediate_steps, default_flow_style=False, sort_keys=True).rstrip("\n")
+        for item_name in self.target_items:
+            del self.intermediate_steps[item_name]
         intermediate_steps_dump = "\n".join(
             f"{item}: " + ", ".join(
                 f"{k}: {details[k]}" 
@@ -293,7 +293,7 @@ class ShoppingList:
                 for k in details 
                 if k not in key_order and k != "name" and k != "items"
             )
-            for item, details in self.intermediate_steps.items()
+            for item, details in sorted(self.intermediate_steps.items())
         ).rstrip(", ")
         intermediate_steps_message = (
             "No intermediate steps."
@@ -305,10 +305,10 @@ class ShoppingList:
         message_parts = [
             f"You selected\n{target_items_formatted}",
             "",
-            f"You need these items to craft:",
+            f"Gather these items:",
             items_message,
             "",
-            "The following intermediate items need to be crafted:",
+            "Craft these intermediate items:",
             intermediate_steps_message,
         ]
 
@@ -342,6 +342,43 @@ class ShoppingList:
                     f"{self.target_items} sells to a vendor for: {sell_to_vendor_formatted}",
                 ]
             )
+
+        # Join all parts into the final message.
+        message = "\n".join(message_parts)
+
+        return message
+    
+    def format_recipes_for_text_display(self) -> str:
+        """Format the ShoppingList for printing to stdout."""
+        
+        # Define the desired order of keys
+        key_order = ["rarity", "source", 'wiki']
+
+        # Construct the output with each item on a new line
+        items_dump = "\n".join(
+            f"{item}: " + ", ".join(
+                f"{k}: {details[k]}" 
+                for k in key_order 
+                if k in details
+            ) + ", " + ", ".join(
+                f"{k}: {details[k]}" 
+                for k in details 
+                if k not in key_order and k != "name" and k != "quantity"
+            )
+            for item, details in sorted(self.items.items())
+        ).rstrip(", ")
+
+        # Construct the message
+        items_message = (
+            ""
+            if items_dump == '{}' or not items_dump
+            else items_dump
+        )
+
+        # Base message parts.
+        message_parts = [
+            items_message,
+        ]
 
         # Join all parts into the final message.
         message = "\n".join(message_parts)

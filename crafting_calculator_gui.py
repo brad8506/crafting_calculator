@@ -43,11 +43,15 @@ def get_inventory_values(inventory, key):
 
 def windowPySimpleGui():
     games = discover_games()
+    listCraftable = {}
+    listGatherable = {}
     if games[0]:
         inventory, meta = _load_recipes(games[0])
-        # items = sorted(get_inventory_values(inventory, "name"))
-        items = sorted(list(inventory.keys()))
-
+        listCraftable, listGatherable  = process_inventory(inventory)
+        listCraftableItems = sorted(list(listCraftable.keys()))
+        gatherable_list = get_gatherable_list(listGatherable)
+        gatherable_list_formatted = gatherable_list.format_recipes_for_text_display()
+    
     layout = [
         [
             sg.Text("Game:", size=(6, 1)),
@@ -60,18 +64,33 @@ def windowPySimpleGui():
             ),
         ],
         [
-            sg.Text("Search:", size=(6, 1)),
-            sg.InputText(key="search", size=(40, 1), enable_events=True),
+            sg.Text("", size=(6, 1)),
+            sg.Text("Craftable Search:", size=(15, 1)),
+            sg.Text("", size=(20, 1)),
+            sg.Text("Gatherable Search:", size=(15, 1)),
         ],
         [
-            sg.Text("Item:", size=(6, 1)),
+            sg.Text("", size=(6, 1)),
+            sg.InputText(key="craftable_search", size=(40, 1), enable_events=True),
+            sg.Text("", size=(0, 1)),
+            sg.InputText(key="gatherable_search", size=(40, 1), enable_events=True),
+        ],
+        [
+            sg.Text("", size=(6, 1)),
+            sg.Text("Craftable Items:", size=(15, 1)),
+            sg.Text("", size=(20, 1)),
+            sg.Text("Gatherable Items:", size=(15, 1)),
+        ],
+        [
+            sg.Text("", size=(6, 1)),
             sg.Listbox(
-                items,
-                key="item",
+                listCraftableItems,
+                key="craftable_item",
                 select_mode="extended",
-                size=(40, 10),
+                size=(40, 20),
                 enable_events=False,
             ),
+            sg.Multiline(size=(40, 21), key="gatherable_output", enable_events=True, default_text=gatherable_list_formatted),
         ],
         [
             sg.Text("Amount:", size=(6, 1)),
@@ -92,11 +111,50 @@ def windowPySimpleGui():
                 size=(49, 1),
             )
         ],
-        [sg.Text("Output:", size=(6, 1))],
-        [sg.Multiline(size=(100, 20), key="output", enable_events=True)],
+        [
+            sg.Text("Output:", size=(6, 1)),
+            sg.Multiline(size=(84, 20), key="craftable_output", enable_events=True)
+        ]
     ]
-    return sg.Window("Crafting Calculator", layout, resizable=True)
+    return sg.Window("Crafting Calculator", layout, finalize=True)
 
+def process_inventory(inventory):
+    """
+    Process the inventory to classify items into craftable and gatherable lists,
+    and return the combined and sorted lists.
+
+    Args:
+        inventory (dict): The inventory dictionary.
+
+    Returns:
+        tuple: A tuple containing:
+            - combined_list (dict): Combined list of craftable and gatherable items with headers.
+            - labels (list): List of item labels.
+    """
+    # Initialize dictionaries for item classification
+    listCraftable = {}
+    listGatherable = {}
+
+    # Classify items into craftable and gatherable
+    for item_name, details in inventory.items():
+        hasChildItems = details.get('items', None)
+        if hasChildItems:
+            listCraftable[item_name] = item_name
+        else:
+            listGatherable[item_name] = details
+
+    # Sort items within each category
+    listCraftable = {key: listCraftable[key] for key in sorted(listCraftable)}
+    listGatherable = {key: listGatherable[key] for key in sorted(listGatherable)}
+
+    return listCraftable, listGatherable
+
+def get_gatherable_list(listGatherable) -> ShoppingList:
+    gatherable_list = ShoppingList.create_empty()
+    gatherable_list.inventory = listGatherable
+    for item_name, details in listGatherable.items():
+        gatherable_list.add_items({item_name: details}, 1)
+    return gatherable_list
 
 def main():
     dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -108,29 +166,49 @@ def main():
     while True:
         event, values = window.read()
 
-        output_element = window["output"]
+        craftable_output = window["craftable_output"]
 
         # if user closes window or clicks cancel
         if event in (sg.WIN_CLOSED, "Cancel"):
             break
 
         if event == "game":
-            output(output_element, "")
+            output(craftable_output, "")
             inventory, meta = _load_recipes(values["game"])
-            items = sorted(inventory.keys())
-            window["item"].update(items)
+            listCraftable, listGatherable  = process_inventory(inventory)
+            
+            window["craftable_item"].update(listCraftable)
+            
+            gatherable_list = get_gatherable_list(listGatherable)
+            output(window["gatherable_output"], gatherable_list.format_recipes_for_text_display())
 
-        if event in ("search", "search_button"):
-            search_query = values.get("search", "").lower()
+        if event in ("craftable_search"):
+            craftable_search_string = values.get("craftable_search", "").lower()
             inventory, meta = _load_recipes(values["game"])
-            items = sorted(inventory.keys())
-            filtered_items = [item for item in items if search_query in item.lower()]
-            window["item"].update(filtered_items)
+            listCraftable, listGatherable  = process_inventory(inventory)
+            filtered_items = [item for item in listCraftable if craftable_search_string in item.lower()]
+            window["craftable_item"].update(filtered_items)
+
+        if event in ("gatherable_search"):
+            gatherable_search_string = values.get("gatherable_search", "").lower()
+            inventory, meta = _load_recipes(values["game"])
+            listCraftable, listGatherable  = process_inventory(inventory)
+            gatherable_list = get_gatherable_list(listGatherable)
+
+            items_to_delete = {}
+            for item_name, details in gatherable_list.items.items():
+                if not gatherable_search_string in item_name.lower():
+                    items_to_delete[item_name] = item_name
+
+            for item_to_delete in items_to_delete:
+                del gatherable_list.items[item_to_delete]
+            
+            output(window["gatherable_output"], gatherable_list.format_recipes_for_text_display())
 
         if event == "calculate":
-            items = values["item"]
+            items = values["craftable_item"]
             if not items:
-                output(output_element, "Please select an item")
+                output(craftable_output, "Please select an item")
             else:
                 game = values["game"]
                 amount = int(values["amount"] or 1)
@@ -151,19 +229,16 @@ def main():
                     target_item = inventory.get(item)
                     target_item['quantity'] = amount
                     shopping_list.target_items.update({item: target_item})
-                    #shopping_list.add_items({item: target_item}, amount)
-                    required_items = target_item.get('items', None)
-                    if required_items:
-                        shopping_list.add_items(required_items, amount)
+                    shopping_list.add_items({item: target_item}, 1)
 
                 shopping_list.simplify()
                 shopping_list.calculate_crafting_costs()
                 shopping_list.calculate_buy_from_vendor()
                 shopping_list.calculate_sell_to_vendor()
-                output(output_element, shopping_list.format_for_display())
+                output(craftable_output, shopping_list.format_for_text_display())
 
         if event == "clear_items":
-            window["item"].set_value([])
+            window["craftable_item"].set_value([])
 
     window.close()
 
