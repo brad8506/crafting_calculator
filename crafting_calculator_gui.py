@@ -154,7 +154,6 @@ def process_inventory(inventory):
 
     return listCraftable, listGatherable
 
-
 def get_gatherable_list(listGatherable) -> ShoppingList:
     gatherable_list = ShoppingList.create_empty()
     gatherable_list.inventory = listGatherable
