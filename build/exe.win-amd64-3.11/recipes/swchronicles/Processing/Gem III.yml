@@ -1,0 +1,15 @@
+---
+- name: Zircon
+  crafting_cost: 1000
+  items:
+    Zircon Ore: 3
+
+- name: Peridot
+  crafting_cost: 3000
+  items:
+    Peridot Ore: 3
+
+- name: Emerald
+  crafting_cost: 1500
+  items:
+    Emerald Ore: 3

@@ -1,0 +1,15 @@
+---
+- name: Opal
+  crafting_cost: 500
+  items:
+    Opal Ore: 3
+
+- name: Aquamarine
+  crafting_cost: 1000
+  items:
+    Aquamarine Ore: 3
+
+- name: Sapphire
+  crafting_cost: 1500
+  items:
+    Sapphire Ore: 3

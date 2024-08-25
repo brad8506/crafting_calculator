@@ -9,6 +9,12 @@ python crafting_calculator_gui.py
 ```
 <img src="./images/gui.png">
 
+## build executable
+pip install cx_Freeze
+python setup.py build
+
+Outputs to ./build directory
+
 # crafting_calculator.py
 
 This is a generic Python CLI tool for resolving (breaking down) crafting

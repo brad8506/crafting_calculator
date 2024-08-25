@@ -1,0 +1,155 @@
+# https://corepunk.wiki/w/Constructor
+# https://corepunk.pro/professions/construction
+# https://corepunkers.com/professions
+
+- name: Armor Plate
+  rarity: green
+  items:
+    Titanium Nugget: 1
+    Iron Ingot: 1
+
+- name: Assassin's Glove
+  items:
+    Steroid Implant: 1
+    Armor Plate: 1
+    Isotope-238: 1
+    Thermal Liquidum: 1
+    Welded Patterned: 1
+
+- name: Battle Mage Implant
+  items:
+    Magic Circle: 1
+    Steroid Implant: 1
+    Isotope-238: 1
+    Neon Mushroom: 1
+
+- name: Body Scanner
+  items:
+    Composite Material: 1
+    Diamond: 1
+
+- name: Cerebral Interface
+  items:
+    Steroid Implant: 1
+    Nano Tissue: 1
+    Petrified Spike: 1
+    Elastic Membrane: 1
+
+- name: Cyber Biker Arm
+  items:
+    Steroid Implant: 1
+    Mana Amulet: 1
+    Petrified Spike: 1
+    Mutated Leaf: 1
+
+- name: Cyber Plate Carrier
+  items:
+    Magic Circle: 1
+    Nano Tissue: 1
+    Neon Mushroom: 1
+    Elastic Membrane: 1
+
+- name: Dragonscale Armor Plate
+  items:
+    Isotype-238: 1
+    Nano Tissue: 1
+    Steroid Implant: 1
+
+- name: Fusion Engine
+  items:
+    Armor Plate: 1
+    Nano Tissue: 1
+    Tungsten: 1
+    Elastic Membrane: 1
+
+- name: Hormone Booster
+  items:
+    Body Scanner: 1
+    Immuno-Stimulating Implant: 1
+    Forest berry: 1
+    Isotope-238: 1
+
+- name: Immuno-Stimulating Implant
+  items:
+    Blue Lotus: 1
+    Bio-compatible Material: 1
+
+- name: Magic Circle
+  items:
+    Moonstone: 1
+    Meteoric Ingot: 1
+
+- name: Mana Amulet
+  items:
+    Mana Resin: 1
+    Treated Wood: 1
+
+- name: Matter Shaker
+  items:
+    Magic Circle: 2
+    Isotope-238: 1
+
+- name: Modular Glove
+  items:
+    Steroid Implant: 1
+    Armor Plate: 1
+    Tungsten: 1
+    Petrified Spike: 1
+
+- name: Nano Tissue
+  items:
+    Amber: 1
+    Cloth: 1
+
+- name: Neural Accelerator
+  items:
+    Steroid Implant: 1
+    Body Scanner: 1
+    Magic Circle: 1
+    Rainbow Snail: 1
+    Blood Honey: 1
+    Granulation Tissue: 1
+
+- name: Primal Energy Invertor
+  items:
+    Magic Circle: 1
+    Immuno-Stimulating Implant: 1
+    Neon Mushroom: 1
+    Petrified Spike: 1
+
+- name: Soldier's Implant
+  items:
+    Immuno-Stimulating Implant: 1
+    Steroid Implant: 1
+    Petrified Spike: 1
+    Forest berry: 1
+
+- name: Steroid Implant
+  items:
+    Gonad: 1
+    Bio-compatible Material: 1
+
+- name: Vital Nano Bracer
+  items:
+    - name: Mana Amulet
+      quantity: 1
+      rarity: green
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Mutated Leaf
+      quantity: 1
+      rarity: blue
+    - name: Forest berry
+      quantity: 1
+      rarity: blue
+
+- name: Vitality Augmenter
+  items:
+    Mana Amulet: 1
+    Immuno-Stimulating Implant: 1
+    Mutated Leaf: 1
+    Forest berry: 1
+
+- name: Welded Patterned
+  rarity: blue

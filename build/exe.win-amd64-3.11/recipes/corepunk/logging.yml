@@ -1,0 +1,44 @@
+# https://corepunk.wiki/w/Logging
+# https://corepunk.pro/professions/logging
+# https://corepunkers.com/professions
+
+- name: Amber
+  rarity: green
+  source: Magic Tree
+  wiki: https://corepunk.wiki/w/Amber
+
+- name: Blood Honey
+  rarity: purple
+  source: Magic Tree
+
+- name: Jewellery Wood
+  items:
+    Tree Root: 3
+
+- name: Mana Resin
+  rarity: green
+  source: Magic Tree
+
+- name: Mutated Leaf
+  rarity: blue
+  source: Magic Tree
+
+- name: Neon Mushroom
+  rarity: blue
+  source: Magic Tree
+
+- name: Silica
+  items:
+    Stone Bark: 3
+
+- name: Tissue Paper
+  items:
+    Wood: 3
+
+- name: Transparent Leaf
+  rarity: green
+  source: Magic Tree
+
+- name: Treated Wood
+  items:
+    Heartwood: 3
