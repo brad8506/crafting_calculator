@@ -22,7 +22,10 @@ def find_recipe(item: str, inventory: Dict[str, Dict[str, Any]]) -> Dict[str, in
 
     return recipe_items
 
-def get_crafting_cost(item: str, inventory: Dict[str, Dict[str, Any]], item_key: str = "crafting_cost") -> Union[float, None]:
+
+def get_crafting_cost(
+    item: str, inventory: Dict[str, Dict[str, Any]], item_key: str = "crafting_cost"
+) -> Union[float, None]:
     """Get the first matching recipe value from the inventory based on the provided item key."""
     recipe_value = None
 
@@ -32,14 +35,21 @@ def get_crafting_cost(item: str, inventory: Dict[str, Dict[str, Any]], item_key:
         if cost:
             recipe_value = cost
         else:
-            logging.warning("No recipe key %s for %s.", item_key, item)
+            # logging.warning("No recipe key %s for %s.", item_key, item)
+            do_nothing = True
 
     return recipe_value
 
-def get_sell_to_vendor(item: str, inventory: List[Dict[str, Any]]) -> Union[float, None]:
-    """Get the first matching recipe sell_to_vendor from the inventory."""
-    return get_crafting_cost(item, inventory, 'sell_to_vendor')
 
-def get_buy_from_vendor(item: str, inventory: List[Dict[str, Any]]) -> Union[float, None]:
+def get_sell_to_vendor(
+    item: str, inventory: List[Dict[str, Any]]
+) -> Union[float, None]:
+    """Get the first matching recipe sell_to_vendor from the inventory."""
+    return get_crafting_cost(item, inventory, "sell_to_vendor")
+
+
+def get_buy_from_vendor(
+    item: str, inventory: List[Dict[str, Any]]
+) -> Union[float, None]:
     """Get the first matching recipe buy_from_vendor from the inventory."""
-    return get_crafting_cost(item, inventory, 'buy_from_vendor')
+    return get_crafting_cost(item, inventory, "buy_from_vendor")

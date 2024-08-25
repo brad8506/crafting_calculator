@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <title>Crafting Calculator GUI</title>
     <style>
+        /* Indent levels with border-left and padding */
+        .level-1 {
+            padding-left: 10px;
+            border-left: 4px solid #000;
+        }
+
+        .level-2 {
+            padding-left: 20px;
+            border-left: 4px solid #000;
+        }
+
+        .level-3 {
+            padding-left: 30px;
+            border-left: 4px solid #000;
+        }
+
+        /* Ensure only the first column is indented */
+        td:first-child {
+            white-space: nowrap;
+        }
+
+
         table {
             border-collapse: collapse;
             width: 100%;
@@ -56,9 +78,31 @@
 
         .sub-table-row > td {
             padding: 0;
-            padding-left: 2rem;
+            /* padding-left: 2rem; */
             border: none;
             border-left: 1px solid;
+        }
+
+        .depth1 {
+            padding-left: 2rem;
+        }
+        .depth2 {
+            padding-left: 4rem;
+        }
+        .depth3 {
+            padding-left: 6rem;
+        }
+        .depth4 {
+            padding-left: 8rem;
+        }
+        .depth5 {
+            padding-left: 10rem;
+        }
+        .depth6 {
+            padding-left: 12rem;
+        }
+        td:first-child {
+            white-space: nowrap;
         }
 
         .sub-table, .sub-sub-table {
@@ -149,6 +193,29 @@
 
     <table>
         <tr>
+          <td class="level-1">Parent Item 1</td>
+          <td>Other Column 1</td>
+          <td>Other Column 2</td>
+        </tr>
+        <tr>
+          <td class="level-2">Child Item 1.1</td>
+          <td>Other Column 1</td>
+          <td>Other Column 2</td>
+        </tr>
+        <tr>
+          <td class="level-3">Grandchild Item 1.1.1</td>
+          <td>Other Column 1</td>
+          <td>Other Column 2</td>
+        </tr>
+        <tr>
+          <td class="level-1">Parent Item 2</td>
+          <td>Other Column 1</td>
+          <td>Other Column 2</td>
+        </tr>
+      </table>
+
+    <table>
+        <tr>
             <th>Item Name</th>
             <th>Required</th>
             <th>Quantity Required</th>
@@ -156,7 +223,7 @@
             <th>Output</th>
         </tr>
         <tr class="expandable-row">
-            <td class="parent width20" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Vital Nano Bracer</td>
+            <td class="parent width20 depth0" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Vital Nano Bracer</td>
             <td>1</td>
             <td><input class="in-inventory" type="text" size="4" value="1"/></td>
             <td><input class="in-inventory" type="text" size="4" /></td>
@@ -174,7 +241,7 @@
                         <td>Output</td>
                     </tr>
                     <tr class="expandable-row rarity-green">
-                        <td class="parent width20" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Mana Amulet</td>
+                        <td class="parent width20 depth1" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Mana Amulet</td>
                         <td>1</td>
                         <td><input class="in-inventory" type="text" size="4" value="1"/></td>
                         <td><input class="in-inventory" type="text" size="4" /></td>
@@ -192,14 +259,14 @@
                                     <td>Output</td>
                                 </tr>
                                 <tr class="rarity-green">
-                                    <td class="width20">Mana Resin</td>
+                                    <td class="width20 depth2">Mana Resin</td>
                                     <td>1</td>
                                     <td><input class="in-inventory" type="text" size="4" value="1"/></td>
                                     <td><input class="in-inventory" type="text" size="4" /></td>
                                     <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
                                 </tr>
                                 <tr>
-                                    <td>Heartwood</td>
+                                    <td class="depth2">Heartwood</td>
                                     <td>3</td>
                                     <td><input class="in-inventory" type="text" size="4" value="1"/></td>
                                     <td><input class="in-inventory" type="text" size="4" /></td>
@@ -209,7 +276,7 @@
                         </td>
                     </tr>
                     <tr class="expandable-row rarity-green">
-                        <td class="parent width20" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Immuno-Stimulating Implant</td>
+                        <td class="parent width20 depth1" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Immuno-Stimulating Implant</td>
                         <td>1</td>
                         <td><input class="in-inventory" type="text" size="4" value="1"/></td>
                         <td><input class="in-inventory" type="text" size="4" /></td>
@@ -227,14 +294,14 @@
                                     <td>Output</td>
                                 </tr>
                                 <tr class="rarity-green">
-                                    <td>Blue Lotus</td>
+                                    <td class="depth2">Blue Lotus</td>
                                     <td>1</td>
                                     <td><input class="in-inventory" type="text" size="4" value="1"/></td>
                                     <td><input class="in-inventory" type="text" size="4" /></td>
                                     <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
                                 </tr>
                                 <tr class="expandable-row">
-                                    <td class="parent width20" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Bio-compatible Material</td>
+                                    <td class="parent width20 depth2" onclick="toggleSubTable(this)"><span class="expand-icon">+</span>Bio-compatible Material</td>
                                     <td>1</td>
                                     <td><input class="in-inventory" type="text" size="4" value="1"/></td>
                                     <td><input class="in-inventory" type="text" size="4" /></td>
@@ -252,7 +319,7 @@
                                                 <td>Output</td>
                                             </tr>
                                             <tr>
-                                                <td class="width20">Xiphoid Process</td>
+                                                <td class="width20 depth3">Xiphoid Process</td>
                                                 <td>3</td>
                                                 <td><input class="in-inventory" type="text" size="4" value="1"/></td>
                                                 <td><input class="in-inventory" type="text" size="4" /></td>
@@ -265,14 +332,14 @@
                         </td>
                     </tr>
                     <tr class="rarity-blue">
-                        <td>Mutated Leaf</td>
+                        <td class="depth1">Mutated Leaf</td>
                         <td>1</td>
                         <td><input class="in-inventory" type="text" size="4" value="1"/></td>
                         <td><input class="in-inventory" type="text" size="4" /></td>
                         <td class=""><textarea id="myTextarea" rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>
                     </tr>
                     <tr class="rarity-blue">
-                        <td>Forest Berry</td>
+                        <td class="depth1">Forest Berry</td>
                         <td>1</td>
                         <td><input class="in-inventory" type="text" size="4" value="1"/></td>
                         <td><input class="in-inventory" type="text" size="4" /></td>
@@ -492,7 +559,7 @@
                                     <td>2</td>
                                     <td><input class="in-inventory" type="text" size="4" /></td>
                                 </tr>
-                            </table>                            
+                            </table>
                         </div>
                     </div>
                     <div class="product">

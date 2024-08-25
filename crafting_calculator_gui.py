@@ -17,6 +17,7 @@ from crafting_calculator import load_recipes
 from crafting.shoppinglist import ShoppingList
 from crafting.common import *
 
+
 def discover_games() -> Tuple[Dict[str, Any]]:
     games = []
     path = Path("recipes")
@@ -34,6 +35,7 @@ def _load_recipes(game):
     inventory, meta = load_recipes(game)
     return (inventory, meta)
 
+
 def get_inventory_values(inventory, key):
     return_array = []
     for item in inventory:
@@ -47,11 +49,11 @@ def windowPySimpleGui():
     listGatherable = {}
     if games[0]:
         inventory, meta = _load_recipes(games[0])
-        listCraftable, listGatherable  = process_inventory(inventory)
+        listCraftable, listGatherable = process_inventory(inventory)
         listCraftableItems = sorted(list(listCraftable.keys()))
         gatherable_list = get_gatherable_list(listGatherable)
         gatherable_list_formatted = gatherable_list.format_recipes_for_text_display()
-    
+
     layout = [
         [
             sg.Text("Game:", size=(6, 1)),
@@ -62,7 +64,7 @@ def windowPySimpleGui():
                 size=(40, 1),
                 enable_events=True,
             ),
-            sg.Button("Reload recipes", key="reload_recipes")
+            sg.Button("Reload recipes", key="reload_recipes"),
         ],
         [
             sg.Text("", size=(6, 1)),
@@ -91,7 +93,12 @@ def windowPySimpleGui():
                 size=(40, 20),
                 enable_events=False,
             ),
-            sg.Multiline(size=(40, 21), key="gatherable_output", enable_events=True, default_text=gatherable_list_formatted),
+            sg.Multiline(
+                size=(40, 21),
+                key="gatherable_output",
+                enable_events=True,
+                default_text=gatherable_list_formatted,
+            ),
         ],
         [
             sg.Text("Amount:", size=(6, 1)),
@@ -99,12 +106,8 @@ def windowPySimpleGui():
         ],
         [
             sg.Text("", size=(5, 1)),
-            sg.Column([
-                [sg.Button("Calculate", key="calculate", size=(15, 1))]
-            ]),
-            sg.Column([
-                [sg.Button("Clear selected items", key="clear_items")]
-            ]),
+            sg.Column([[sg.Button("Calculate", key="calculate", size=(15, 1))]]),
+            sg.Column([[sg.Button("Clear selected items", key="clear_items")]]),
         ],
         [
             sg.Text(
@@ -114,10 +117,11 @@ def windowPySimpleGui():
         ],
         [
             sg.Text("Output:", size=(6, 1)),
-            sg.Multiline(size=(84, 20), key="craftable_output", enable_events=True)
-        ]
+            sg.Multiline(size=(84, 20), key="craftable_output", enable_events=True),
+        ],
     ]
-    return sg.Window("Crafting Calculator", layout, finalize=True)
+    return sg.Window("Crafting Calculator", layout, location=(500, 200), finalize=True)
+
 
 def process_inventory(inventory):
     """
@@ -138,7 +142,7 @@ def process_inventory(inventory):
 
     # Classify items into craftable and gatherable
     for item_name, details in inventory.items():
-        hasChildItems = details.get('items', None)
+        hasChildItems = details.get("items", None)
         if hasChildItems:
             listCraftable[item_name] = item_name
         else:
@@ -150,12 +154,15 @@ def process_inventory(inventory):
 
     return listCraftable, listGatherable
 
+
 def get_gatherable_list(listGatherable) -> ShoppingList:
     gatherable_list = ShoppingList.create_empty()
     gatherable_list.inventory = listGatherable
     for item_name, details in listGatherable.items():
-        gatherable_list.add_items({item_name: details}, 1)
+        details["quantity"] = details.get("quantity", 1)
+    gatherable_list.items = listGatherable
     return gatherable_list
+
 
 def main():
     dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -165,7 +172,7 @@ def main():
 
     # Event Loop to process "events" and get the "values" of the inputs
     while True:
-        event, values = window.read()
+        event, window_values = window.read()
 
         craftable_output = window["craftable_output"]
 
@@ -173,27 +180,36 @@ def main():
         if event in (sg.WIN_CLOSED, "Cancel"):
             break
 
-        if event in ('game', 'reload_recipes'):
+        if event in ("game", "reload_recipes"):
             output(craftable_output, "")
-            inventory, meta = _load_recipes(values["game"])
-            listCraftable, listGatherable  = process_inventory(inventory)
-            
+            inventory, meta = _load_recipes(window_values["game"])
+            listCraftable, listGatherable = process_inventory(inventory)
+
             window["craftable_item"].update(listCraftable)
-            
+
             gatherable_list = get_gatherable_list(listGatherable)
-            output(window["gatherable_output"], gatherable_list.format_recipes_for_text_display())
+            output(
+                window["gatherable_output"],
+                gatherable_list.format_recipes_for_text_display(),
+            )
 
         if event in ("craftable_search"):
-            craftable_search_string = values.get("craftable_search", "").lower()
-            inventory, meta = _load_recipes(values["game"])
-            listCraftable, listGatherable  = process_inventory(inventory)
-            filtered_items = [item for item in listCraftable if craftable_search_string in item.lower()]
+            craftable_search_string = window_values.get("craftable_search", "").lower()
+            inventory, meta = _load_recipes(window_values["game"])
+            listCraftable, listGatherable = process_inventory(inventory)
+            filtered_items = [
+                item
+                for item in listCraftable
+                if craftable_search_string in item.lower()
+            ]
             window["craftable_item"].update(filtered_items)
 
         if event in ("gatherable_search"):
-            gatherable_search_string = values.get("gatherable_search", "").lower()
-            inventory, meta = _load_recipes(values["game"])
-            listCraftable, listGatherable  = process_inventory(inventory)
+            gatherable_search_string = window_values.get(
+                "gatherable_search", ""
+            ).lower()
+            inventory, meta = _load_recipes(window_values["game"])
+            listCraftable, listGatherable = process_inventory(inventory)
             gatherable_list = get_gatherable_list(listGatherable)
 
             items_to_delete = {}
@@ -203,39 +219,44 @@ def main():
 
             for item_to_delete in items_to_delete:
                 del gatherable_list.items[item_to_delete]
-            
-            output(window["gatherable_output"], gatherable_list.format_recipes_for_text_display())
+
+            output(
+                window["gatherable_output"],
+                gatherable_list.format_recipes_for_text_display(),
+            )
 
         if event == "calculate":
-            items = values["craftable_item"]
+            items = window_values["craftable_item"]
             if not items:
                 output(craftable_output, "Please select an item")
             else:
-                game = values["game"]
-                amount = int(values["amount"] or 1)
+                game = window_values["game"]
+                amount = int(window_values["amount"] or 1)
                 shopping_list = ShoppingList.create_empty()
-                inventory, meta = _load_recipes(values["game"])
+                inventory, meta = _load_recipes(window_values["game"])
+
+                target_items = {}
+                for item_name in items:
+                    target_items[item_name] = inventory.get(item_name)
+                    target_items[item_name]["quantity"] = (
+                        target_items[item_name].get("quantity", 1) * amount
+                    )
+                del items
+                del item_name
 
                 # Sort inventory dictionary alphabetically
-                inventory = {key: inventory[key] for key in sorted(inventory)}
+                shopping_list.inventory = {
+                    key: inventory[key] for key in sorted(inventory)
+                }
+                del inventory
 
-                temp_items = {}
-                for item in items:
-                    temp_items[item] = inventory.get(item)
-                items = temp_items
-
-                shopping_list.inventory = inventory
                 shopping_list.target_amount = amount
-                for item in items:
-                    target_item = inventory.get(item)
-                    target_item['quantity'] = amount
-                    shopping_list.target_items.update({item: target_item})
-                    shopping_list.add_items({item: target_item}, 1)
+                del amount
 
+                shopping_list.target_items.update(target_items)
+                shopping_list.items.update(target_items)
                 shopping_list.simplify()
-                shopping_list.calculate_crafting_costs()
-                shopping_list.calculate_buy_from_vendor()
-                shopping_list.calculate_sell_to_vendor()
+
                 output(craftable_output, shopping_list.format_for_text_display())
 
         if event == "clear_items":

@@ -139,10 +139,8 @@
       rarity: green
     - name: Mutated Leaf
       quantity: 1
-      rarity: blue
     - name: Forest berry
       quantity: 1
-      rarity: blue
 
 - name: Vitality Augmenter
   items:

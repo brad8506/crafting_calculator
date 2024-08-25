@@ -81,15 +81,16 @@ def setup_logging(debug: bool, verbose: bool) -> None:
     else:
         logging.basicConfig(format="%(levelname)s: %(message)s")
 
+
 @staticmethod
 def move_single_int_to_quantity(data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Iterate over the dictionary and move a single integer value to a 'quantity' property.
     Ensures each dictionary has only one integer value.
-    
+
     Args:
         data (Dict[str, Any]): The dictionary to process.
-    
+
     Returns:
         Dict[str, Any]: The updated dictionary with the integer value moved to 'quantity'.
     """
@@ -104,17 +105,22 @@ def move_single_int_to_quantity(data: Dict[str, Any]) -> Dict[str, Any]:
             updated_data[key] = ShoppingList.move_single_int_to_quantity(value)
         elif isinstance(value, int):
             # If the value is an integer, move it to 'quantity'
-            updated_data[key] = {'name': key, 'quantity': value}
+            updated_data[key] = {"name": key, "quantity": value}
         else:
             # Keep other values as they are
             updated_data[key] = value
-    
+
     # Ensure that each dictionary has only one integer value
-    if len(updated_data) == 1 and isinstance(list(updated_data.values())[0], dict) and 'quantity' in list(updated_data.values())[0]:
+    if (
+        len(updated_data) == 1
+        and isinstance(list(updated_data.values())[0], dict)
+        and "quantity" in list(updated_data.values())[0]
+    ):
         # If there is only one item and it's a dict with a 'quantity' key, return as is
         return updated_data
-    
+
     return updated_data
+
 
 def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
     """Load all recipes for a given game."""
@@ -136,20 +142,29 @@ def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
                 content_list.extend(content)
                 logging.debug("Read %s recipes from %s.", len(content), entry)
 
-    inventory = {}
     # Loop through the content and add each item to the inventory, keyed by the "name" key
+    inventory = {}
     for item in content_list:
-        if isinstance(item, dict) and 'name' in item:
-            recipe_name = item['name']
-            child_items = item.get('items', None)
-            if isinstance(child_items, dict):
-                item['items'] = move_single_int_to_quantity(child_items)
-            # else:
-
+        if isinstance(item, dict) and "name" in item:
+            recipe_name = item["name"]
+            inventory[recipe_name] = item
+        elif isinstance(item, list) and "name" in item:
+            convert_items_to_dict = {}
+            recipe_name = item["name"]
             inventory[recipe_name] = item
         else:
             # Optionally handle cases where item is not a dictionary or doesn't have a "name" key
-            print(f"Skipping item: {item}, not a dictionary or missing 'name' key")   
+            print(f"Skipping item: {item}, missing 'name' key")
+
+    # Loop through inventory and fix child items that are using list type
+    for item_name, details in inventory.items():
+        child_items = details.get("items", None)
+        if isinstance(child_items, list) and "name" in details:
+            convert_items_to_dict = {}
+            for child_item in child_items:
+                child_item_name = child_item.get("name")
+                convert_items_to_dict[child_item_name] = child_item
+            inventory[item_name]["items"] = convert_items_to_dict
 
     sum_recipes = len(inventory)
     if sum_recipes:
@@ -173,11 +188,11 @@ def craft_item(item: str, inventory: List[Dict[str, Any]], amount: int) -> Shopp
     shopping_list.add_items(required_items, amount)
     shopping_list.simplify()
 
-    #shopping_list.add_item_costs(shopping_list.intermediate_steps)
+    # shopping_list.add_item_costs(shopping_list.intermediate_steps)
     shopping_list.crafting_cost.update(
         {item: get_crafting_cost(item, inventory) * amount}
     )
-    
+
     for recipe in inventory:
         if recipe.get("name") == item:
             if "sell_to_vendor" in recipe.keys():
