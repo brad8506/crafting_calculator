@@ -62,6 +62,7 @@ def windowPySimpleGui():
                 size=(40, 1),
                 enable_events=True,
             ),
+            sg.Button("Reload recipes", key="reload_recipes")
         ],
         [
             sg.Text("", size=(6, 1)),
@@ -172,7 +173,7 @@ def main():
         if event in (sg.WIN_CLOSED, "Cancel"):
             break
 
-        if event == "game":
+        if event in ('game', 'reload_recipes'):
             output(craftable_output, "")
             inventory, meta = _load_recipes(values["game"])
             listCraftable, listGatherable  = process_inventory(inventory)

@@ -18,7 +18,7 @@ class ShoppingList:
 
     def __init__(self, inventory: Dict[str, Dict[str, Any]], item: str, amount: int):
         self.items: Dict[str, Dict[str, Any]] = {}
-        self.crafting_cost: Dict[str, float] = {}
+        self.crafting_cost: float = 0.0
         self.buy_from_vendor: Dict[str, float] = {}
         self.sell_to_vendor: float = 0.0
         self.target_items: Dict[str, Any] = {}
@@ -97,32 +97,17 @@ class ShoppingList:
 
     def calculate_crafting_costs(self) -> None:
         """Calculate all costs."""
-        for item in self.target_items:
-            recipe_cost = get_crafting_cost(item, self.inventory)
+        for item_name, details in self.items.items():
+            recipe_cost = get_crafting_cost(item_name, self.inventory)
             if recipe_cost is not None:
-                self.crafting_cost.update(
-                    {item: self.target_items[item] * recipe_cost * self.target_amount}
-                )
+                self.crafting_cost = self.crafting_cost + (recipe_cost * details.get('quantity'))
 
-        for item in self.items:
-            recipe_cost = get_crafting_cost(item, self.inventory)
+        for item_name, details in self.intermediate_steps.items():
+            recipe_cost = get_crafting_cost(item_name, self.inventory)
             if recipe_cost is not None:
-                self.crafting_cost.update(
-                    {item: self.items[item] * recipe_cost * self.target_amount}
-                )
-
-        for item in self.intermediate_steps:
-            recipe_cost = get_crafting_cost(item, self.inventory)
-            if recipe_cost is not None:
-                self.crafting_cost.update(
-                    {
-                        item: self.intermediate_steps[item]
-                        * recipe_cost
-                        * self.target_amount
-                    }
-                )
+                self.crafting_cost = self.crafting_cost + (recipe_cost * details.get('quantity'))
         logging.debug(
-            "Summing item crafting_cost for %s item/s in shopping list.", item
+            "Summing item crafting_cost for %s item/s in shopping list.", item_name
         )
 
     def calculate_buy_from_vendor(self) -> Dict[str, float]:
@@ -252,7 +237,7 @@ class ShoppingList:
         # Define the desired order of keys
         key_order = ["quantity", "rarity", "source", 'wiki']
 
-        total_crafting_cost = sum(self.crafting_cost.values())
+        total_crafting_cost = self.crafting_cost
         total_crafting_cost_formatted = f"{total_crafting_cost:,}"
         target_items = self.target_items
         target_items_formatted = "\n".join(
@@ -281,8 +266,8 @@ class ShoppingList:
             else items_dump
         )
         
-        for item_name in self.target_items:
-            del self.intermediate_steps[item_name]
+        # for item_name in self.target_items:
+        #     del self.intermediate_steps[item_name]
         intermediate_steps_dump = "\n".join(
             f"{item}: " + ", ".join(
                 f"{k}: {details[k]}" 
