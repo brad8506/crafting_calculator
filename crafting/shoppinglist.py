@@ -134,6 +134,64 @@ class ShoppingList:
         else:
             logging.info("Nothing to simplify.")
 
+    def simplifyV2(self) -> None:
+        """Recursively replace intermediate crafted items with their components."""
+        logging.info("Simplifying shopping list.")
+
+        items_to_add = {}
+        items_to_remove = []
+
+        # Collect items to be added or removed
+        for item_name, details in self.items.items():
+            # recipe = self.inventory.get(item_name)
+            recipe = self.get_recipe_recursive(item_name, details)
+            if recipe:
+                # Merge details with the recipe, giving priority to details
+                if isinstance(details, dict):
+                    details = {**recipe, **details}
+                    process_child_items(details)
+
+                child_items = details.get("items", {})
+                if child_items:
+                    self.intermediate_steps[item_name] = details
+                    items_to_remove.append(item_name)  # Mark item for removal
+
+                    for child_name, child_details in child_items.items():
+                        child_recipe = self.inventory.get(child_name, {})
+                        new_child_details = {
+                            "name": child_name,
+                            "quantity": child_details.get('quantity', 1) * details.get('quantity', 1),
+                            **child_recipe
+                        }
+
+                        items_to_add[child_name] = new_child_details  # Mark item for addition
+                        # if child_recipe:
+                        #     self.intermediate_steps[child_name] = new_child_details * self.target_amount
+
+        # Apply the changes
+        for item_name in items_to_remove:
+            self.items.pop(item_name, None)
+
+        self.items.update(items_to_add)
+
+        # Recursively simplify if there were changes
+        if items_to_add or items_to_remove:
+            self.simplify()
+        else:
+            logging.info("Nothing to simplify.")
+
+    def get_recipe_recursive(self, item_name: str, details: dict = {}) -> None:
+        recipe = self.inventory.get(item_name, {})
+        recipe = process_child_items(recipe)
+        details = process_child_items(details)
+        details = {**recipe, **details}
+        child_items = recipe.get('items', {})
+        if child_items:
+            for child_item_name, child_details in child_items.items():
+                a = self.get_recipe_recursive(child_item_name, child_details)
+                debug = True
+        debug = True
+
     def to_yaml(self) -> str:
         """Return ShoppingList contents as YAML formatted string."""
         prepared_string: str = safe_dump(

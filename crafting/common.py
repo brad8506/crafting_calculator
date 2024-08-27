@@ -53,3 +53,29 @@ def get_buy_from_vendor(
 ) -> Union[float, None]:
     """Get the first matching recipe buy_from_vendor from the inventory."""
     return get_crafting_cost(item, inventory, "buy_from_vendor")
+
+def process_child_items(details) -> dict:
+    """
+    Process the input data by adding a 'quantity' key if the value is an int,
+    or converting a list into a dictionary.
+
+    :param input_data: The dictionary or list to process.
+    :param amount: The amount to set or adjust the 'quantity' key by.
+    :return: The processed dictionary.
+    """
+    child_items = details.get('items', {})
+    if child_items:
+        if isinstance(child_items, dict):
+            # If the dict contains an int, add a 'quantity' key
+            for key, value in child_items.items():
+                if isinstance(value, int):
+                    child_items[key] = {"quantity": value}
+                elif isinstance(value, list):
+                    child_items[key] = dict(value)
+                #child_items[key]['quantity'] = child_items[key]['quantity'] * details['quantity']
+        elif isinstance(child_items, list):
+            # Convert list to dict
+            child_items = dict(child_items)
+        details.update({'items': child_items})
+
+    return details

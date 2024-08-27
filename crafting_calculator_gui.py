@@ -13,8 +13,8 @@ import PySimpleGUI as sg
 from yaml import safe_load
 
 # internal
-from crafting_calculator import load_recipes
-from crafting.shoppinglist import ShoppingList
+from crafting_calculator import *
+from crafting.shoppinglist import *
 from crafting.common import *
 
 
@@ -152,6 +152,16 @@ def process_inventory(inventory):
     listCraftable = {key: listCraftable[key] for key in sorted(listCraftable)}
     listGatherable = {key: listGatherable[key] for key in sorted(listGatherable)}
 
+    final_inventory = {}
+    for item_name, details in inventory.items():
+        if item_name in ('Vital Nano Bracer'):
+            debug = True
+        if item_name in ('Vital Nano Bracer', 'Bio-compatible Material', 'Xiphoid Process', 'Steroid Implant'):
+            debug = True
+        add_recipe_details_recursive(item_name, details, inventory, final_inventory)
+        debug = True
+    final_inventory = {key: final_inventory[key] for key in sorted(final_inventory)}
+
     return listCraftable, listGatherable
 
 def get_gatherable_list(listGatherable) -> ShoppingList:
@@ -254,7 +264,8 @@ def main():
 
                 shopping_list.target_items.update(target_items)
                 shopping_list.items.update(target_items)
-                shopping_list.simplify()
+                # shopping_list.simplify()
+                shopping_list.simplifyV2()
 
                 output(craftable_output, shopping_list.format_for_text_display())
 

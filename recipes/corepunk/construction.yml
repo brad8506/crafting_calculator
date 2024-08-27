@@ -64,10 +64,16 @@
 
 - name: Hormone Booster
   items:
-    Body Scanner: 1
-    Immuno-Stimulating Implant: 1
-    Forest berry: 1
-    Isotope-238: 1
+    - name: Body Scanner
+      quantity: 1
+      rarity: green
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Forest berry
+      quantity: 1
+    - name: Isotope-238
+      quantity: 1
 
 - name: Immuno-Stimulating Implant
   items:
@@ -119,10 +125,16 @@
 
 - name: Soldier's Implant
   items:
-    Immuno-Stimulating Implant: 1
-    Steroid Implant: 1
-    Petrified Spike: 1
-    Forest berry: 1
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+    - name: Petrified Spike
+      quantity: 1
+    - name: Forest berry
+      quantity: 1
 
 - name: Steroid Implant
   items:

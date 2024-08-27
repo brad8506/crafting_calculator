@@ -149,9 +149,8 @@ def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
             recipe_name = item["name"]
             inventory[recipe_name] = item
         elif isinstance(item, list) and "name" in item:
-            convert_items_to_dict = {}
             recipe_name = item["name"]
-            inventory[recipe_name] = item
+            inventory[recipe_name] = dict(item)
         else:
             # Optionally handle cases where item is not a dictionary or doesn't have a "name" key
             print(f"Skipping item: {item}, missing 'name' key")
@@ -159,12 +158,18 @@ def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
     # Loop through inventory and fix child items that are using list type
     for item_name, details in inventory.items():
         child_items = details.get("items", None)
-        if isinstance(child_items, list) and "name" in details:
-            convert_items_to_dict = {}
-            for child_item in child_items:
-                child_item_name = child_item.get("name")
-                convert_items_to_dict[child_item_name] = child_item
-            inventory[item_name]["items"] = convert_items_to_dict
+        if child_items:
+            if isinstance(child_items, list):
+                new_child_items = {}
+                for values in child_items:
+                    child_name = values.get('name')
+                    new_child_items[child_name] = values
+                child_items = new_child_items
+            for child_item_name, child_details in child_items.items():
+                    if isinstance(child_details, int):
+                        child_items[child_item_name] = {'name': child_item_name, 'quantity': child_details}
+                    if isinstance(child_items, dict):
+                        debug = True
 
     sum_recipes = len(inventory)
     if sum_recipes:
@@ -180,6 +185,53 @@ def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
 
     return (inventory, meta)
 
+def convert_item(item_name: str, item, inventory: dict):
+    if isinstance(item, int):
+        # If item is an integer, convert it to a dictionary with 'quantity' as the key
+        item = {'name': item_name}
+    if isinstance(item, list):
+        # If item is an integer, convert it to a dictionary with 'quantity' as the key
+        item = dict(item)
+
+    if 'items' in item and isinstance(item['items'], list):
+        new_child_details = {}
+        for child_details in item['items']:
+            name = child_details['name']
+            child_defaults = {'name': item_name, 'quantity': item.get('quantity', 1)}
+            recipe = inventory.get(name, {})
+            new_child_details[name] = {**child_defaults, **recipe, **child_details}
+        item['items'] = new_child_details
+    
+    recipe = inventory.get(item_name, {})
+    defaults = {'name': item_name, 'quantity': item.get('quantity', 1)}
+    item = {**defaults, **recipe, **item}
+    return item  # Return the item as is if it's not an integer
+
+def add_recipe_details_recursive(item_name: str, item_details: dict, inventory: dict, final_inventory):
+    """
+    Recursively adds item details into the parent_dict.
+
+    Args:
+        item (dict): The current item details.
+        parent_dict (dict): The dictionary to accumulate the details.
+    """
+
+    item_details = convert_item(item_name, item_details, inventory)
+    # if not item_name in parent:
+    #     details['quantity'] = 1
+    #     parent[item_name] = details
+
+    # Recurse if there are child items
+    child_name = ''
+    child_details = {}
+    for child_name, child_details in item_details.get('items', {}).items():
+        child_details = convert_item(child_name, child_details, inventory)
+        child_details_new = add_recipe_details_recursive(child_name, child_details, inventory, item_details['items'])
+        # details[item_name].items[child_name] = {**new_child_details, **child_details}
+    
+    final_inventory[item_name] = item_details
+
+    return final_inventory
 
 def craft_item(item: str, inventory: List[Dict[str, Any]], amount: int) -> ShoppingList:
     """Calculate the items required to craft a recipe."""
