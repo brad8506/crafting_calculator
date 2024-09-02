@@ -14,6 +14,7 @@
             .sub-table-row > td { overflow: hidden; }
             .sub-table .table-header-row { display: none; }
             tr.sub-table-row { border-left: 1px solid #ccc; }
+            tr.depth-0 { border-top: 1px solid #ccc; }
             tr.depth-0 .quantity { width: 100px; }
             tr.depth-1 .quantity { width: 110px; }
             tr.depth-2 .quantity { width: 120px; }
@@ -76,7 +77,7 @@
                                             <tr class="table-header-row">
                                                 <th class=sub-item>Sub-Item</th>
                                                 <th class=quantity-required>Quantity Required</th>`;
-                                
+
                                 rows += `</tr>`;
                                 for (const subItem in item.items) {
                                     rows += createTableRow(item.items[subItem], depth + 1);
