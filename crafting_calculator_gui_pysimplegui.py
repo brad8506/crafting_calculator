@@ -9,6 +9,9 @@ import os
 import subprocess
 import PySimpleGUI as sg
 
+# DEBUG ONLY.
+import json
+
 # 3rd party
 from yaml import safe_load
 
@@ -262,6 +265,22 @@ def main():
                 shopping_list.simplifyV2()
 
                 output(craftable_output, shopping_list.format_for_text_display())
+                
+                # DEBUG ONLY.
+                # Writing JSON data to the file.
+                # data = shopping_list.to_json()
+                data = shopping_list.inventory
+                file_path = 'data.json'
+                try:
+                    # Writing JSON data to the file with proper formatting
+                    with open(file_path, 'w', encoding='utf-8') as file:
+                        json.dump(data, file, indent=4)  # Indent for readability
+                        print(data)
+                    print(f"Data successfully written to {file_path}")
+                except IOError as e:
+                    print(f"Error writing file: {e}")
+                except TypeError as e:
+                    print(f"Error serializing data: {e}")
 
         if event == "clear_items":
             window["craftable_item"].set_value([])

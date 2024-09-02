@@ -185,15 +185,33 @@ class ShoppingList:
         return prepared_string
 
     def to_json(self) -> str:
-        """Return ShoppingList contents as JSON formatted string."""
-
+        """Return ShoppingList contents as JSON."""
+        
         output = {
             "shopping_list": self.items,
             "intermediates": self.intermediate_steps,
             "target_items": self.target_items,
             "target_amount": self.target_amount,
         }
-        return dumps(output, sort_keys=True, indent=2)
+        return output
+    
+    def to_json_string(self) -> str:
+        """Return ShoppingList contents as a JSON formatted string."""
+        
+        output = {
+            "shopping_list": self.items,
+            "intermediates": self.intermediate_steps,
+            "target_items": self.target_items,
+            "target_amount": self.target_amount,
+        }
+
+        # Serialize to a JSON formatted string with sorting of keys and indentation
+        json_str = dumps(output, sort_keys=True, indent=4)
+        return json_str
+    
+    def inventory_to_json(self) -> str:
+        """Return ShoppingList inventory as JSON."""
+        return self.inventory
 
     def format_for_text_display(self) -> str:
         """Format the ShoppingList for printing to stdout."""
