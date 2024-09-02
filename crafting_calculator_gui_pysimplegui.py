@@ -132,6 +132,12 @@ def process_inventory(inventory):
     
     recursive_inventory = {}
     for item_name, details in inventory.items():
+        if item_name in ('Armor Plate'):
+            debug = True
+        if item_name in ('Plasma Launcher'):
+            debug = True
+        if item_name in ('Steroid Implant'):
+            debug = True
         if item_name in ('Vital Nano Bracer'):
             debug = True
         if item_name in ('Vital Nano Bracer', 'Bio-compatible Material', 'Xiphoid Process', 'Steroid Implant'):
@@ -269,7 +275,9 @@ def main():
                 # DEBUG ONLY.
                 # Writing JSON data to the file.
                 # data = shopping_list.to_json()
-                data = shopping_list.inventory
+                #data = shopping_list.inventory
+                data = listCraftable
+                update_amounts_recursively(data, 1)
                 file_path = 'data.json'
                 try:
                     # Writing JSON data to the file with proper formatting

@@ -3,25 +3,38 @@
 # https://corepunkers.com/professions
 
 - name: Armor Plate
-  rarity: green
   items:
     Titanium Nugget: 1
     Iron Ingot: 1
 
 - name: Assassin's Glove
   items:
-    Steroid Implant: 1
-    Armor Plate: 1
-    Isotope-238: 1
-    Thermal Liquidum: 1
-    Welded Patterned: 1
+    - name: Steroid Implant
+      quantity: 1
+      rarity: blue
+    - name: Armor Plate
+      quantity: 1
+      rarity: blue
+    - name: Isotope-238
+      quantity: 1
+    - name: Thermal Liquidum
+      quantity: 1
+    - name: Welded Patterned
+      quantity: 1
+      rarity: blue
 
 - name: Battle Mage Implant
   items:
-    Magic Circle: 1
-    Steroid Implant: 1
-    Isotope-238: 1
-    Neon Mushroom: 1
+    - name: Magic Circle
+      quantity: 1
+      rarity: green
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+    - name: Isotope-238
+      quantity: 1
+    - name: Neon Mushroom
+      quantity: 1
 
 - name: Body Scanner
   items:
@@ -30,37 +43,85 @@
 
 - name: Cerebral Interface
   items:
-    Steroid Implant: 1
-    Nano Tissue: 1
-    Petrified Spike: 1
-    Elastic Membrane: 1
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+    - name: Nano Tissue
+      quantity: 1
+      rarity: green
+    - name: Petrified Spike
+      quantity: 1
+    - name: Elastic Membrane
+      quantity: 1
 
 - name: Cyber Biker Arm
   items:
-    Steroid Implant: 1
-    Mana Amulet: 1
-    Petrified Spike: 1
-    Mutated Leaf: 1
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+    - name: Mana Amulet
+      quantity: 1
+      rarity: green
+    - name: Petrified Spike
+      quantity: 1
+    - name: Mutated Leaf
+      quantity: 1
 
 - name: Cyber Plate Carrier
   items:
-    Magic Circle: 1
-    Nano Tissue: 1
-    Neon Mushroom: 1
-    Elastic Membrane: 1
+    - name: Armor Plate
+      quantity: 1
+      rarity: green
+    - name: Nano Tissue
+      quantity: 1
+      rarity: green
+    - name: Tungsten
+      quantity: 1
+    - name: Elastic Membrane
+      quantity: 1
 
 - name: Dragonscale Armor Plate
   items:
-    Isotype-238: 1
-    Nano Tissue: 1
-    Steroid Implant: 1
+    - name: Isotype-238
+      quantity: 1
+    - name: Nano Tissue
+      quantity: 1
+      rarity: green
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+
+- name: Flux Strike
+  items:
+    - name: Rainbow Snail
+      quantity: 1
+    - name: Concentrated Mana
+      quantity: 1
+      rarity: purple
+    - name: Granulation Tissue
+      quantity: 1
+    - name: Magic Circle
+      quantity: 1
+      rarity: blue
+    - name: Mana Amulet
+      quantity: 1
+      rarity: blue
+    - name: Body Scanner
+      quantity: 1
+      rarity: blue
 
 - name: Fusion Engine
   items:
-    Armor Plate: 1
-    Nano Tissue: 1
-    Tungsten: 1
-    Elastic Membrane: 1
+    - name: Magic Circle
+      quantity: 1
+      rarity: green
+    - name: Nano Tissue
+      quantity: 1
+      rarity: green
+    - name: Neon Mushroom
+      quantity: 1
+    - name: Elastic Membrane
+      quantity: 1
 
 - name: Hormone Booster
   items:
@@ -92,15 +153,24 @@
 
 - name: Matter Shaker
   items:
-    Magic Circle: 2
-    Isotope-238: 1
+    - name: Magic Circle
+      quantity: 2
+      rarity: green
+    - name: Isotope-238
+      quantity: 1
 
 - name: Modular Glove
   items:
-    Steroid Implant: 1
-    Armor Plate: 1
-    Tungsten: 1
-    Petrified Spike: 1
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+    - name: Armor Plate
+      quantity: 1
+      rarity: green
+    - name: Tungsten
+      quantity: 1
+    - name: Petrified Spike
+      quantity: 1
 
 - name: Nano Tissue
   items:
@@ -109,19 +179,45 @@
 
 - name: Neural Accelerator
   items:
-    Steroid Implant: 1
-    Body Scanner: 1
-    Magic Circle: 1
-    Rainbow Snail: 1
-    Blood Honey: 1
-    Granulation Tissue: 1
+    - name: Steroid Implant
+      quantity: 1
+      rarity: blue
+    - name: Body Scanner
+      quantity: 1
+      rarity: blue
+    - name: Magic Circle
+      quantity: 1
+      rarity: blue
+    - name: Rainbow Snail
+      quantity: 1
+    - name: Blood Honey
+      quantity: 1
+    - name: Granulation Tissue
+      quantity: 1
+
+- name: Paramedic Bracer
+  items:
+    - name: Armor Plate
+      quantity: 1
+      rarity: green
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Isotope-238
+      quantity: 1
 
 - name: Primal Energy Invertor
   items:
-    Magic Circle: 1
-    Immuno-Stimulating Implant: 1
-    Neon Mushroom: 1
-    Petrified Spike: 1
+    - name: Magic Circle
+      quantity: 1
+      rarity: green
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Neon Mushroom
+      quantity: 1
+    - name: Forest berry
+      quantity: 1
 
 - name: Soldier's Implant
   items:
@@ -143,6 +239,19 @@
 
 - name: Vital Nano Bracer
   items:
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Nano Tissue
+      quantity: 1
+      rarity: green
+    - name: Elastic Membrane
+      quantity: 1
+    - name: Forest berry
+      quantity: 1
+
+- name: Vitality Augmenter
+  items:
     - name: Mana Amulet
       quantity: 1
       rarity: green
@@ -153,13 +262,3 @@
       quantity: 1
     - name: Forest berry
       quantity: 1
-
-- name: Vitality Augmenter
-  items:
-    Mana Amulet: 1
-    Immuno-Stimulating Implant: 1
-    Mutated Leaf: 1
-    Forest berry: 1
-
-- name: Welded Patterned
-  rarity: blue

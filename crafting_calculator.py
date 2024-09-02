@@ -174,12 +174,17 @@ def add_recipe_details_recursive(item_name: str, item_details: dict, inventory: 
         parent_dict (dict): The dictionary to accumulate the details.
     """
 
+    if item_name == 'Armor Plate':
+        debug = True
+
     item_details = convert_item(item_name, item_details, inventory)
+    item_quantity = item_details.get('quantity')
     # Recurse if there are child items
     child_name = ''
     child_details = {}
     for child_name, child_details in item_details.get('items', {}).items():
         child_details = convert_item(child_name, child_details, inventory)
+        # child_details['quantity'] = child_details['quantity'] * item_quantity
         child_details_new = add_recipe_details_recursive(child_name, child_details, inventory, item_details['items'])
         item_details['items'] = child_details_new
     

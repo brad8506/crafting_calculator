@@ -1,53 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crafting Calculator GUI Live</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
-    </style>
-    <script>
-        function calculateTableList() {
-            // Example AJAX call to get new data
-            fetch('data.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Find the table body element
-                    const tableBody = document.getElementById('js-data-table-list');
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crafting Calculator GUI Live</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            table { border-collapse: collapse; width: 100%; }
+            th, td { text-align: left; padding: 8px 8px 8px 0; }
+            /* tr:nth-child(even) { background-color: #f2f2f2; } */
+            .expandable-row { cursor: pointer; }
+            .sub-table { margin-left: 20px; }
+            .sub-table-row > td { overflow: hidden; }
+            .sub-table .table-header-row { display: none; }
+            tr.sub-table-row { border-left: 1px solid #ccc; }
+            tr.depth-0 .quantity { width: 100px; }
+            tr.depth-1 .quantity { width: 110px; }
+            tr.depth-2 .quantity { width: 120px; }
+            tr.depth-3 .quantity { width: 130px; }
+            tr.depth-4 .quantity { width: 140px; }
+            tr.depth-5 .quantity { width: 150px; }
+            tr.depth-6 .quantity { width: 160px; }
+            tr.depth-7 .quantity { width: 170px; }
+            tr.depth-8 .quantity { width: 180px; }
+            .no-expand td:first-child { padding-left: 2rem; }
+            /* .rarity-green td:first-child { color: white; background-color: green; }
+            .rarity-blue td:first-child { color: white; background-color: blue; }
+            .rarity-purple td:first-child { color: white; background-color: purple; } */
+            .rarity-green td:first-child { color: green; }
+            .rarity-blue td:first-child { color: blue; }
+            .rarity-purple td:first-child { color: purple; }
+            span.expand-icon {
+                color: orange;
+                font-weight: 900;
+                background-color: #eee;
+                border: 1px solid orange;
+                border-radius: 12px;
+                padding: 0px 8px;
+                margin-right: 5px;
+                min-width: 10px;
+                display: inline-block;
+                text-align: center;
+            }
+        </style>
+        <script>
+            function calculateTableList() {
+                fetch('data.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.getElementById('js-data-table-list');
+                        tableBody.innerHTML = '';
 
-                    // Clear existing content
-                    tableBody.innerHTML = '';
+                        function createTableRow(item, depth = 0) {
+                            let rows = '';
+                            const indent = ' '.repeat(depth * 4);
+                            const rarityClass = item.rarity ? 'rarity-' + item.rarity.toLowerCase() : '';
+                            const depthClass = `depth-${depth}`;
 
-                    // Populate table with new data
-                    for (const [key, value] of Object.entries(data)) {
-                        const row = `<tr><td>${key}</td><td>${value}</td></tr>`;
-                        tableBody.insertAdjacentHTML('beforeend', row);
-                    }
-                })
-                .catch(error => console.error('Error fetching data:', error));
-        }
+                            rows += `<tr class="${item.items ? 'expandable-row' : 'no-expand'} ${rarityClass} ${depthClass}" style="margin-left: ${indent};">
+                                ${item.items ? `<td class="parent width20" onclick="toggleSubTable(this)">
+                                    <span class="expand-icon">+</span>${item.name}
+                                </td>` : `<td class="${rarityClass} width20">${item.name}</td>`}
+                                <td class="quantity" data-quantity-original="${item.quantity || ''}"><input type="text" size="4" value="${item.quantity || ''}"/></td>`;
 
-        // Update content every 5 seconds
-        //setInterval(calculateTableList, 5000);
-    </script>
-</head>
-<body>
-    <h1>Crafting Calculator GUI Live</h1>
-    <button onclick="calculateTableList()">Calculate</button>
-    <table>
-        <thead>
-            <tr>
-                <th>Key</th>
-                <th>Value</th>
-            </tr>
-        </thead>
-        <tbody id="js-data-table-list">
-            <!-- Dynamic content will be injected here -->
-        </tbody>
-    </table>
-</body>
+                            if (depth === 0) {
+                                rows += `<td class=""><textarea rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>`;
+                            }
+
+                            rows += `</tr>`;
+
+                            if (item.items) {
+                                rows += `<tr class="sub-table-row collapse" style="display: none;">
+                                <td colspan="2">
+                                        <table class="sub-table">
+                                            <tr class="table-header-row">
+                                                <th class=sub-item>Sub-Item</th>
+                                                <th class=quantity-required>Quantity Required</th>`;
+                                
+                                rows += `</tr>`;
+                                for (const subItem in item.items) {
+                                    rows += createTableRow(item.items[subItem], depth + 1);
+                                }
+                                rows += `</table>
+                                    </td>
+                                </tr>`;
+                            }
+
+                            return rows;
+                        }
+
+                        for (const key in data) {
+                            tableBody.innerHTML += createTableRow(data[key]);
+                        }
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            }
+
+            function toggleSubTable(element) {
+                const icon = element.querySelector('.expand-icon');
+                const row = element.closest('tr');
+                const subTableRow = row.nextElementSibling;
+
+                if (subTableRow.style.display === 'none') {
+                    subTableRow.style.display = '';
+                    icon.textContent = '-';
+                } else {
+                    subTableRow.style.display = 'none';
+                    icon.textContent = '+';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Crafting Calculator GUI Live</h1>
+        <button onclick="calculateTableList()">Calculate</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity Required</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody id="js-data-table-list">
+                <!-- Dynamic content will be injected here -->
+            </tbody>
+        </table>
+    </body>
 </html>
