@@ -551,7 +551,8 @@
             },
             "Concentrated Mana": {
                 "name": "Concentrated Mana",
-                "quantity": 1
+                "quantity": 1,
+                "rarity": "purple"
             },
             "Granulation Tissue": {
                 "name": "Granulation Tissue",
