@@ -143,34 +143,18 @@ class ShoppingList:
 
         # Collect items to be added or removed
         for item_name, details in self.items.items():
-            # recipe = self.inventory.get(item_name)
-            recipe = self.get_recipe_recursive(item_name, details)
-            if recipe:
-                # Merge details with the recipe, giving priority to details
-                if isinstance(details, dict):
-                    details = {**recipe, **details}
-                    process_child_items(details)
-
-                child_items = details.get("items", {})
-                if child_items:
-                    self.intermediate_steps[item_name] = details
-                    items_to_remove.append(item_name)  # Mark item for removal
-
-                    for child_name, child_details in child_items.items():
-                        child_recipe = self.inventory.get(child_name, {})
-                        new_child_details = {
-                            "name": child_name,
-                            "quantity": child_details.get('quantity', 1) * details.get('quantity', 1),
-                            **child_recipe
-                        }
-
-                        items_to_add[child_name] = new_child_details  # Mark item for addition
-                        # if child_recipe:
-                        #     self.intermediate_steps[child_name] = new_child_details * self.target_amount
+            item_quantity = details.get('quantity')
+            child_items = details.get("items", {})
+            if child_items:
+                child_items = update_amounts_recursively(child_items, item_quantity)
+                for child_name, child_details in child_items.items():
+                    items_to_add[child_name] = child_details  # Mark item for addition
+                self.intermediate_steps.update({item_name: details})
+                items_to_remove.append(item_name)  # Mark item for removal
 
         # Apply the changes
         for item_name in items_to_remove:
-            self.items.pop(item_name, None)
+            del self.items[item_name]
 
         self.items.update(items_to_add)
 
@@ -218,15 +202,15 @@ class ShoppingList:
         key_order = ["quantity", "rarity", "source", "wiki"]
         ignore_keys = ["name", "items"]
 
-        # target_items_formatted = "\n".join(
-        #     f"{item}: " + ", ".join(
-        #         f"{k}: {details[k]}"
-        #         for k in key_order + [k for k in details if k not in key_order and k not in ignore_keys]
-        #         if k in details
-        #     )
-        #     for item, details in sorted(self.target_items.items())
-        # )
-        target_items_formatted = "\n".join(self.target_items.keys())
+        target_items_formatted = "\n".join(
+            f"{item}: " + ", ".join(
+                f"{k}: {details[k]}"
+                for k in key_order + [k for k in details if k not in key_order and k not in ignore_keys]
+                if k in details
+            )
+            for item, details in sorted(self.target_items.items())
+        )
+        # target_items_formatted = "\n".join(self.target_items.keys())
 
         items_formatted = "\n".join(
             f"{item}: "

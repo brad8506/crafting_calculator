@@ -4,32 +4,28 @@ import logging
 from typing import List, Dict, Any, Union
 
 
-def find_recipe(item: str, inventory: Dict[str, Dict[str, Any]]) -> Dict[str, int]:
+def find_recipe(item_name: str, inventory: Dict[str, Dict]) -> Dict[str, Dict]:
     """Find the first matching recipe from the inventory."""
+    recipe = inventory.get(item_name, {})
+    if not recipe:
+        logging.debug("No recipe for %s.", item_name)
+    return recipe
 
-    recipe_items = inventory.get(item, {})
+def update_amounts_recursively(details: Dict, quantity: int) -> Dict:
+    if isinstance(details, Dict):
+        for item_name, item_details in details.items():
+            item_details['quantity'] = item_details['quantity'] * quantity
+            child_items = item_details.get('items', {})
+            if child_items:
+                item_details['items'] = update_amounts_recursively(child_items, quantity)
 
-    # logging.debug("Searching recipe for %s.", item)
-    # for recipe in inventory:
-    #     if recipe.get("name") == item:
-    #         recipe_items = recipe.get("items", {})
-    #         logging.debug("Found recipe for %s.", item)
-    #         logging.debug(recipe_items)
-    #         break
+    return details
 
-    # if not recipe_items:
-    #     logging.debug("No recipes for %s.", item)
-
-    return recipe_items
-
-
-def get_crafting_cost(
-    item: str, inventory: Dict[str, Dict[str, Any]], item_key: str = "crafting_cost"
-) -> Union[float, None]:
+def get_crafting_cost(item_name: str, inventory: Dict[str, Dict[str, Any]], item_key: str = "crafting_cost") -> Union[float, None]:
     """Get the first matching recipe value from the inventory based on the provided item key."""
     recipe_value = None
 
-    recipe = inventory.get(item, None)
+    recipe = inventory.get(item_name, None)
     if recipe:
         cost = recipe.get(item_key, None)
         if cost:
@@ -65,6 +61,14 @@ def process_child_items(details) -> dict:
     """
     child_items = details.get('items', {})
     if child_items:
+        if isinstance(child_items, list):
+            # Convert list of dicts to a dict with 'name' as the key
+            converted_items = {}
+            for item in child_items:
+                name = item.pop('name')
+                converted_items[name] = item
+            child_items = converted_items
+
         if isinstance(child_items, dict):
             # If the dict contains an int, add a 'quantity' key
             for key, value in child_items.items():
@@ -73,9 +77,7 @@ def process_child_items(details) -> dict:
                 elif isinstance(value, list):
                     child_items[key] = dict(value)
                 #child_items[key]['quantity'] = child_items[key]['quantity'] * details['quantity']
-        elif isinstance(child_items, list):
-            # Convert list to dict
-            child_items = dict(child_items)
+        
         details.update({'items': child_items})
 
     return details

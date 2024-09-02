@@ -17,7 +17,6 @@ from crafting_calculator import *
 from crafting.shoppinglist import *
 from crafting.common import *
 
-
 def discover_games() -> Tuple[Dict[str, Any]]:
     games = []
     path = Path("recipes")
@@ -30,18 +29,9 @@ def discover_games() -> Tuple[Dict[str, Any]]:
 
     return games
 
-
 def _load_recipes(game):
     inventory, meta = load_recipes(game)
     return (inventory, meta)
-
-
-def get_inventory_values(inventory, key):
-    return_array = []
-    for item in inventory:
-        return_array.append(item.get(key))
-    return return_array
-
 
 def windowPySimpleGui():
     games = discover_games()
@@ -136,31 +126,33 @@ def process_inventory(inventory):
             - combined_list (dict): Combined list of craftable and gatherable items with headers.
             - labels (list): List of item labels.
     """
+    
+    recursive_inventory = {}
+    for item_name, details in inventory.items():
+        if item_name in ('Vital Nano Bracer'):
+            debug = True
+        if item_name in ('Vital Nano Bracer', 'Bio-compatible Material', 'Xiphoid Process', 'Steroid Implant'):
+            debug = True
+        add_recipe_details_recursive(item_name, details, inventory, recursive_inventory)
+        debug = True
+    recursive_inventory = {key: recursive_inventory[key] for key in sorted(recursive_inventory)}
+
+
     # Initialize dictionaries for item classification
     listCraftable = {}
     listGatherable = {}
 
     # Classify items into craftable and gatherable
-    for item_name, details in inventory.items():
-        hasChildItems = details.get("items", None)
+    for item_name, details in recursive_inventory.items():
+        hasChildItems = details.get("items", {})
         if hasChildItems:
-            listCraftable[item_name] = item_name
+            listCraftable[item_name] = details
         else:
             listGatherable[item_name] = details
 
     # Sort items within each category
     listCraftable = {key: listCraftable[key] for key in sorted(listCraftable)}
     listGatherable = {key: listGatherable[key] for key in sorted(listGatherable)}
-
-    final_inventory = {}
-    for item_name, details in inventory.items():
-        if item_name in ('Vital Nano Bracer'):
-            debug = True
-        if item_name in ('Vital Nano Bracer', 'Bio-compatible Material', 'Xiphoid Process', 'Steroid Implant'):
-            debug = True
-        add_recipe_details_recursive(item_name, details, inventory, final_inventory)
-        debug = True
-    final_inventory = {key: final_inventory[key] for key in sorted(final_inventory)}
 
     return listCraftable, listGatherable
 
@@ -243,6 +235,7 @@ def main():
                 amount = int(window_values["amount"] or 1)
                 shopping_list = ShoppingList.create_empty()
                 inventory, meta = _load_recipes(window_values["game"])
+                listCraftable, listGatherable = process_inventory(inventory)
 
                 target_items = {}
                 for item_name in items:
@@ -264,6 +257,7 @@ def main():
 
                 shopping_list.target_items.update(target_items)
                 shopping_list.items.update(target_items)
+                del target_items
                 # shopping_list.simplify()
                 shopping_list.simplifyV2()
 

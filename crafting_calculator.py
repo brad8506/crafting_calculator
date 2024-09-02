@@ -17,7 +17,6 @@ from crafting.common import get_crafting_cost
 
 EXITCODE_NO_RECIPES = 1
 
-
 def parse_arguments() -> argparse.Namespace:
     """Parse given command line arguments."""
     parser = argparse.ArgumentParser(
@@ -80,47 +79,6 @@ def setup_logging(debug: bool, verbose: bool) -> None:
         logging.basicConfig(format="%(levelname)s: %(message)s", level=logging.INFO)
     else:
         logging.basicConfig(format="%(levelname)s: %(message)s")
-
-
-@staticmethod
-def move_single_int_to_quantity(data: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Iterate over the dictionary and move a single integer value to a 'quantity' property.
-    Ensures each dictionary has only one integer value.
-
-    Args:
-        data (Dict[str, Any]): The dictionary to process.
-
-    Returns:
-        Dict[str, Any]: The updated dictionary with the integer value moved to 'quantity'.
-    """
-    # if not 'items' in data:
-    #     return data
-
-    updated_data = {}
-
-    for key, value in data.items():
-        if isinstance(value, dict):
-            # Process nested dictionaries
-            updated_data[key] = ShoppingList.move_single_int_to_quantity(value)
-        elif isinstance(value, int):
-            # If the value is an integer, move it to 'quantity'
-            updated_data[key] = {"name": key, "quantity": value}
-        else:
-            # Keep other values as they are
-            updated_data[key] = value
-
-    # Ensure that each dictionary has only one integer value
-    if (
-        len(updated_data) == 1
-        and isinstance(list(updated_data.values())[0], dict)
-        and "quantity" in list(updated_data.values())[0]
-    ):
-        # If there is only one item and it's a dict with a 'quantity' key, return as is
-        return updated_data
-
-    return updated_data
-
 
 def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
     """Load all recipes for a given game."""
@@ -187,10 +145,10 @@ def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
 
 def convert_item(item_name: str, item, inventory: dict):
     if isinstance(item, int):
-        # If item is an integer, convert it to a dictionary with 'quantity' as the key
+        # If item is an integer, convert it to a dictionary.
         item = {'name': item_name}
     if isinstance(item, list):
-        # If item is an integer, convert it to a dictionary with 'quantity' as the key
+        # If item is an integer, convert it to a dictionary.
         item = dict(item)
 
     if 'items' in item and isinstance(item['items'], list):
@@ -217,17 +175,13 @@ def add_recipe_details_recursive(item_name: str, item_details: dict, inventory: 
     """
 
     item_details = convert_item(item_name, item_details, inventory)
-    # if not item_name in parent:
-    #     details['quantity'] = 1
-    #     parent[item_name] = details
-
     # Recurse if there are child items
     child_name = ''
     child_details = {}
     for child_name, child_details in item_details.get('items', {}).items():
         child_details = convert_item(child_name, child_details, inventory)
         child_details_new = add_recipe_details_recursive(child_name, child_details, inventory, item_details['items'])
-        # details[item_name].items[child_name] = {**new_child_details, **child_details}
+        item_details['items'] = child_details_new
     
     final_inventory[item_name] = item_details
 
@@ -254,7 +208,6 @@ def craft_item(item: str, inventory: List[Dict[str, Any]], amount: int) -> Shopp
                 logging.warning("No sell_to_vendor property for %s.", item)
 
     return shopping_list
-
 
 def main() -> None:
     """Break a recipe down into its base components and create a shopping list."""
