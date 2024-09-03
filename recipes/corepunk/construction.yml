@@ -23,6 +23,14 @@
       quantity: 1
       rarity: blue
 
+- name: Atomic Breastplate
+  items:
+    - name: Armor Plate
+      quantity: 2
+      rarity: green
+    - name: Tungsten
+      quantity: 2
+
 - name: Battle Mage Implant
   items:
     - name: Magic Circle
@@ -35,6 +43,14 @@
       quantity: 1
     - name: Neon Mushroom
       quantity: 1
+
+- name: Battle Sleeve
+  items:
+    - name: Steroid Implant
+      quantity: 2
+      rarity: green
+    - name: Petrified Spike
+      quantity: 2
 
 - name: Body Scanner
   items:
@@ -91,6 +107,25 @@
       quantity: 1
       rarity: green
 
+- name: Emerald Cypher
+  items:
+    - name: Thermal Liquidum
+      quantity: 1
+    - name: Concentrated Mana
+      quantity: 1
+      rarity: purple
+    - name: Granulation Tissue
+      quantity: 1
+    - name: Armor Plate
+      quantity: 1
+      rarity: blue
+    - name: Mana Amulet
+      quantity: 1
+      rarity: blue
+    - name: Body Scanner
+      quantity: 1
+      rarity: blue
+
 - name: Flux Strike
   items:
     - name: Rainbow Snail
@@ -123,6 +158,25 @@
     - name: Elastic Membrane
       quantity: 1
 
+- name: Gadgetron Cube
+  items:
+    - name: Thermal Liquidum
+      quantity: 1
+    - name: Mana Amulet
+      quantity: 1
+      rarity: blue
+    - name: Armor Plate
+      quantity: 1
+      rarity: blue
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: blue
+    - name: Beating Heart
+      quantity: 1
+    - name: Concentrated Mana
+      quantity: 1
+      rarity: purple
+
 - name: Hormone Booster
   items:
     - name: Body Scanner
@@ -146,10 +200,56 @@
     Moonstone: 1
     Meteoric Ingot: 1
 
+- name: Magic Cube
+  items:
+    - name: Body Scanner
+      quantity: 1
+      rarity: blue
+    - name: Petrified Spike
+      quantity: 1
+    - name: Isotype-238
+      quantity: 1
+    - name: Magic Circle
+      quantity: 1
+      rarity: blue
+    - name: Thermal Liquidum
+      quantity: 1
+
+- name: Magitech Visor
+  items:
+    - name: Thermal Liquidum
+      quantity: 1
+    - name: Magic Circle
+      quantity: 1
+      rarity: blue
+    - name: Rainbow Snail
+      quantity: 1
+    - name: Beating Heart
+      quantity: 1
+    - name: Armor Plate
+      quantity: 1
+      rarity: blue
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: blue
+
 - name: Mana Amulet
   items:
     Mana Resin: 1
     Treated Wood: 1
+
+- name: Mana Phaser
+  items:
+    - name: Body Scanner
+      quantity: 1
+      rarity: green
+    - name: Mana Amulet
+      quantity: 1
+      rarity: green
+    - name: Isotope-238
+      quantity: 1
+    - name: Mutated Leaf
+      quantity: 1
 
 - name: Matter Shaker
   items:
@@ -219,6 +319,35 @@
     - name: Forest berry
       quantity: 1
 
+- name: Psionic Backpack
+  items:
+    - name: Mana Amulet
+      quantity: 2
+      rarity: green
+    - name: Mutated Leaf
+      quantity: 2
+
+- name: Recovery Device
+  items:
+    - name: Body Scanner
+      quantity: 1
+      rarity: green
+    - name: Armor Plate
+      quantity: 1
+      rarity: green
+    - name: Isotype-238
+      quantity: 1
+    - name: Tungsten
+      quantity: 1
+
+- name: Resonance Armor
+  items:
+    - name: Isotype-238
+      quantity: 2
+    - name: Body Scanner
+      quantity: 2
+      rarity: green
+
 - name: Soldier's Implant
   items:
     - name: Immuno-Stimulating Implant
@@ -232,10 +361,64 @@
     - name: Forest berry
       quantity: 1
 
+- name: Spellbound Dominance
+  items:
+    - name: Steroid Implant
+      quantity: 1
+      rarity: blue
+    - name: Magic Circle
+      quantity: 1
+      rarity: blue
+    - name: Nano Tissue
+      quantity: 1
+      rarity: blue
+    - name: Dragon Shell
+      quantity: 1
+      rarity: purple
+    - name: Blood Honey
+      quantity: 1
+    - name: Rainbow Shell
+      quantity: 1
+
+- name: Stealth Cloak
+  items:
+    - name: Nano Tissue
+      quantity: 2
+      rarity: green
+    - name: Elastic Membrane
+      quantity: 2
+
+- name: Steam Cells Implant
+  items:
+    - name: Immuno-Stimulating Implant
+      quantity: 2
+      rarity: green
+    - name: Forest berry
+      quantity: 2
+
 - name: Steroid Implant
   items:
     Gonad: 1
     Bio-compatible Material: 1
+
+- name: Techfort Shell
+  items:
+    - name: Thermal Liquidum
+      quantity: 1
+    - name: Nano Tissue
+      quantity: 1
+      rarity: blue
+    - name: Armor Plate
+      quantity: 1
+      rarity: blue
+    - name: Body Scanner
+      quantity: 1
+      rarity: blue
+    - name: Dragon Shell
+      quantity: 1
+      rarity: purple
+    - name: Granulation Tissue
+      quantity: 1
 
 - name: Vital Nano Bracer
   items:
@@ -261,4 +444,17 @@
     - name: Mutated Leaf
       quantity: 1
     - name: Forest berry
+      quantity: 1
+
+- name: Warlock's Lamp
+  items:
+    - name: Magic Circle
+      quantity: 1
+      rarity: green
+    - name: Mana Amulet
+      quantity: 1
+      rarity: green
+    - name: Neon Mushroom
+      quantity: 1
+    - name: Mutated Leaf
       quantity: 1
