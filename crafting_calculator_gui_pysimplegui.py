@@ -173,7 +173,6 @@ def get_gatherable_list(listGatherable) -> ShoppingList:
     gatherable_list.items = listGatherable
     return gatherable_list
 
-
 def main():
     dir_path = os.path.dirname(os.path.realpath(__file__))
     logging.debug(dir_path)

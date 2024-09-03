@@ -111,10 +111,45 @@
                 }
             }
         </script>
+
+        <script>
+            // Load games on page load
+            window.onload = function() {
+                fetch('/discover_games')
+                    .then(response => response.json())
+                    .then(games => {
+                        const select = document.getElementById('game-select');
+                        games.forEach(game => {
+                            const option = document.createElement('option');
+                            option.value = game;
+                            option.text = game;
+                            select.add(option);
+                        });
+                    })
+                    .catch(error => console.error('Error discovering games:', error));
+            };
+
+            // Select a game and update data.json
+            function selectGame() {
+                const selectedGame = document.getElementById('game-select').value;
+                fetch(`/select_game?game=${encodeURIComponent(selectedGame)}`)
+                    .then(() => {
+                        console.log('Game selected and data.json updated');
+                        // Optionally, reload the table content here
+                    })
+                    .catch(error => console.error('Error selecting game:', error));
+            }
+        </script>
     </head>
     <body>
         <h1>Crafting Calculator GUI Live</h1>
-        <button onclick="calculateTableList()">Calculate</button>
+        
+        <label for="game-select">Select a game:</label>
+        <select id="game-select"></select>
+        <button onclick="selectGame(); calculateTableList();">Load Recipes</button>
+
+        <!-- <button onclick="calculateQuantities()">Calculate</button> -->
+
         <table>
             <thead>
                 <tr>

@@ -139,6 +139,41 @@
             }
         }
     },
+    "Atomic Breastplate": {
+        "name": "Atomic Breastplate",
+        "quantity": 1,
+        "items": {
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 2,
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Tungsten": {
+                "name": "Tungsten",
+                "quantity": 2,
+                "rarity": "blue",
+                "source": "Metal Vein"
+            }
+        }
+    },
     "Battle Mage Implant": {
         "name": "Battle Mage Implant",
         "quantity": 1,
@@ -202,6 +237,43 @@
                 "quantity": 1,
                 "rarity": "blue",
                 "source": "Magic Tree"
+            }
+        }
+    },
+    "Battle Sleeve": {
+        "name": "Battle Sleeve",
+        "quantity": 1,
+        "items": {
+            "Steroid Implant": {
+                "name": "Steroid Implant",
+                "quantity": 2,
+                "items": {
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Petrified Spike": {
+                "name": "Petrified Spike",
+                "quantity": 2,
+                "rarity": "blue",
+                "source": "Thick Bush"
             }
         }
     },
@@ -539,6 +611,97 @@
             }
         }
     },
+    "Emerald Cypher": {
+        "name": "Emerald Cypher",
+        "quantity": 1,
+        "items": {
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Metal Vein"
+            },
+            "Concentrated Mana": {
+                "name": "Concentrated Mana",
+                "quantity": 1,
+                "rarity": "purple"
+            },
+            "Granulation Tissue": {
+                "name": "Granulation Tissue",
+                "quantity": 1,
+                "rarity": "purple"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 1,
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic Tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    }
+                },
+                "rarity": "blue"
+            }
+        }
+    },
     "Flux Strike": {
         "name": "Flux Strike",
         "quantity": 1,
@@ -692,6 +855,100 @@
                 "quantity": 1,
                 "rarity": "blue",
                 "source": "wolf"
+            }
+        }
+    },
+    "Gadgetron Cube": {
+        "name": "Gadgetron Cube",
+        "quantity": 1,
+        "items": {
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Metal Vein"
+            },
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 1,
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic Tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 1,
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Beating Heart": {
+                "name": "Beating Heart",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "wolf"
+            },
+            "Concentrated Mana": {
+                "name": "Concentrated Mana",
+                "quantity": 1,
+                "rarity": "purple"
             }
         }
     },
@@ -850,6 +1107,169 @@
             }
         }
     },
+    "Magic Cube": {
+        "name": "Magic Cube",
+        "quantity": 1,
+        "items": {
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Petrified Spike": {
+                "name": "Petrified Spike",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            },
+            "Isotype-238": {
+                "name": "Isotype-238",
+                "quantity": 1
+            },
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Metal Vein"
+            }
+        }
+    },
+    "Magitech Visor": {
+        "name": "Magitech Visor",
+        "quantity": 1,
+        "items": {
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Metal Vein"
+            },
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Rainbow Snail": {
+                "name": "Rainbow Snail",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Thick Bush"
+            },
+            "Beating Heart": {
+                "name": "Beating Heart",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "wolf"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 1,
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            }
+        }
+    },
     "Mana Amulet": {
         "name": "Mana Amulet",
         "quantity": 1,
@@ -869,6 +1289,70 @@
                         "quantity": 3
                     }
                 }
+            }
+        }
+    },
+    "Mana Phaser": {
+        "name": "Mana Phaser",
+        "quantity": 1,
+        "items": {
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    }
+                },
+                "rarity": "green"
+            },
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 1,
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic Tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Isotope-238": {
+                "name": "Isotope-238",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal Vein"
+            },
+            "Mutated Leaf": {
+                "name": "Mutated Leaf",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic Tree"
             }
         }
     },
@@ -1303,6 +1787,136 @@
             }
         }
     },
+    "Psionic Backpack": {
+        "name": "Psionic Backpack",
+        "quantity": 1,
+        "items": {
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 2,
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic Tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Mutated Leaf": {
+                "name": "Mutated Leaf",
+                "quantity": 2,
+                "rarity": "blue",
+                "source": "Magic Tree"
+            }
+        }
+    },
+    "Recovery Device": {
+        "name": "Recovery Device",
+        "quantity": 1,
+        "items": {
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    }
+                },
+                "rarity": "green"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Isotype-238": {
+                "name": "Isotype-238",
+                "quantity": 1
+            },
+            "Tungsten": {
+                "name": "Tungsten",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal Vein"
+            }
+        }
+    },
+    "Resonance Armor": {
+        "name": "Resonance Armor",
+        "quantity": 1,
+        "items": {
+            "Isotype-238": {
+                "name": "Isotype-238",
+                "quantity": 2
+            },
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 2,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    }
+                },
+                "rarity": "green"
+            }
+        }
+    },
     "Scar Rune": {
         "name": "Scar Rune",
         "quantity": 1,
@@ -1412,6 +2026,99 @@
             }
         }
     },
+    "Spellbound Dominance": {
+        "name": "Spellbound Dominance",
+        "quantity": 1,
+        "items": {
+            "Steroid Implant": {
+                "name": "Steroid Implant",
+                "quantity": 1,
+                "items": {
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 1,
+                "items": {
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic Tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Dragon Shell": {
+                "name": "Dragon Shell",
+                "quantity": 1,
+                "rarity": "purple"
+            },
+            "Blood Honey": {
+                "name": "Blood Honey",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Magic Tree"
+            },
+            "Rainbow Shell": {
+                "name": "Rainbow Shell",
+                "quantity": 1
+            }
+        }
+    },
     "Star Energy": {
         "name": "Star Energy",
         "quantity": 1,
@@ -1422,6 +2129,79 @@
             }
         },
         "source": "Metal Vein"
+    },
+    "Stealth Cloak": {
+        "name": "Stealth Cloak",
+        "quantity": 1,
+        "items": {
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 2,
+                "items": {
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic Tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 2,
+                "rarity": "blue",
+                "source": "wolf"
+            }
+        }
+    },
+    "Steam Cells Implant": {
+        "name": "Steam Cells Implant",
+        "quantity": 1,
+        "items": {
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 2,
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Forest berry": {
+                "name": "Forest berry",
+                "quantity": 2,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            }
+        }
     },
     "Steroid Implant": {
         "name": "Steroid Implant",
@@ -1454,6 +2234,98 @@
             "Jute": {
                 "name": "Jute",
                 "quantity": 3
+            }
+        }
+    },
+    "Techfort Shell": {
+        "name": "Techfort Shell",
+        "quantity": 1,
+        "items": {
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Metal Vein"
+            },
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 1,
+                "items": {
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic Tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Dragon Shell": {
+                "name": "Dragon Shell",
+                "quantity": 1,
+                "rarity": "purple"
+            },
+            "Granulation Tissue": {
+                "name": "Granulation Tissue",
+                "quantity": 1,
+                "rarity": "purple"
             }
         }
     },
@@ -1607,6 +2479,70 @@
                 "quantity": 1,
                 "rarity": "blue",
                 "source": "Thick Bush"
+            }
+        }
+    },
+    "Warlock's Lamp": {
+        "name": "Warlock's Lamp",
+        "quantity": 1,
+        "items": {
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal Vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 1,
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic Tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Neon Mushroom": {
+                "name": "Neon Mushroom",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic Tree"
+            },
+            "Mutated Leaf": {
+                "name": "Mutated Leaf",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic Tree"
             }
         }
     }
