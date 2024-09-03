@@ -10,11 +10,24 @@
             th, td { text-align: left; padding: 8px 8px 8px 0; }
             /* tr:nth-child(even) { background-color: #f2f2f2; } */
             .expandable-row { cursor: pointer; }
+            /* .sub-table { width: 500px; margin-left: 20px; } */
             .sub-table { margin-left: 20px; }
             .sub-table-row > td { overflow: hidden; }
             .sub-table .table-header-row { display: none; }
             tr.sub-table-row { border-left: 1px solid #ccc; }
             tr.depth-0 { border-top: 1px solid #ccc; }
+
+            /* .sub-table.depth-1 { width: 500px; }
+            .sub-table.depth-2 { width: 490px; } */
+
+            td.item-name { display: inline-block; }
+            td.quantity { display: inline-block; }
+            .sub-table .quantity input { border: none; }
+            td.output-wrapper textarea { width: 100%; }
+            
+            /* tr.depth-0 .item-name { width: 400px; }
+            tr.depth-1 .item-name { width: 280px; }
+            
             tr.depth-0 .quantity { width: 100px; }
             tr.depth-1 .quantity { width: 110px; }
             tr.depth-2 .quantity { width: 120px; }
@@ -23,8 +36,11 @@
             tr.depth-5 .quantity { width: 150px; }
             tr.depth-6 .quantity { width: 160px; }
             tr.depth-7 .quantity { width: 170px; }
-            tr.depth-8 .quantity { width: 180px; }
-            .width20 { width: 30%; }
+            tr.depth-8 .quantity { width: 180px; } */
+            
+            /* .output-wrapper { width: 30%; } */
+            /* .output { width: 100%; } */
+            /* .width30 { width: 400px; } */
             .no-expand td:first-child { padding-left: 2rem; }
             /* .rarity-green td:first-child { color: white; background-color: green; }
             .rarity-blue td:first-child { color: white; background-color: blue; }
@@ -61,28 +77,35 @@
                         // Define indentation and classes based on item properties
                         const indent = ' '.repeat(depth * 4);  // Indentation for nested rows
                         const rarityClass = item.rarity ? `rarity-${item.rarity.toLowerCase()}` : '';  // Class for rarity
-                        const depthClass = `depth-${depth}`;  // Class for depth
+                        const depthClass = `depth-${depth}`;
+                        const subTableDepthClass = `depth-${depth + 1}`;
+                        const source = item.source || '';
+                        const wiki = item.wiki || '';
 
                         // Start building the row HTML
                         let rowHtml = `<tr class="${item.items ? 'expandable-row' : 'no-expand'} ${rarityClass} ${depthClass}" style="margin-left: ${indent};">`;
 
                         // Add item name cell with optional expand/collapse functionality
                         rowHtml += item.items
-                            ? `<td class="item-name parent width20" onclick="toggleSubTable(this)">
-                                    <span class="expand-icon">+</span>${item.name}
-                            </td>`
-                            : `<td class="item-name ${rarityClass} width20">${item.name}</td>`;
+                            ? `<td class="item-name parent width30" onclick="toggleSubTable(this)" data-source="${source}" data-wiki="${wiki}">
+                                   <span class="expand-icon">+</span>${item.name}
+                               </td>`
+                            : `<td class="item-name ${rarityClass} width30" data-source="${source}" data-wiki="${wiki}">${item.name}</td>`;
+
+                        // Check if depth > 0 to conditionally add disabled attribute
+                        const disabledAttr = depth > 0 ? 'disabled="disabled"' : '';
 
                         // Add quantity cell with input field
                         rowHtml += `<td class="quantity">
                                         <input type="text" size="4" 
+                                            ${disabledAttr}
                                             data-quantity-original="${item.quantity || ''}" 
                                             value="${item.quantity || ''}"/>
                                 </td>`;
 
                         // Add textarea cell if at the top level (depth 0)
                         if (depth === 0) {
-                            rowHtml += `<td><textarea class="output" rows="1" cols="50"></textarea></td>`;
+                            rowHtml += `<td class="output-wrapper"><textarea class="output" rows="1" cols="50"></textarea></td>`;
                         }
 
                         // Close the row HTML
@@ -92,7 +115,7 @@
                         if (item.items) {
                             rowHtml += `<tr class="sub-table-row collapse" style="display: none;">
                                             <td colspan="3"> <!-- Adjusted colspan to 3 to include textarea -->
-                                                <table class="sub-table">
+                                                <table class="sub-table ${subTableDepthClass}">
                                                     <tr class="table-header-row">
                                                         <th class="sub-item">Sub-Item</th>
                                                         <th class="quantity-required">Quantity Required</th>
@@ -129,6 +152,7 @@
                 const icon = element.querySelector('.expand-icon');
                 const row = element.closest('tr');
                 const subTableRow = row.nextElementSibling;
+                const outputWrapperTextarea = row.querySelector('.output-wrapper textarea');
 
                 if (subTableRow.style.display === 'none') {
                     subTableRow.style.display = '';
@@ -136,6 +160,11 @@
                 } else {
                     subTableRow.style.display = 'none';
                     icon.textContent = '+';
+                }
+
+                // Check if the textarea exists and remove its style attribute
+                if (outputWrapperTextarea) {
+                    outputWrapperTextarea.removeAttribute('style');
                 }
             }
         </script>
@@ -157,16 +186,6 @@
                     .catch(error => console.error('Error discovering games:', error));
             };
 
-            // Select a game and update data.json
-            // function selectGame() {
-            //     const selectedGame = document.getElementById('game-select').value;
-            //     fetch(`/select_game?game=${encodeURIComponent(selectedGame)}`)
-            //         .then(() => {
-            //             console.log('Game selected and data.json updated');
-            //             // Optionally, reload the table content here
-            //         })
-            //         .catch(error => console.error('Error selecting game:', error));
-            // }
             async function selectGame() {
                 const selectedGame = document.getElementById('game-select').value;
                 
@@ -236,6 +255,7 @@
                     subItems.forEach(subItemRow => {
                         const subItemNameElement = subItemRow.querySelector('.item-name');
                         let subItemName = subItemNameElement ? subItemNameElement.textContent.trim() : 'Unknown Item';
+
                         // Remove leading '+' or '-' character if present
                         subItemName = subItemName.replace(/^[+-]/, '').trim();
                         
@@ -249,8 +269,9 @@
                         } else if (subItemRow.classList.contains('no-expand')) {
                             // Add to gather items group
                             const rarity = subItemRow.classList.contains('rarity-green') ? 'rarity: green' : ''; // Example for rarity, adjust as needed
-                            const source = 'source: Metal Vein'; // Example, adjust as needed
-                            gatherItems.push(` - ${subItemName}: ${adjustedQuantity}${rarity ? ', ' + rarity : ''}${source ? ', ' + source : ''}`);
+                            const source = subItemNameElement.dataset.source || ''
+                            const wiki = subItemNameElement.dataset.wiki || ''
+                            gatherItems.push(` - ${subItemName}: ${adjustedQuantity}${rarity ? ', ' + rarity : ''}${source ? ', source: ' + source : ''}${wiki ? ', wiki: ' + wiki : ''}`);
                         }
                     });
 
@@ -258,12 +279,18 @@
                     gatherItems.sort();
                     craftItems.sort();
 
+                    let toCraftItem = row.querySelector('.item-name').textContent.trim()
+                    // Remove leading '+' or '-' character if present.
+                    toCraftItem = toCraftItem.replace(/^[+-]/, '').trim();
+
+                    const toCraftQuantity = row.querySelector('.quantity input').value;
+                    const toCraftText = `To craft:\n${toCraftItem}: ${toCraftQuantity}`;
                     const gatherItemsText = `Gather these items:\n${gatherItems.join('\n')}`;
                     const craftItemsText = `Craft these intermediate items:\n${craftItems.join('\n')}`;
 
                     const outputTextarea = row.querySelector('.output');
                     if (outputTextarea) {
-                        outputTextarea.value = `${gatherItemsText}\n\n${craftItemsText}`;
+                        outputTextarea.value = `${toCraftText}\n\n${gatherItemsText}\n\n${craftItemsText}`;
                         // Auto-size the textarea
                         outputTextarea.style.height = 'auto'; // Reset height
                         outputTextarea.style.height = `${outputTextarea.scrollHeight}px`; // Set height based on content
@@ -287,7 +314,6 @@
                 <tr>
                     <th>Craftable Items</th>
                     <th>Quantity Required</th>
-                    <th>Output</th>
                 </tr>
             </thead>
             <tbody id="js-data-table-list">
