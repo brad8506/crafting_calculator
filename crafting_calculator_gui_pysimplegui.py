@@ -115,56 +115,6 @@ def windowPySimpleGui():
     ]
     return sg.Window("Crafting Calculator", layout, location=(500, 200), finalize=True)
 
-
-def process_inventory(inventory):
-    """
-    Process the inventory to classify items into craftable and gatherable lists,
-    and return the combined and sorted lists.
-
-    Args:
-        inventory (dict): The inventory dictionary.
-
-    Returns:
-        tuple: A tuple containing:
-            - combined_list (dict): Combined list of craftable and gatherable items with headers.
-            - labels (list): List of item labels.
-    """
-    
-    recursive_inventory = {}
-    for item_name, details in inventory.items():
-        if item_name in ('Armor Plate'):
-            debug = True
-        if item_name in ('Plasma Launcher'):
-            debug = True
-        if item_name in ('Steroid Implant'):
-            debug = True
-        if item_name in ('Vital Nano Bracer'):
-            debug = True
-        if item_name in ('Vital Nano Bracer', 'Bio-compatible Material', 'Xiphoid Process', 'Steroid Implant'):
-            debug = True
-        add_recipe_details_recursive(item_name, details, inventory, recursive_inventory)
-        debug = True
-    recursive_inventory = {key: recursive_inventory[key] for key in sorted(recursive_inventory)}
-
-
-    # Initialize dictionaries for item classification
-    listCraftable = {}
-    listGatherable = {}
-
-    # Classify items into craftable and gatherable
-    for item_name, details in recursive_inventory.items():
-        hasChildItems = details.get("items", {})
-        if hasChildItems:
-            listCraftable[item_name] = details
-        else:
-            listGatherable[item_name] = details
-
-    # Sort items within each category
-    listCraftable = {key: listCraftable[key] for key in sorted(listCraftable)}
-    listGatherable = {key: listGatherable[key] for key in sorted(listGatherable)}
-
-    return listCraftable, listGatherable
-
 def get_gatherable_list(listGatherable) -> ShoppingList:
     gatherable_list = ShoppingList.create_empty()
     gatherable_list.inventory = listGatherable

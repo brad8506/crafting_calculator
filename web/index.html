@@ -24,6 +24,7 @@
             tr.depth-6 .quantity { width: 160px; }
             tr.depth-7 .quantity { width: 170px; }
             tr.depth-8 .quantity { width: 180px; }
+            .width20 { width: 30%; }
             .no-expand td:first-child { padding-left: 2rem; }
             /* .rarity-green td:first-child { color: white; background-color: green; }
             .rarity-blue td:first-child { color: white; background-color: blue; }
@@ -45,57 +46,84 @@
             }
         </style>
         <script>
-            function calculateTableList() {
-                fetch('data.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        const tableBody = document.getElementById('js-data-table-list');
-                        tableBody.innerHTML = '';
+            async function calculateTableList() {
+                try {
+                    const response = await fetch('data.json');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
 
-                        function createTableRow(item, depth = 0) {
-                            let rows = '';
-                            const indent = ' '.repeat(depth * 4);
-                            const rarityClass = item.rarity ? 'rarity-' + item.rarity.toLowerCase() : '';
-                            const depthClass = `depth-${depth}`;
+                    const tableBody = document.getElementById('js-data-table-list');
+                    tableBody.innerHTML = '';
 
-                            rows += `<tr class="${item.items ? 'expandable-row' : 'no-expand'} ${rarityClass} ${depthClass}" style="margin-left: ${indent};">
-                                ${item.items ? `<td class="parent width20" onclick="toggleSubTable(this)">
+                    function createTableRow(item, depth = 0) {
+                        // Define indentation and classes based on item properties
+                        const indent = ' '.repeat(depth * 4);  // Indentation for nested rows
+                        const rarityClass = item.rarity ? `rarity-${item.rarity.toLowerCase()}` : '';  // Class for rarity
+                        const depthClass = `depth-${depth}`;  // Class for depth
+
+                        // Start building the row HTML
+                        let rowHtml = `<tr class="${item.items ? 'expandable-row' : 'no-expand'} ${rarityClass} ${depthClass}" style="margin-left: ${indent};">`;
+
+                        // Add item name cell with optional expand/collapse functionality
+                        rowHtml += item.items
+                            ? `<td class="item-name parent width20" onclick="toggleSubTable(this)">
                                     <span class="expand-icon">+</span>${item.name}
-                                </td>` : `<td class="${rarityClass} width20">${item.name}</td>`}
-                                <td class="quantity" data-quantity-original="${item.quantity || ''}"><input type="text" size="4" value="${item.quantity || ''}"/></td>`;
+                            </td>`
+                            : `<td class="item-name ${rarityClass} width20">${item.name}</td>`;
 
-                            if (depth === 0) {
-                                rows += `<td class=""><textarea rows="1" cols="50" placeholder="Output all the recipe info here..."></textarea></td>`;
-                            }
+                        // Add quantity cell with input field
+                        rowHtml += `<td class="quantity">
+                                        <input type="text" size="4" 
+                                            data-quantity-original="${item.quantity || ''}" 
+                                            value="${item.quantity || ''}"/>
+                                </td>`;
 
-                            rows += `</tr>`;
-
-                            if (item.items) {
-                                rows += `<tr class="sub-table-row collapse" style="display: none;">
-                                <td colspan="2">
-                                        <table class="sub-table">
-                                            <tr class="table-header-row">
-                                                <th class=sub-item>Sub-Item</th>
-                                                <th class=quantity-required>Quantity Required</th>`;
-
-                                rows += `</tr>`;
-                                for (const subItem in item.items) {
-                                    rows += createTableRow(item.items[subItem], depth + 1);
-                                }
-                                rows += `</table>
-                                    </td>
-                                </tr>`;
-                            }
-
-                            return rows;
+                        // Add textarea cell if at the top level (depth 0)
+                        if (depth === 0) {
+                            rowHtml += `<td><textarea class="output" rows="1" cols="50"></textarea></td>`;
                         }
 
-                        for (const key in data) {
-                            tableBody.innerHTML += createTableRow(data[key]);
+                        // Close the row HTML
+                        rowHtml += `</tr>`;
+
+                        // Check if the item has sub-items and generate the sub-table row if needed
+                        if (item.items) {
+                            rowHtml += `<tr class="sub-table-row collapse" style="display: none;">
+                                            <td colspan="3"> <!-- Adjusted colspan to 3 to include textarea -->
+                                                <table class="sub-table">
+                                                    <tr class="table-header-row">
+                                                        <th class="sub-item">Sub-Item</th>
+                                                        <th class="quantity-required">Quantity Required</th>
+                                                    </tr>`;
+
+                            // Recursively create rows for sub-items
+                            for (const subItem in item.items) {
+                                rowHtml += createTableRow(item.items[subItem], depth + 1);
+                            }
+
+                            // Close the sub-table and row
+                            rowHtml += `</table>
+                                        </td>
+                                    </tr>`;
                         }
-                    })
-                    .catch(error => console.error('Error fetching data:', error));
+
+                        return rowHtml;
+                    }
+
+                    // Generate table rows and append to the table body
+                    for (const key in data) {
+                        tableBody.innerHTML += createTableRow(data[key]);
+                    }
+
+                    // Optionally, reattach event listeners if needed
+                    attachEventListeners();
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
             }
+
 
             function toggleSubTable(element) {
                 const icon = element.querySelector('.expand-icon');
@@ -113,7 +141,7 @@
         </script>
 
         <script>
-            // Load games on page load
+            // Load games on page load.
             window.onload = function() {
                 fetch('/discover_games')
                     .then(response => response.json())
@@ -130,15 +158,119 @@
             };
 
             // Select a game and update data.json
-            function selectGame() {
+            // function selectGame() {
+            //     const selectedGame = document.getElementById('game-select').value;
+            //     fetch(`/select_game?game=${encodeURIComponent(selectedGame)}`)
+            //         .then(() => {
+            //             console.log('Game selected and data.json updated');
+            //             // Optionally, reload the table content here
+            //         })
+            //         .catch(error => console.error('Error selecting game:', error));
+            // }
+            async function selectGame() {
                 const selectedGame = document.getElementById('game-select').value;
-                fetch(`/select_game?game=${encodeURIComponent(selectedGame)}`)
-                    .then(() => {
-                        console.log('Game selected and data.json updated');
-                        // Optionally, reload the table content here
-                    })
-                    .catch(error => console.error('Error selecting game:', error));
+                
+                try {
+                    // Fetch the selected game data
+                    const response = await fetch(`/select_game?game=${encodeURIComponent(selectedGame)}`);
+                    
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    
+                    console.log('Game selected and data.json updated');
+                    
+                    // Optionally, reload or update the table content
+                    await calculateTableList(); // Ensure this function returns a promise or is adjusted to work asynchronously
+
+                    // Attach event listeners after updating the table
+                    attachEventListeners();
+                } catch (error) {
+                    console.error('Error selecting game:', error);
+                }
             }
+        </script>
+
+        <script>
+            function loadAndAttachListeners() {
+                selectGame().then(() => {
+                    return calculateTableList();
+                }).then(() => {
+                    attachEventListeners();
+                });
+            }
+
+            function attachEventListeners() {
+                const quantityInputs = document.querySelectorAll('.quantity input');
+                
+                // Remove any previously attached event listeners (optional, but good practice)
+                quantityInputs.forEach(input => {
+                    input.removeEventListener('focus', updateOutput);
+                    input.removeEventListener('change', updateOutput);
+                });
+                
+                // Attach new event listeners
+                quantityInputs.forEach(input => {
+                    input.addEventListener('focus', updateOutput);
+                    input.addEventListener('change', updateOutput);
+                });
+            }
+
+            function updateOutput(event) {
+                const input = event.target;
+                const row = input.closest('tr');
+                const subTableRow = row.nextElementSibling;
+
+                if (subTableRow && subTableRow.classList.contains('sub-table-row')) {
+                    const subTable = subTableRow.querySelector('.sub-table');
+                    const subItems = subTable.querySelectorAll('tr.expandable-row, tr.no-expand');
+
+                    // Retrieve the original quantity from the input field's parent row
+                    const originalQuantity = parseInt(row.querySelector('.quantity').getAttribute('data-quantity-original') || 1);
+                    const newQuantity = parseInt(input.value || 1);
+                    const multiplicationFactor = newQuantity / originalQuantity;
+
+                    let gatherItems = [];
+                    let craftItems = [];
+
+                    subItems.forEach(subItemRow => {
+                        const subItemNameElement = subItemRow.querySelector('.item-name');
+                        let subItemName = subItemNameElement ? subItemNameElement.textContent.trim() : 'Unknown Item';
+                        // Remove leading '+' or '-' character if present
+                        subItemName = subItemName.replace(/^[+-]/, '').trim();
+                        
+                        const subItemQuantityInput = subItemRow.querySelector('.quantity input');
+                        const subItemOriginalQuantity = parseInt(subItemQuantityInput.getAttribute('data-quantity-original') || 1);
+                        const adjustedQuantity = subItemOriginalQuantity * multiplicationFactor; // Adjust quantity based on the factor
+
+                        if (subItemRow.classList.contains('expandable-row')) {
+                            // Add to craft items group
+                            craftItems.push(` - ${subItemName}: ${adjustedQuantity}`);
+                        } else if (subItemRow.classList.contains('no-expand')) {
+                            // Add to gather items group
+                            const rarity = subItemRow.classList.contains('rarity-green') ? 'rarity: green' : ''; // Example for rarity, adjust as needed
+                            const source = 'source: Metal Vein'; // Example, adjust as needed
+                            gatherItems.push(` - ${subItemName}: ${adjustedQuantity}${rarity ? ', ' + rarity : ''}${source ? ', ' + source : ''}`);
+                        }
+                    });
+
+                    // Sort the items alphabetically
+                    gatherItems.sort();
+                    craftItems.sort();
+
+                    const gatherItemsText = `Gather these items:\n${gatherItems.join('\n')}`;
+                    const craftItemsText = `Craft these intermediate items:\n${craftItems.join('\n')}`;
+
+                    const outputTextarea = row.querySelector('.output');
+                    if (outputTextarea) {
+                        outputTextarea.value = `${gatherItemsText}\n\n${craftItemsText}`;
+                        // Auto-size the textarea
+                        outputTextarea.style.height = 'auto'; // Reset height
+                        outputTextarea.style.height = `${outputTextarea.scrollHeight}px`; // Set height based on content
+                    }
+                }
+            }
+
         </script>
     </head>
     <body>
@@ -146,7 +278,7 @@
         
         <label for="game-select">Select a game:</label>
         <select id="game-select"></select>
-        <button onclick="selectGame(); calculateTableList();">Load Recipes</button>
+        <button onclick="loadAndAttachListeners();">Load Recipes</button>
 
         <!-- <button onclick="calculateQuantities()">Calculate</button> -->
 
