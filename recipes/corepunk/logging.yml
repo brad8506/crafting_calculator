@@ -4,12 +4,19 @@
 
 - name: Amber
   rarity: green
-  source: Magic Tree
+  source: Magic tree
   wiki: https://corepunk.wiki/w/Amber
 
 - name: Blood Honey
   rarity: purple
-  source: Magic Tree
+  source: Magic tree
+
+- name: Giant Feather
+  rarity: green
+  source: Magic tree
+
+- name: Heartwood
+  source: Timberheart tree
 
 - name: Jewellery Wood
   items:
@@ -17,19 +24,22 @@
 
 - name: Mana Resin
   rarity: green
-  source: Magic Tree
+  source: Magic tree
 
 - name: Mutated Leaf
   rarity: blue
-  source: Magic Tree
+  source: Magic tree
 
 - name: Neon Mushroom
   rarity: blue
-  source: Magic Tree
+  source: Magic tree
 
 - name: Silica
   items:
     Stone Bark: 3
+
+- name: Stone Bark
+  source: Petrified tree
 
 - name: Tissue Paper
   items:
@@ -37,8 +47,14 @@
 
 - name: Transparent Leaf
   rarity: green
-  source: Magic Tree
+  source: Magic tree
 
 - name: Treated Wood
   items:
     Heartwood: 3
+
+- name: Tree Root
+  source: Petrified tree
+
+- name: Wood
+  source: Timberheart tree

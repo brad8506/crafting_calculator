@@ -2,9 +2,21 @@
 # https://corepunk.pro/professions/butchery
 # https://corepunkers.com/professions
 
+- name: Adrenaline Bladder
+  source: boar
+  rarity: green
+
+- name: Beating Heart
+  rarity: purple
+  source: wolf
+
 - name: Bio-compatible Material
   items:
     Xiphoid Process: 3
+
+- name: Blue Shell
+  source: turtle
+  rarity: blue
 
 - name: Cosmetic Fat
   source: boar
@@ -15,19 +27,35 @@
 
 - name: Elastic Membrane
   rarity: blue
-  source: Wolf
+  source: wolf
+
+- name: Eye of the Beast
+  rarity: green
+  source: wolf
+
+- name: Gonad
+  source: boar
+  rarity: green
 
 - name: Granulation Tissue
   rarity: purple
 
+- name: Green Shell
+  source: turtle
+  rarity: blue
+
 - name: Jewellery Bone
-  source: Turtle
+  source: turtle
   items:
     Large Bone: 3
 
 - name: Leather
   items:
     Wolf Skin: 2
+
+- name: Living Blood
+  source: turtle
+  rarity: green
 
 - name: Nerve Endings
   items:
@@ -36,6 +64,9 @@
 - name: Neurotoxin
   items:
     Poisonous Gland: 3
+
+- name: Poisonous Gland
+  rarity: blue
 
 - name: Wolf Skin
   source: wolf

@@ -1,3 +1,6 @@
+import socketserver
+import webbrowser
+import threading
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 from pathlib import Path
@@ -75,8 +78,22 @@ class MyRequestHandler(SimpleHTTPRequestHandler):
         return (inventory, meta)
 
 # Define the server address and port
-server_address = ('localhost', 8000)
-httpd = HTTPServer(server_address, MyRequestHandler)
+PORT = 8000
+server_address = ('localhost', PORT)
 
-print(f"Serving on http://{server_address[0]}:{server_address[1]}")
-httpd.serve_forever()
+def start_server():
+    httpd = socketserver.TCPServer(server_address, MyRequestHandler)
+    print(f"Serving on http://{server_address[0]}:{PORT}")
+    httpd.serve_forever()
+
+def open_browser():
+    # Open the default web browser to the server URL
+    webbrowser.open(f'http://{server_address[0]}:{PORT}')
+
+if __name__ == "__main__":
+    # Start the server in a new thread
+    server_thread = threading.Thread(target=start_server)
+    server_thread.start()
+    
+    # Open the browser
+    open_browser()
