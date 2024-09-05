@@ -2,6 +2,33 @@
 # https://corepunk.pro/professions/weaponsmithing
 # https://corepunkers.com/professions
 
+- name: Apocalyptic Scrap
+  items:
+    - name: Treated Wood
+      quantity: 2
+    - name: Strong Thread
+      quantity: 1
+    - name: Leather
+      quantity: 1
+    - name: Apocalyptic Sharp
+      quantity: 1
+      rarity: green
+    - name: Giant Feather
+      quantity: 1
+    - name: Petrified Spike
+      quantity: 1
+
+- name: Apocalyptic Sharp
+  items:
+    - name: Treated Wood
+      quantity: 2
+    - name: Strong Thread
+      quantity: 1
+    - name: Leather
+      quantity: 1
+    - name: Giant Feather
+      quantity: 1
+
 - name: Assault Launcher
   buy_from_vendor: 139.66 # Buy from Ratchet
   sell_to_vendor: 10 # Buy from Ratchet
@@ -18,3 +45,7 @@
     Amber: 1
 
 - name: Welded Patterned
+  items:
+    Iron Ingot: 3
+    Ruby: 1
+  wiki: https://corepunkers.com/i/weapon-welded-patterned-knuckle

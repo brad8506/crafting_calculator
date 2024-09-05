@@ -2,18 +2,20 @@ from cx_Freeze import setup, Executable
 import os
 
 # Directory containing your assets
-web_dir = os.path.join(os.path.dirname(__file__), 'web')
-recipes_dir = os.path.join(os.path.dirname(__file__), 'recipes')
+web_dir = os.path.join(os.path.dirname(__file__), "web")
+recipes_dir = os.path.join(os.path.dirname(__file__), "recipes")
+js_dir = os.path.join(os.path.dirname(__file__), "js")
 
 # Options for cx_Freeze
 build_exe_options = {
-    'packages': [],  # Include any additional packages you might need
-    'excludes': [],
-    'include_files': [
-        (web_dir, 'web'),   # Include the 'web' folder
-        (recipes_dir, 'recipes')  # Include the 'recipes' folder
+    "packages": [],  # Include any additional packages you might need
+    "excludes": [],
+    "include_files": [
+        (web_dir, "web"),  # Include the 'web' folder
+        (recipes_dir, "recipes"),  # Include the 'recipes' folder
+        (js_dir, "js"),  # Include the 'recipes' folder
     ],
-    'optimize': 2
+    "optimize": 2,
 }
 
 # Base 'Win32GUI' is used for Windows applications without a console

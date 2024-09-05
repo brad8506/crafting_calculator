@@ -14,7 +14,7 @@
   source: Metal vein
 
 - name: Iron Ore
-  source: Meteoric vein
+  source: Celestial vein
 
 - name: Iron Ingot
   items:
@@ -23,6 +23,9 @@
 - name: Isotope-238
   rarity: blue
   source: Metal vein
+
+- name: Meteoric Ore
+  source: Celestial vein
 
 - name: Meteoric Ingot
   items:

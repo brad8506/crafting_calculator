@@ -90,6 +90,25 @@
             "Welded Patterned": {
                 "name": "Welded Patterned",
                 "quantity": 1,
+                "items": {
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 3,
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
+                    },
+                    "Ruby": {
+                        "name": "Ruby",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
                 "rarity": "blue"
             }
         }
@@ -2574,6 +2593,29 @@
                 "quantity": 1,
                 "rarity": "blue",
                 "source": "Magic tree"
+            }
+        }
+    },
+    "Welded Patterned": {
+        "name": "Welded Patterned",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 3,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Ruby": {
+                "name": "Ruby",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
             }
         }
     }

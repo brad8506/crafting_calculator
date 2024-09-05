@@ -2,6 +2,14 @@
 # https://corepunk.pro/professions/herbalism
 # https://corepunkers.com/professions
 
+- name: Blue Lotus
+  rarity: green
+  source: Thick Bush
+
+- name: Carnivorous Plant
+  rarity: green
+  source: Thick Bush
+
 - name: Cloth
   items:
     Silkworm Caterpillar: 3
@@ -9,6 +17,20 @@
 - name: Composite Material
   items:
     Jute: 3
+
+- name: Forest berry
+  rarity: blue
+  source: Thick Bush
+
+- name: Fragrant Root
+  source: Nutty Bush
+
+- name: Jute
+  source: Weaver's Bush
+
+- name: Magic Weeds
+  rarity: green
+  source: Thick Bush
 
 - name: Natural Oil
   items:
@@ -18,30 +40,6 @@
   items:
     Fragrant Root: 3
 
-- name: Strong Thread
-  items:
-    Jute: 3
-
-- name: Blue Lotus
-  rarity: green
-  source: Thick Bush
-
-- name: Carnivorous Plant
-  rarity: green
-  source: Thick Bush
-
-- name: Magic Weeds
-  rarity: green
-  source: Thick Bush
-
-- name: Six-leaf Clover
-  rarity: green
-  source: Thick Bush
-
-- name: Forest berry
-  rarity: blue
-  source: Thick Bush
-
 - name: Petrified Spike
   rarity: blue
   source: Thick Bush
@@ -49,3 +47,14 @@
 - name: Rainbow Snail
   rarity: purple
   source: Thick Bush
+
+- name: Silkworm Caterpillar
+  source: Weaver's Bush
+
+- name: Six-leaf Clover
+  rarity: green
+  source: Thick Bush
+
+- name: Strong Thread
+  items:
+    Jute: 3
