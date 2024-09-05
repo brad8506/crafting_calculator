@@ -12,25 +12,26 @@ from yaml import safe_load
 from crafting_calculator import *
 from crafting.common import *
 
+
 class MyRequestHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         # Handle the root path
-        if self.path == '/':
-            self.path = '/web/index.html'
+        if self.path == "/":
+            self.path = "/web/index.html"
             return super().do_GET()
 
         # Handle the game discovery
-        elif self.path.startswith('/discover_games'):
+        elif self.path.startswith("/discover_games"):
             games = self.discover_games()
             self.send_response(200)
-            self.send_header('Content-Type', 'application/json')
+            self.send_header("Content-Type", "application/json")
             self.end_headers()
             self.wfile.write(json.dumps(games).encode())
 
         # Handle game selection
-        elif self.path.startswith('/select_game'):
+        elif self.path.startswith("/select_game"):
             query_components = parse_qs(urlparse(self.path).query)
-            selected_game = query_components.get('game', [None])[0]
+            selected_game = query_components.get("game", [None])[0]
             if selected_game:
                 self.update_data_json(selected_game)
             self.send_response(200)
@@ -57,10 +58,10 @@ class MyRequestHandler(SimpleHTTPRequestHandler):
 
         # Update the data.json file
         data = listCraftable
-        update_amounts_recursively(data, 1)
-        file_path = 'data.json'
+        # update_amounts_recursively(data, 1)
+        file_path = "data.json"
         try:
-            with open(file_path, 'w', encoding='utf-8') as file:
+            with open(file_path, "w", encoding="utf-8") as file:
                 json.dump(data, file, indent=4)  # Indent for readability
                 print(data)
             print(f"Data successfully written to {file_path}")
@@ -69,31 +70,37 @@ class MyRequestHandler(SimpleHTTPRequestHandler):
 
     def end_headers(self):
         # Add CORS headers, we only allow localhost.
-        self.send_header('Access-Control-Allow-Origin', 'http://localhost')
+        self.send_header("Access-Control-Allow-Origin", "http://localhost")
         super().end_headers()
 
     # Placeholder methods for loading recipes and processing inventory
     def _load_recipes(self, game):
         inventory, meta = load_recipes(game)
+        # inventory = process_inventory(inventory)
+        # inventory = update_amounts_recursively(inventory, 1)
         return (inventory, meta)
+
 
 # Define the server address and port
 PORT = 8000
-server_address = ('localhost', PORT)
+server_address = ("localhost", PORT)
+
 
 def start_server():
     httpd = socketserver.TCPServer(server_address, MyRequestHandler)
     print(f"Serving on http://{server_address[0]}:{PORT}")
     httpd.serve_forever()
 
+
 def open_browser():
     # Open the default web browser to the server URL
-    webbrowser.open(f'http://{server_address[0]}:{PORT}')
+    webbrowser.open(f"http://{server_address[0]}:{PORT}")
+
 
 if __name__ == "__main__":
     # Start the server in a new thread
     server_thread = threading.Thread(target=start_server)
     server_thread.start()
-    
+
     # Open the browser
     open_browser()

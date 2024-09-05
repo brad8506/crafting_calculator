@@ -11,17 +11,31 @@ def find_recipe(item_name: str, inventory: Dict[str, Dict]) -> Dict[str, Dict]:
         logging.debug("No recipe for %s.", item_name)
     return recipe
 
+
 def update_amounts_recursively(details: Dict, quantity: int) -> Dict:
     if isinstance(details, Dict):
         for item_name, item_details in details.items():
-            item_details['quantity'] = item_details['quantity'] * quantity
-            child_items = item_details.get('items', {})
+            if item_name == "Plasma Launcher":
+                debug = True
+            item_details["quantity"] = item_details["quantity"] * quantity
+            quantity = item_details["quantity"]
+            child_items = item_details.get("items", {})
             if child_items:
-                item_details['items'] = update_amounts_recursively(child_items, quantity)
+                # if isinstance(child_items, Dict):
+                #     for child_item_name, child_details in child_items.items():
+                # child_details['quantity'] = child_details['quantity'] * item_details['quantity']
+                item_details["items"] = update_amounts_recursively(
+                    child_items, quantity
+                )
 
     return details
 
-def get_crafting_cost(item_name: str, inventory: Dict[str, Dict[str, Any]], item_key: str = "crafting_cost") -> Union[float, None]:
+
+def get_crafting_cost(
+    item_name: str,
+    inventory: Dict[str, Dict[str, Any]],
+    item_key: str = "crafting_cost",
+) -> Union[float, None]:
     """Get the first matching recipe value from the inventory based on the provided item key."""
     recipe_value = None
 
@@ -50,6 +64,7 @@ def get_buy_from_vendor(
     """Get the first matching recipe buy_from_vendor from the inventory."""
     return get_crafting_cost(item, inventory, "buy_from_vendor")
 
+
 def process_child_items(details) -> dict:
     """
     Process the input data by adding a 'quantity' key if the value is an int,
@@ -59,13 +74,13 @@ def process_child_items(details) -> dict:
     :param amount: The amount to set or adjust the 'quantity' key by.
     :return: The processed dictionary.
     """
-    child_items = details.get('items', {})
+    child_items = details.get("items", {})
     if child_items:
         if isinstance(child_items, list):
             # Convert list of dicts to a dict with 'name' as the key
             converted_items = {}
             for item in child_items:
-                name = item.pop('name')
+                name = item.pop("name")
                 converted_items[name] = item
             child_items = converted_items
 
@@ -76,8 +91,8 @@ def process_child_items(details) -> dict:
                     child_items[key] = {"quantity": value}
                 elif isinstance(value, list):
                     child_items[key] = dict(value)
-                #child_items[key]['quantity'] = child_items[key]['quantity'] * details['quantity']
-        
-        details.update({'items': child_items})
+                # child_items[key]['quantity'] = child_items[key]['quantity'] * details['quantity']
+
+        details.update({"items": child_items})
 
     return details

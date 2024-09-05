@@ -17,6 +17,7 @@ from crafting.common import get_crafting_cost
 
 EXITCODE_NO_RECIPES = 1
 
+
 def parse_arguments() -> argparse.Namespace:
     """Parse given command line arguments."""
     parser = argparse.ArgumentParser(
@@ -80,6 +81,7 @@ def setup_logging(debug: bool, verbose: bool) -> None:
     else:
         logging.basicConfig(format="%(levelname)s: %(message)s")
 
+
 def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
     """Load all recipes for a given game."""
     content_list = []
@@ -115,19 +117,27 @@ def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
 
     # Loop through inventory and fix child items that are using list type
     for item_name, details in inventory.items():
+        if item_name == "Plasma Launcher":
+            debug = True
+        details["quantity"] = details.get("quantity", 1)
         child_items = details.get("items", None)
         if child_items:
             if isinstance(child_items, list):
                 new_child_items = {}
                 for values in child_items:
-                    child_name = values.get('name')
+                    child_name = values.get("name")
                     new_child_items[child_name] = values
                 child_items = new_child_items
             for child_item_name, child_details in child_items.items():
-                    if isinstance(child_details, int):
-                        child_items[child_item_name] = {'name': child_item_name, 'quantity': child_details}
-                    if isinstance(child_items, dict):
-                        debug = True
+                if isinstance(child_details, int):
+                    # child_items[child_item_name] = {'name': child_item_name, 'quantity': child_details}
+                    dict_child_details = {
+                        "name": child_item_name,
+                        "quantity": child_details * details["quantity"],
+                    }
+                    child_items[child_item_name] = dict_child_details
+                if isinstance(child_items, dict):
+                    debug = True
 
     sum_recipes = len(inventory)
     if sum_recipes:
@@ -143,6 +153,7 @@ def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
 
     return (inventory, meta)
 
+
 def process_inventory(inventory):
     """
     Process the inventory to classify items into craftable and gatherable lists,
@@ -156,23 +167,29 @@ def process_inventory(inventory):
             - combined_list (dict): Combined list of craftable and gatherable items with headers.
             - labels (list): List of item labels.
     """
-    
+
     recursive_inventory = {}
     for item_name, details in inventory.items():
-        if item_name in ('Armor Plate'):
+        if item_name in ("Armor Plate"):
             debug = True
-        if item_name in ('Plasma Launcher'):
+        if item_name in ("Plasma Launcher"):
             debug = True
-        if item_name in ('Steroid Implant'):
+        if item_name in ("Steroid Implant"):
             debug = True
-        if item_name in ('Vital Nano Bracer'):
+        if item_name in ("Vital Nano Bracer"):
             debug = True
-        if item_name in ('Vital Nano Bracer', 'Bio-compatible Material', 'Xiphoid Process', 'Steroid Implant'):
+        if item_name in (
+            "Vital Nano Bracer",
+            "Bio-compatible Material",
+            "Xiphoid Process",
+            "Steroid Implant",
+        ):
             debug = True
         add_recipe_details_recursive(item_name, details, inventory, recursive_inventory)
         debug = True
-    recursive_inventory = {key: recursive_inventory[key] for key in sorted(recursive_inventory)}
-
+    recursive_inventory = {
+        key: recursive_inventory[key] for key in sorted(recursive_inventory)
+    }
 
     # Initialize dictionaries for item classification
     listCraftable = {}
@@ -192,29 +209,33 @@ def process_inventory(inventory):
 
     return listCraftable, listGatherable
 
+
 def convert_item(item_name: str, item, inventory: dict):
     if isinstance(item, int):
         # If item is an integer, convert it to a dictionary.
-        item = {'name': item_name}
+        item = {"name": item_name}
     if isinstance(item, list):
         # If item is an integer, convert it to a dictionary.
         item = dict(item)
 
-    if 'items' in item and isinstance(item['items'], list):
+    if "items" in item and isinstance(item["items"], list):
         new_child_details = {}
-        for child_details in item['items']:
-            name = child_details['name']
-            child_defaults = {'name': item_name, 'quantity': item.get('quantity', 1)}
+        for child_details in item["items"]:
+            name = child_details["name"]
+            child_defaults = {"name": item_name, "quantity": item.get("quantity", 1)}
             recipe = inventory.get(name, {})
             new_child_details[name] = {**child_defaults, **recipe, **child_details}
-        item['items'] = new_child_details
-    
+        item["items"] = new_child_details
+
     recipe = inventory.get(item_name, {})
-    defaults = {'name': item_name, 'quantity': item.get('quantity', 1)}
+    defaults = {"name": item_name, "quantity": item.get("quantity", 1)}
     item = {**defaults, **recipe, **item}
     return item  # Return the item as is if it's not an integer
 
-def add_recipe_details_recursive(item_name: str, item_details: dict, inventory: dict, final_inventory):
+
+def add_recipe_details_recursive(
+    item_name: str, item_details: dict, inventory: dict, final_inventory
+):
     """
     Recursively adds item details into the parent_dict.
 
@@ -223,23 +244,26 @@ def add_recipe_details_recursive(item_name: str, item_details: dict, inventory: 
         parent_dict (dict): The dictionary to accumulate the details.
     """
 
-    if item_name == 'Armor Plate':
+    if item_name == "Armor Plate":
         debug = True
 
     item_details = convert_item(item_name, item_details, inventory)
-    item_quantity = item_details.get('quantity')
+    item_quantity = item_details.get("quantity")
     # Recurse if there are child items
-    child_name = ''
+    child_name = ""
     child_details = {}
-    for child_name, child_details in item_details.get('items', {}).items():
+    for child_name, child_details in item_details.get("items", {}).items():
         child_details = convert_item(child_name, child_details, inventory)
         # child_details['quantity'] = child_details['quantity'] * item_quantity
-        child_details_new = add_recipe_details_recursive(child_name, child_details, inventory, item_details['items'])
-        item_details['items'] = child_details_new
-    
+        child_details_new = add_recipe_details_recursive(
+            child_name, child_details, inventory, item_details["items"]
+        )
+        item_details["items"] = child_details_new
+
     final_inventory[item_name] = item_details
 
     return final_inventory
+
 
 def craft_item(item: str, inventory: List[Dict[str, Any]], amount: int) -> ShoppingList:
     """Calculate the items required to craft a recipe."""
@@ -262,6 +286,7 @@ def craft_item(item: str, inventory: List[Dict[str, Any]], amount: int) -> Shopp
                 logging.warning("No sell_to_vendor property for %s.", item)
 
     return shopping_list
+
 
 def main() -> None:
     """Break a recipe down into its base components and create a shopping list."""
