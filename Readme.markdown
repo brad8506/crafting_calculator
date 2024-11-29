@@ -1,7 +1,6 @@
 # crafting_calculator_gui_html_server.py
 
 A HTML server for crafting recipes with expand/collapse and simple text export.
-At the moment, only Corepunk is supported.
 
 Run build\exe.win-amd64-3.11\crafting_calculator_gui_html_server.exe
 Visit http://localhost:8000/
