@@ -1,3 +1,27 @@
 # https://corepunk.wiki/w/Alchemy#Resources
 # https://corepunk.pro/professions/alchemy
 # https://corepunkers.com/professions/alchemy
+
+- name: Counterfeit Painkillers
+  items:
+    - name: Blue Lotus
+      quantity: 1
+      rarity: green
+    - name: Powder Filler
+      quantity: 1
+
+- name: Mana Pipe
+  items:
+    - name: Magic Weeds
+      quantity: 1
+      rarity: green
+    - name: Jewellery Wood
+      quantity: 1
+
+- name: Small Joint
+  items:
+    - name: Transparent Leaf
+      quantity: 1
+      rarity: green
+    - name: Tissue Paper
+      quantity: 1

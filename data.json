@@ -1,4 +1,149 @@
 {
+    "Apocalyptic Scrap": {
+        "name": "Apocalyptic Scrap",
+        "quantity": 1,
+        "items": {
+            "Treated Wood": {
+                "name": "Treated Wood",
+                "quantity": 2,
+                "items": {
+                    "Heartwood": {
+                        "name": "Heartwood",
+                        "quantity": 3,
+                        "source": "Timberheart tree"
+                    }
+                }
+            },
+            "Strong Thread": {
+                "name": "Strong Thread",
+                "quantity": 1,
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Apocalyptic Sharp": {
+                "name": "Apocalyptic Sharp",
+                "quantity": 1,
+                "items": {
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 2,
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3,
+                                "source": "Timberheart tree"
+                            }
+                        }
+                    },
+                    "Strong Thread": {
+                        "name": "Strong Thread",
+                        "quantity": 1,
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Leather": {
+                        "name": "Leather",
+                        "quantity": 1,
+                        "items": {
+                            "Wolf Skin": {
+                                "name": "Wolf Skin",
+                                "quantity": 2,
+                                "source": "wolf",
+                                "buy_from_vendor": 19.59
+                            }
+                        }
+                    },
+                    "Giant Feather": {
+                        "name": "Giant Feather",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree"
+                    }
+                },
+                "rarity": "green"
+            },
+            "Giant Feather": {
+                "name": "Giant Feather",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree"
+            },
+            "Petrified Spike": {
+                "name": "Petrified Spike",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            }
+        }
+    },
+    "Apocalyptic Sharp": {
+        "name": "Apocalyptic Sharp",
+        "quantity": 1,
+        "items": {
+            "Treated Wood": {
+                "name": "Treated Wood",
+                "quantity": 2,
+                "items": {
+                    "Heartwood": {
+                        "name": "Heartwood",
+                        "quantity": 3,
+                        "source": "Timberheart tree"
+                    }
+                }
+            },
+            "Strong Thread": {
+                "name": "Strong Thread",
+                "quantity": 1,
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Giant Feather": {
+                "name": "Giant Feather",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree"
+            }
+        }
+    },
     "Armor Plate": {
         "name": "Armor Plate",
         "quantity": 1,
@@ -109,9 +254,11 @@
                         "source": "Metal vein"
                     }
                 },
+                "wiki": "https://corepunkers.com/i/weapon-welded-patterned-knuckle",
                 "rarity": "blue"
             }
-        }
+        },
+        "wiki": "https://corepunkers.com/i/artifact-assassins-glove"
     },
     "Assault Launcher": {
         "name": "Assault Launcher",
@@ -323,7 +470,8 @@
                 "items": {
                     "Jute": {
                         "name": "Jute",
-                        "quantity": 3
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
                     }
                 }
             },
@@ -392,7 +540,8 @@
                         "items": {
                             "Silkworm Caterpillar": {
                                 "name": "Silkworm Caterpillar",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     }
@@ -419,7 +568,8 @@
         "items": {
             "Silkworm Caterpillar": {
                 "name": "Silkworm Caterpillar",
-                "quantity": 3
+                "quantity": 3,
+                "source": "Weaver's Bush"
             }
         }
     },
@@ -429,7 +579,8 @@
         "items": {
             "Jute": {
                 "name": "Jute",
-                "quantity": 3
+                "quantity": 3,
+                "source": "Weaver's Bush"
             }
         }
     },
@@ -443,6 +594,30 @@
             "Animal Fat": {
                 "name": "Animal Fat",
                 "quantity": 3
+            }
+        }
+    },
+    "Counterfeit Painkillers": {
+        "name": "Counterfeit Painkillers",
+        "quantity": 1,
+        "items": {
+            "Blue Lotus": {
+                "name": "Blue Lotus",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Thick Bush"
+            },
+            "Powder Filler": {
+                "name": "Powder Filler",
+                "quantity": 1,
+                "items": {
+                    "Soft Crystal": {
+                        "name": "Soft Crystal",
+                        "quantity": 3,
+                        "rarity": "white",
+                        "source": "Fossilized crystal vein"
+                    }
+                }
             }
         }
     },
@@ -558,7 +733,8 @@
                         "items": {
                             "Silkworm Caterpillar": {
                                 "name": "Silkworm Caterpillar",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     }
@@ -604,7 +780,8 @@
                         "items": {
                             "Silkworm Caterpillar": {
                                 "name": "Silkworm Caterpillar",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     }
@@ -716,7 +893,8 @@
                         "items": {
                             "Jute": {
                                 "name": "Jute",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     },
@@ -808,7 +986,8 @@
                         "items": {
                             "Jute": {
                                 "name": "Jute",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     },
@@ -867,7 +1046,8 @@
                         "items": {
                             "Silkworm Caterpillar": {
                                 "name": "Silkworm Caterpillar",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     }
@@ -998,7 +1178,8 @@
                         "items": {
                             "Jute": {
                                 "name": "Jute",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     },
@@ -1155,7 +1336,8 @@
                         "items": {
                             "Jute": {
                                 "name": "Jute",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     },
@@ -1342,7 +1524,8 @@
                         "items": {
                             "Jute": {
                                 "name": "Jute",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     },
@@ -1390,6 +1573,29 @@
                 "quantity": 1,
                 "rarity": "blue",
                 "source": "Magic tree"
+            }
+        }
+    },
+    "Mana Pipe": {
+        "name": "Mana Pipe",
+        "quantity": 1,
+        "items": {
+            "Magic Weeds": {
+                "name": "Magic Weeds",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Thick Bush"
+            },
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
             }
         }
     },
@@ -1522,7 +1728,8 @@
                 "items": {
                     "Silkworm Caterpillar": {
                         "name": "Silkworm Caterpillar",
-                        "quantity": 3
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
                     }
                 }
             }
@@ -1587,7 +1794,8 @@
                         "items": {
                             "Jute": {
                                 "name": "Jute",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     },
@@ -1659,7 +1867,8 @@
         "items": {
             "Fragrant Root": {
                 "name": "Fragrant Root",
-                "quantity": 3
+                "quantity": 3,
+                "source": "Nutty Bush"
             }
         }
     },
@@ -1877,7 +2086,8 @@
                         "items": {
                             "Jute": {
                                 "name": "Jute",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     },
@@ -1944,7 +2154,8 @@
                         "items": {
                             "Jute": {
                                 "name": "Jute",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     },
@@ -1969,7 +2180,8 @@
                 "items": {
                     "Jute": {
                         "name": "Jute",
-                        "quantity": 3
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
                     }
                 }
             },
@@ -1998,6 +2210,29 @@
                 "name": "Stone Bark",
                 "quantity": 3,
                 "source": "Petrified tree"
+            }
+        }
+    },
+    "Small Joint": {
+        "name": "Small Joint",
+        "quantity": 1,
+        "items": {
+            "Transparent Leaf": {
+                "name": "Transparent Leaf",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree"
+            },
+            "Tissue Paper": {
+                "name": "Tissue Paper",
+                "quantity": 1,
+                "items": {
+                    "Wood": {
+                        "name": "Wood",
+                        "quantity": 3,
+                        "source": "Timberheart tree"
+                    }
+                }
             }
         }
     },
@@ -2138,7 +2373,8 @@
                         "items": {
                             "Silkworm Caterpillar": {
                                 "name": "Silkworm Caterpillar",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     }
@@ -2196,7 +2432,8 @@
                         "items": {
                             "Silkworm Caterpillar": {
                                 "name": "Silkworm Caterpillar",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     }
@@ -2278,7 +2515,8 @@
         "items": {
             "Jute": {
                 "name": "Jute",
-                "quantity": 3
+                "quantity": 3,
+                "source": "Weaver's Bush"
             }
         }
     },
@@ -2309,7 +2547,8 @@
                         "items": {
                             "Silkworm Caterpillar": {
                                 "name": "Silkworm Caterpillar",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     }
@@ -2350,7 +2589,8 @@
                         "items": {
                             "Jute": {
                                 "name": "Jute",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     },
@@ -2443,7 +2683,8 @@
                         "items": {
                             "Silkworm Caterpillar": {
                                 "name": "Silkworm Caterpillar",
-                                "quantity": 3
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     }
@@ -2617,6 +2858,7 @@
                 "rarity": "green",
                 "source": "Metal vein"
             }
-        }
+        },
+        "wiki": "https://corepunkers.com/i/weapon-welded-patterned-knuckle"
     }
 }
