@@ -1,4 +1,72 @@
 {
+    "Adrenaline Shot": {
+        "name": "Adrenaline Shot",
+        "quantity": 1,
+        "items": {
+            "Adrenaline Bladder": {
+                "name": "Adrenaline Bladder",
+                "quantity": 1,
+                "source": "boar",
+                "rarity": "green"
+            },
+            "Natural Oil": {
+                "name": "Natural Oil",
+                "quantity": 1,
+                "items": {
+                    "Hazelnut": {
+                        "name": "Hazelnut",
+                        "quantity": 3
+                    }
+                }
+            }
+        }
+    },
+    "Apocalyptic Effigy": {
+        "name": "Apocalyptic Effigy",
+        "quantity": 1,
+        "items": {
+            "Treated Wood": {
+                "name": "Treated Wood",
+                "quantity": 2,
+                "items": {
+                    "Heartwood": {
+                        "name": "Heartwood",
+                        "quantity": 3,
+                        "source": "Timberheart tree"
+                    }
+                }
+            },
+            "Strong Thread": {
+                "name": "Strong Thread",
+                "quantity": 1,
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Giant Feather": {
+                "name": "Giant Feather",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree"
+            }
+        }
+    },
     "Apocalyptic Scrap": {
         "name": "Apocalyptic Scrap",
         "quantity": 1,
@@ -345,6 +413,53 @@
             }
         }
     },
+    "Battered Gun": {
+        "name": "Battered Gun",
+        "quantity": 1,
+        "items": {
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 2,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Amber": {
+                "name": "Amber",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree",
+                "wiki": "https://corepunk.wiki/w/Amber"
+            }
+        }
+    },
     "Battle Mage Implant": {
         "name": "Battle Mage Implant",
         "quantity": 1,
@@ -460,6 +575,137 @@
             }
         }
     },
+    "Biosteroids Shot": {
+        "name": "Biosteroids Shot",
+        "quantity": 1,
+        "items": {
+            "Gonad": {
+                "name": "Gonad",
+                "quantity": 1,
+                "source": "boar",
+                "rarity": "green"
+            },
+            "Natural Oil": {
+                "name": "Natural Oil",
+                "quantity": 1,
+                "items": {
+                    "Hazelnut": {
+                        "name": "Hazelnut",
+                        "quantity": 3
+                    }
+                }
+            }
+        }
+    },
+    "Blade Punk": {
+        "name": "Blade Punk",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 2,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Diamond": {
+                "name": "Diamond",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Blade Rusty": {
+        "name": "Blade Rusty",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 2,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Iron Ore": {
+                "name": "Iron Ore",
+                "quantity": 1,
+                "source": "Celestial vein"
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Diamond": {
+                "name": "Diamond",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Blade Soldier": {
+        "name": "Blade Soldier",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 2,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Treated Wood": {
+                "name": "Treated Wood",
+                "quantity": 1,
+                "items": {
+                    "Heartwood": {
+                        "name": "Heartwood",
+                        "quantity": 3,
+                        "source": "Timberheart tree"
+                    }
+                }
+            },
+            "Diamond": {
+                "name": "Diamond",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
     "Body Scanner": {
         "name": "Body Scanner",
         "quantity": 1,
@@ -480,6 +726,32 @@
                 "quantity": 1,
                 "rarity": "green",
                 "source": "Metal vein"
+            }
+        }
+    },
+    "Burn Relief": {
+        "name": "Burn Relief",
+        "quantity": 1,
+        "items": {
+            "Amber": {
+                "name": "Amber",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree",
+                "wiki": "https://corepunk.wiki/w/Amber"
+            },
+            "Cosmetic Fat": {
+                "name": "Cosmetic Fat",
+                "quantity": 1,
+                "source": "boar",
+                "rarity": "white",
+                "wiki": "https://corepunk.wiki/w/Cosmetic_Fat",
+                "items": {
+                    "Animal Fat": {
+                        "name": "Animal Fat",
+                        "quantity": 3
+                    }
+                }
             }
         }
     },
@@ -621,6 +893,28 @@
             }
         }
     },
+    "Cyber": {
+        "name": "Cyber",
+        "quantity": 1,
+        "items": {
+            "Titanium Nugget": {
+                "name": "Titanium Nugget",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            },
+            "Meteoric Ingot": {
+                "name": "Meteoric Ingot",
+                "quantity": 3,
+                "items": {
+                    "Meteoric Metal": {
+                        "name": "Meteoric Metal",
+                        "quantity": 3
+                    }
+                }
+            }
+        }
+    },
     "Cyber Biker Arm": {
         "name": "Cyber Biker Arm",
         "quantity": 1,
@@ -752,6 +1046,41 @@
                 "quantity": 1,
                 "rarity": "blue",
                 "source": "wolf"
+            }
+        }
+    },
+    "Dagger Marked": {
+        "name": "Dagger Marked",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 2,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Diamond": {
+                "name": "Diamond",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
             }
         }
     },
@@ -1002,6 +1331,30 @@
             }
         }
     },
+    "Funny Pills": {
+        "name": "Funny Pills",
+        "quantity": 1,
+        "items": {
+            "Six-leaf Clover": {
+                "name": "Six-leaf Clover",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Thick Bush"
+            },
+            "Powder Filler": {
+                "name": "Powder Filler",
+                "quantity": 1,
+                "items": {
+                    "Soft Crystal": {
+                        "name": "Soft Crystal",
+                        "quantity": 3,
+                        "rarity": "white",
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            }
+        }
+    },
     "Fusion Engine": {
         "name": "Fusion Engine",
         "quantity": 1,
@@ -1164,6 +1517,58 @@
             }
         }
     },
+    "Gladiator Shield": {
+        "name": "Gladiator Shield",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 4,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            }
+        }
+    },
+    "Gladiator Spear": {
+        "name": "Gladiator Spear",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 3,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Titanium Nugget": {
+                "name": "Titanium Nugget",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
     "Hormone Booster": {
         "name": "Hormone Booster",
         "quantity": 1,
@@ -1231,6 +1636,23 @@
             }
         }
     },
+    "Iloth Shield": {
+        "name": "Iloth Shield",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 4,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            }
+        }
+    },
     "Immuno-Stimulating Implant": {
         "name": "Immuno-Stimulating Implant",
         "quantity": 1,
@@ -1266,6 +1688,58 @@
             }
         }
     },
+    "Jagged Needle": {
+        "name": "Jagged Needle",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 3,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Titanium Nugget": {
+                "name": "Titanium Nugget",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Jagged Shield": {
+        "name": "Jagged Shield",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 4,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            }
+        }
+    },
     "Jewellery Bone": {
         "name": "Jewellery Bone",
         "quantity": 1,
@@ -1288,6 +1762,52 @@
             }
         }
     },
+    "Lacerator Sword": {
+        "name": "Lacerator Sword",
+        "quantity": 1,
+        "items": {
+            "Treated Wood": {
+                "name": "Treated Wood",
+                "quantity": 2,
+                "items": {
+                    "Heartwood": {
+                        "name": "Heartwood",
+                        "quantity": 3,
+                        "source": "Timberheart tree"
+                    }
+                }
+            },
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 1,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Titanium Nugget": {
+                "name": "Titanium Nugget",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
     "Leather": {
         "name": "Leather",
         "quantity": 1,
@@ -1297,6 +1817,41 @@
                 "quantity": 2,
                 "source": "wolf",
                 "buy_from_vendor": 19.59
+            }
+        }
+    },
+    "Lumbergrip": {
+        "name": "Lumbergrip",
+        "quantity": 1,
+        "items": {
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 3,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Amber": {
+                "name": "Amber",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree",
+                "wiki": "https://corepunk.wiki/w/Amber"
             }
         }
     },
@@ -1388,6 +1943,30 @@
                 "quantity": 1,
                 "rarity": "purple",
                 "source": "Metal vein"
+            }
+        }
+    },
+    "Magic Pills": {
+        "name": "Magic Pills",
+        "quantity": 1,
+        "items": {
+            "Moonstone": {
+                "name": "Moonstone",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            },
+            "Powder Filler": {
+                "name": "Powder Filler",
+                "quantity": 1,
+                "items": {
+                    "Soft Crystal": {
+                        "name": "Soft Crystal",
+                        "quantity": 3,
+                        "rarity": "white",
+                        "source": "Fossilized crystal vein"
+                    }
+                }
             }
         }
     },
@@ -1599,6 +2178,29 @@
             }
         }
     },
+    "Mana Vial": {
+        "name": "Mana Vial",
+        "quantity": 1,
+        "items": {
+            "Magic Weeds": {
+                "name": "Magic Weeds",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Thick Bush"
+            },
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            }
+        }
+    },
     "Matter Shaker": {
         "name": "Matter Shaker",
         "quantity": 1,
@@ -1630,6 +2232,29 @@
                 "name": "Isotope-238",
                 "quantity": 1,
                 "rarity": "blue",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Metal": {
+        "name": "Metal",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 3,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Ruby": {
+                "name": "Ruby",
+                "quantity": 1,
+                "rarity": "green",
                 "source": "Metal vein"
             }
         }
@@ -1861,6 +2486,41 @@
             }
         }
     },
+    "Obsolete": {
+        "name": "Obsolete",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 2,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Diamond": {
+                "name": "Diamond",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
     "Organic Gel": {
         "name": "Organic Gel",
         "quantity": 1,
@@ -1930,6 +2590,30 @@
                 "quantity": 1,
                 "rarity": "blue",
                 "source": "Metal vein"
+            }
+        }
+    },
+    "Plasma Gun": {
+        "name": "Plasma Gun",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 4,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Amber": {
+                "name": "Amber",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree",
+                "wiki": "https://corepunk.wiki/w/Amber"
             }
         }
     },
@@ -2170,6 +2854,199 @@
             }
         }
     },
+    "Restorative Ointment": {
+        "name": "Restorative Ointment",
+        "quantity": 1,
+        "items": {
+            "Living Blood": {
+                "name": "Living Blood",
+                "quantity": 1,
+                "source": "turtle",
+                "rarity": "green"
+            },
+            "Cosmetic Fat": {
+                "name": "Cosmetic Fat",
+                "quantity": 1,
+                "source": "boar",
+                "rarity": "white",
+                "wiki": "https://corepunk.wiki/w/Cosmetic_Fat",
+                "items": {
+                    "Animal Fat": {
+                        "name": "Animal Fat",
+                        "quantity": 3
+                    }
+                }
+            }
+        }
+    },
+    "Riveted Shield": {
+        "name": "Riveted Shield",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 4,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            }
+        }
+    },
+    "Riveted Spear": {
+        "name": "Riveted Spear",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 3,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Titanium Nugget": {
+                "name": "Titanium Nugget",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Rusty": {
+        "name": "Rusty",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 2,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Ruby": {
+                "name": "Ruby",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Rusty Bow": {
+        "name": "Rusty Bow",
+        "quantity": 1,
+        "items": {
+            "Treated Wood": {
+                "name": "Treated Wood",
+                "quantity": 2,
+                "items": {
+                    "Heartwood": {
+                        "name": "Heartwood",
+                        "quantity": 3,
+                        "source": "Timberheart tree"
+                    }
+                }
+            },
+            "Strong Thread": {
+                "name": "Strong Thread",
+                "quantity": 1,
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Giant Feather": {
+                "name": "Giant Feather",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree"
+            }
+        }
+    },
+    "Rusty Sword": {
+        "name": "Rusty Sword",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 3,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Titanium Nugget": {
+                "name": "Titanium Nugget",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
     "Scar Rune": {
         "name": "Scar Rune",
         "quantity": 1,
@@ -2185,9 +3062,27 @@
                     }
                 }
             },
-            "Ancient Fossil": {
-                "name": "Ancient Fossil",
-                "quantity": 1
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
             },
             "Jewellery Bone": {
                 "name": "Jewellery Bone",
@@ -2199,6 +3094,116 @@
                         "quantity": 3
                     }
                 }
+            }
+        }
+    },
+    "Scavenger Shield": {
+        "name": "Scavenger Shield",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 4,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            }
+        }
+    },
+    "Scavenger Spear": {
+        "name": "Scavenger Spear",
+        "quantity": 1,
+        "items": {
+            "Treated Wood": {
+                "name": "Treated Wood",
+                "quantity": 2,
+                "items": {
+                    "Heartwood": {
+                        "name": "Heartwood",
+                        "quantity": 3,
+                        "source": "Timberheart tree"
+                    }
+                }
+            },
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 1,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Titanium Nugget": {
+                "name": "Titanium Nugget",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Shabby Wood": {
+        "name": "Shabby Wood",
+        "quantity": 1,
+        "items": {
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 2,
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 1,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Amber": {
+                "name": "Amber",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree",
+                "wiki": "https://corepunk.wiki/w/Amber"
             }
         }
     },
@@ -2400,6 +3405,52 @@
             }
         }
     },
+    "Spiked Spear": {
+        "name": "Spiked Spear",
+        "quantity": 1,
+        "items": {
+            "Treated Wood": {
+                "name": "Treated Wood",
+                "quantity": 2,
+                "items": {
+                    "Heartwood": {
+                        "name": "Heartwood",
+                        "quantity": 3,
+                        "source": "Timberheart tree"
+                    }
+                }
+            },
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 1,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Titanium Nugget": {
+                "name": "Titanium Nugget",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
     "Star Energy": {
         "name": "Star Energy",
         "quantity": 1,
@@ -2410,6 +3461,52 @@
             }
         },
         "source": "Metal vein"
+    },
+    "Starshard": {
+        "name": "Starshard",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 2,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Strong Thread": {
+                "name": "Strong Thread",
+                "quantity": 1,
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Giant Feather": {
+                "name": "Giant Feather",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree"
+            }
+        }
     },
     "Stealth Cloak": {
         "name": "Stealth Cloak",
@@ -2520,6 +3617,41 @@
             }
         }
     },
+    "Taser": {
+        "name": "Taser",
+        "quantity": 1,
+        "items": {
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 2,
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            },
+            "Leather": {
+                "name": "Leather",
+                "quantity": 1,
+                "items": {
+                    "Wolf Skin": {
+                        "name": "Wolf Skin",
+                        "quantity": 2,
+                        "source": "wolf",
+                        "buy_from_vendor": 19.59
+                    }
+                }
+            },
+            "Ruby": {
+                "name": "Ruby",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            }
+        }
+    },
     "Techfort Shell": {
         "name": "Techfort Shell",
         "quantity": 1,
@@ -2623,6 +3755,31 @@
                 "name": "Wood",
                 "quantity": 3,
                 "source": "Timberheart tree"
+            }
+        }
+    },
+    "Titanium Ointment": {
+        "name": "Titanium Ointment",
+        "quantity": 1,
+        "items": {
+            "Titanium Nugget": {
+                "name": "Titanium Nugget",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            },
+            "Cosmetic Fat": {
+                "name": "Cosmetic Fat",
+                "quantity": 1,
+                "source": "boar",
+                "rarity": "white",
+                "wiki": "https://corepunk.wiki/w/Cosmetic_Fat",
+                "items": {
+                    "Animal Fat": {
+                        "name": "Animal Fat",
+                        "quantity": 3
+                    }
+                }
             }
         }
     },
