@@ -46,19 +46,22 @@ async function calculateTableList() {
             rowHtml += `<td class="quantity">`;
             
             if (depth === 0) {
-                rowHtml +=   `<button class="minus-btn">-</button>`
+                rowHtml += `<button class="minus-btn">-</button>`
             }
-            rowHtml +=   `<input class="quantity-input" type="text" size="4" ${disabledAttr} data-quantity-original="${itemQuantity}" value="${calculatedQuantity}"/>`
+            rowHtml += `<input class="quantity-input" type="text" size="4" ${disabledAttr} data-quantity-original="${itemQuantity}" value="${calculatedQuantity}"/>`
             
             if (depth === 0) {
-                rowHtml +=   `<button class="plus-btn">+</button>`
+                rowHtml += `<button class="plus-btn">+</button>`
             }
             
             rowHtml += `</td>`;
             // td quantity end.
 
             if (depth === 0) {
-                rowHtml += `<td class="output-wrapper"><textarea class="output" rows="1" cols="50"></textarea></td>`;
+                rowHtml += `<td class="output-wrapper">`;
+                rowHtml += `<button class="copy-btn">Copy</button>`;
+                rowHtml += `<textarea class="output" rows="1" cols="50"></textarea>`;
+                rowHtml += `</td>`;
             }
 
             rowHtml += `</tr>`;
@@ -195,6 +198,23 @@ function attachEventListeners() {
         input.removeEventListener('click', processQuantityButtonClick);
         input.addEventListener('click', processQuantityButtonClick);
     });
+
+    const copyButtons = document.getElementsByClassName("copy-btn");
+    Array.from(copyButtons).forEach(button => {
+        button.addEventListener("click", function () {
+            // Get the text to copy
+            const copyText = button.closest('tr').querySelector('.output');
+            if (copyText) {
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); // For mobile compatibility
+                navigator.clipboard.writeText(copyText.value).then(() => {
+                    // alert("Text copied to clipboard!");
+                }).catch(err => {
+                    console.error("Failed to copy text: ", err);
+                });
+            }
+        });
+    });
 }
 
 function updateOutput(event) {
@@ -261,6 +281,10 @@ function updateOutput(event) {
             // Auto-size the textarea
             outputTextarea.style.height = 'auto'; // Reset height
             outputTextarea.style.height = `${outputTextarea.scrollHeight}px`; // Set height based on content
+
+            // Show the copy button.
+            const closestTableRow = outputTextarea.closest("tr");
+            closestTableRow.querySelector('.copy-btn').style.display = "block";
         }
     }
 }
