@@ -83,27 +83,26 @@ def setup_logging(debug: bool, verbose: bool) -> None:
 
 
 def load_recipes(game: str) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
-    """Load all recipes for a given game."""
+    """Helper to load content from files for a specific game."""
+    path = Path(f"recipes/{game}")
     content_list = []
-    meta = {"title": "unknown game (meta data incomplete)"}
-
-    path = Path("recipes").joinpath(game)
-    logging.info("Loading recipes from %s.", path)
-
-    for entry in path.rglob("**/*.yml"):
+    for entry in path.rglob("*.yml"):
         raw_content = entry.read_text()
         content = safe_load(raw_content)
         if content:
-            if entry.name == "meta.yml":
-                meta = content
-                if meta.get("title"):
-                    logging.debug("Game detected as %s.", meta.get("title"))
-            else:
-                content_list.extend(content)
-                logging.debug("Read %s recipes from %s.", len(content), entry)
+            content_list.extend(content)
 
+    inventory, meta = load_recipes_from_content(content_list)
+    return (inventory, meta)
+
+
+def load_recipes_from_content(
+    content_list: List[Dict[str, Any]]
+) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Any]]:
     # Loop through the content and add each item to the inventory, keyed by the "name" key
     inventory = {}
+    meta = {}
+
     for item in content_list:
         if isinstance(item, dict) and "name" in item:
             recipe_name = item["name"]

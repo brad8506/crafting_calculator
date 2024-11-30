@@ -7,21 +7,26 @@
         <meta http-equiv="pragma" content="no-cache">
         <meta http-equiv="expires" content="-1">
         <link rel="icon" href="data:,">
-        <title>Crafting Calculator GUI Live</title>
+        <title>Crafting Calculator</title>
         <style>
             body { font-family: Arial, sans-serif; margin: 20px; }
             table { border-collapse: collapse; width: 100%; }
             th, td { text-align: left; padding: 8px 8px 8px 0; }
-            /* tr:nth-child(even) { background-color: #f2f2f2; } */
-            .expandable-row { cursor: pointer; }
-            /* .sub-table { width: 500px; margin-left: 20px; } */
+            tr.depth-0:nth-child(even) { background-color: #ddd; }
+            .expandable-row .item-name { cursor: pointer; }
             .sub-table { margin-left: 20px; }
             .sub-table-row > td { overflow: hidden; }
             .sub-table .table-header-row { display: none; }
             tr.sub-table-row { border-left: 1px solid #ccc; }
-            tr.depth-0 { border-top: 1px solid #ccc; }
+            tr.depth-0 {
+                border-top: 1px solid #ccc;
+            }
             td.item-name { display: inline-block; }
             td.quantity { display: inline-block; }
+            .quantity-input {
+                height: 28px;
+                width: 31px;
+            }
             .sub-table .quantity input { border: none; }
             td.output-wrapper textarea { width: 100%; }
             .no-expand td:first-child { padding-left: 2rem; }
@@ -40,6 +45,15 @@
                 display: inline-block;
                 text-align: center;
             }
+            .plus-btn,
+            .minus-btn {
+                font-size: 18px;
+                padding: 5px 10px;
+                margin: 0;
+                cursor: pointer;
+            }
+            .mb-1 { margin-bottom: 1rem; }
+            .specialisation-wrapper { display: none; }
         </style>
         <!-- Reference external JS files -->
         <script src="../js/main.js"></script>
@@ -48,11 +62,17 @@
     <body>
         <h1>Crafting Calculator GUI Live</h1>
 
-        <label for="game-select">Select a game:</label>
-        <select id="game-select"></select>
-        <button onclick="loadAndAttachListeners();">Load Recipes</button>
+        <div class="mb-1">
+            <label for="game-select">Select a game:</label>
+            <select id="game-select"></select>
+            <button onclick="loadAndAttachListeners();">Load Recipes</button>
+        </div>
 
-        <!-- <button onclick="calculateQuantities()">Calculate</button> -->
+        <div class="mb-1 specialisation-wrapper">
+            <label for="specialisation-select">Select a specialisation:</label>
+            <select id="specialisation-select"></select>
+            <!-- <button onclick="filterRecipesBySpecialization();">Filter Recipes</button> -->
+        </div>
 
         <table>
             <thead>

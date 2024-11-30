@@ -11,7 +11,19 @@ async function calculateTableList() {
         tableBody.innerHTML = '';
 
         function createTableRow(item, depth = 0, parentQuantity = 1) {
-            const indent = ' '.repeat(depth * 4);  // Indentation for nested rows
+            let style = [];
+            if (depth > 0) {
+                const indent = ' '.repeat((depth) * 4); // Indentation for nested rows
+                style.push(`margin-left: ${indent}`)
+            }
+
+            if (style.length > 0) {
+                // Implode style array to a string.
+                style = style.join(';');
+            } else {
+                style = ''
+            }
+
             const rarityClass = item.rarity ? `rarity-${item.rarity.toLowerCase()}` : '';  // Class for rarity
             const depthClass = `depth-${depth}`;
             const subTableDepthClass = `depth-${depth + 1}`;
@@ -21,7 +33,7 @@ async function calculateTableList() {
             const itemQuantity = item.quantity || 1;
             const calculatedQuantity = itemQuantity * parentQuantity;
 
-            let rowHtml = `<tr class="${item.items ? 'expandable-row' : 'no-expand'} ${rarityClass} ${depthClass}" style="margin-left: ${indent};">`;
+            let rowHtml = `<tr class="${item.items ? 'expandable-row' : 'no-expand'} ${rarityClass} ${depthClass}" ${style}>`;
             rowHtml += item.items
                 ? `<td class="item-name parent width30" onclick="toggleSubTable(this)" data-source="${source}" data-wiki="${wiki}">
                         <span class="expand-icon">+</span>${item.name}
@@ -29,7 +41,11 @@ async function calculateTableList() {
                 : `<td class="item-name ${rarityClass} width30" data-source="${source}" data-wiki="${wiki}">${item.name}</td>`;
 
             const disabledAttr = depth > 0 ? 'disabled="disabled"' : '';
-            rowHtml += `<td class="quantity"><input type="text" size="4" ${disabledAttr} data-quantity-original="${itemQuantity}" value="${calculatedQuantity}"/></td>`;
+            rowHtml += `<td class="quantity">
+                <button class="minus-btn">-</button>
+                <input class="quantity-input" type="text" size="4" ${disabledAttr} data-quantity-original="${itemQuantity}" value="${calculatedQuantity}"/>
+                <button class="plus-btn">+</button>
+            </td>`;
 
             if (depth === 0) {
                 rowHtml += `<td class="output-wrapper"><textarea class="output" rows="1" cols="50"></textarea></td>`;
@@ -80,23 +96,73 @@ function toggleSubTable(element) {
     }
 }
 
-function attachEventListeners() {
-    const quantityInputs = document.querySelectorAll('.quantity input');
-
-    quantityInputs.forEach(input => {
-        input.removeEventListener('focus', updateOutput);
-        input.removeEventListener('change', updateOutput);
-        input.addEventListener('focus', updateOutput);
-        input.addEventListener('change', updateOutput);
-    });
-}
-
 function loadAndAttachListeners() {
     selectGame().then(() => {
-        return calculateTableList();
+        const selectedGame = document.getElementById('game-select').value;
+        setQueryStringParameter('game', selectedGame);
+        calculateTableList();
+
+        // Show specialisation filter wrapper.
+        const elements = document.getElementsByClassName('specialisation-wrapper');
+        for (const element of elements) {
+            element.style.display = 'block';
+        }
     }).then(() => {
         attachEventListeners();
     });
+}
+
+function loadGamesAndSpecialisations() {
+    // Fetch games and specialisations from server or static data
+    fetch('/discover_games')
+        .then(response => response.json())
+        .then(games => {
+            const gameSelect = document.getElementById('game-select');
+            games.forEach(game => {
+                const option = document.createElement('option');
+                option.value = game;
+                option.textContent = game;
+                gameSelect.appendChild(option);
+            });
+        });
+
+    // Fetch specialisations based on the selected game
+    const gameSelect = document.getElementById('game-select');
+    gameSelect.addEventListener('change', function() {
+        const selectedGame = gameSelect.value;
+        fetch(`/discover_specialisations?game=${selectedGame}`)
+            .then(response => response.json())
+            .then(specialisations => {
+                const specialisationSelect = document.getElementById('specialisation-select');
+                specialisationSelect.innerHTML = ''; // Clear current options
+                specialisations.forEach(specialisation => {
+                    const option = document.createElement('option');
+                    option.value = specialisation;
+                    option.textContent = specialisation;
+                    specialisationSelect.appendChild(option);
+                });
+            });
+    });
+}
+
+function setQueryStringParameter(key, value) {
+    const url = new URL(window.location.href);
+    url.searchParams.set(key, value);
+    window.history.replaceState({}, '', url);
+}
+
+// Clear a specific parameter
+function clearQueryStringParameter(key) {
+    const url = new URL(window.location.href);
+    url.searchParams.delete(key);
+    window.history.replaceState({}, '', url);
+}
+
+// Clear all parameters
+function clearAllQueryStringParameters() {
+    const url = new URL(window.location.href);
+    url.search = '';
+    window.history.replaceState({}, '', url);
 }
 
 function attachEventListeners() {
@@ -112,6 +178,12 @@ function attachEventListeners() {
     quantityInputs.forEach(input => {
         input.addEventListener('focus', updateOutput);
         input.addEventListener('change', updateOutput);
+    });
+
+    const quantityButtons = document.querySelectorAll('.plus-btn,.minus-btn');
+    quantityButtons.forEach(input => {
+        input.removeEventListener('click', processQuantityButtonClick);
+        input.addEventListener('click', processQuantityButtonClick);
     });
 }
 
@@ -182,3 +254,22 @@ function updateOutput(event) {
         }
     }
 }
+
+function processQuantityButtonClick(event) {
+    const button = event.target;
+
+    // Check if the clicked element is either a plus or minus button
+    if (button.classList.contains('plus-btn') || button.classList.contains('minus-btn')) {
+        const input = button.closest('.quantity').querySelector('.quantity-input');
+        let value = parseInt(input.value) || 0;
+
+        // Handle the behavior based on the button type (plus or minus)
+        if (button.classList.contains('plus-btn')) {
+            input.value = value + 1;
+        } else if (button.classList.contains('minus-btn') && value > 0) {
+            input.value = value - 1;
+        }
+        const changeEvent = new Event('change');
+        input.dispatchEvent(changeEvent);
+    }
+};
