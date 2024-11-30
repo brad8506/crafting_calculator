@@ -112,38 +112,38 @@ function loadAndAttachListeners() {
     });
 }
 
-function loadGamesAndSpecialisations() {
-    // Fetch games and specialisations from server or static data
-    fetch('/discover_games')
-        .then(response => response.json())
-        .then(games => {
-            const gameSelect = document.getElementById('game-select');
-            games.forEach(game => {
-                const option = document.createElement('option');
-                option.value = game;
-                option.textContent = game;
-                gameSelect.appendChild(option);
-            });
-        });
+// function loadGamesAndSpecialisations() {
+//     // Fetch games and specialisations from server or static data
+//     fetch('/discover_games')
+//         .then(response => response.json())
+//         .then(games => {
+//             const gameSelect = document.getElementById('game-select');
+//             games.forEach(game => {
+//                 const option = document.createElement('option');
+//                 option.value = game;
+//                 option.textContent = game;
+//                 gameSelect.appendChild(option);
+//             });
+//         });
 
-    // Fetch specialisations based on the selected game
-    const gameSelect = document.getElementById('game-select');
-    gameSelect.addEventListener('change', function() {
-        const selectedGame = gameSelect.value;
-        fetch(`/discover_specialisations?game=${selectedGame}`)
-            .then(response => response.json())
-            .then(specialisations => {
-                const specialisationSelect = document.getElementById('specialisation-select');
-                specialisationSelect.innerHTML = ''; // Clear current options
-                specialisations.forEach(specialisation => {
-                    const option = document.createElement('option');
-                    option.value = specialisation;
-                    option.textContent = specialisation;
-                    specialisationSelect.appendChild(option);
-                });
-            });
-    });
-}
+//     // Fetch specialisations based on the selected game
+//     const gameSelect = document.getElementById('game-select');
+//     gameSelect.addEventListener('change', function() {
+//         const selectedGame = gameSelect.value;
+//         fetch(`/discover_specialisations?game=${selectedGame}`)
+//             .then(response => response.json())
+//             .then(specialisations => {
+//                 const specialisationSelect = document.getElementById('specialisation-select');
+//                 specialisationSelect.innerHTML = ''; // Clear current options
+//                 specialisations.forEach(specialisation => {
+//                     const option = document.createElement('option');
+//                     option.value = specialisation;
+//                     option.textContent = specialisation;
+//                     specialisationSelect.appendChild(option);
+//                 });
+//             });
+//     });
+// }
 
 function setQueryStringParameter(key, value) {
     const url = new URL(window.location.href);

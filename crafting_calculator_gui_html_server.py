@@ -102,28 +102,25 @@ class MyRequestHandler(SimpleHTTPRequestHandler):
 
         # Debugging: List the files and directories inside fullPath
         try:
-            contents = list(fullPath.iterdir())  # Attempt to list contents
+            contents = list(fullPath.rglob("*.yml"))  # Find all .yml files recursively
             print(f"Contents of {fullPath}: {contents}")  # Debug log
         except Exception as e:
             print(f"Error reading directory: {e}")
             return []
 
-        # Get specialisations (directories only)
+        # Get specialisations (file names without extension)
         specialisations = ["- None -"]
         for entry in contents:
-            print(
-                f"Checking entry: {entry} (Type: {type(entry)})"
-            )  # Debug log to check entry types
-            print(
-                f"Found directory: {entry.name}"
-            )  # Debug log to show found directories
-            specialisations.append(entry.stem)
+            print(f"Checking entry: {entry} (Type: {type(entry)})")  # Debug log
+            if entry.is_file() and entry.suffix == '.yml' and entry.stem != 'meta':
+                specialisations.append(entry.stem)  # Add file name without extension to specialisations
 
         return specialisations
 
     def filter_recipes(self, game: str, specialization: str) -> Dict[str, Any]:
         path = Path(f"recipes/{game}")
         content_list = {}
+        inventory = {}
         meta = {}
 
         # Ensure the path exists
@@ -131,17 +128,43 @@ class MyRequestHandler(SimpleHTTPRequestHandler):
             return content_list
 
         # Look for the specific specialization file
-        specialization_file = path / f"{specialization}.yml"
-        if specialization_file.exists() and specialization_file.is_file():
-            raw_content = specialization_file.read_text(encoding="utf-8")
+        # recipe_file = path / f"{specialization}.yml"
+        recipe_file = self.find_specialization_file(game, specialization)
+        if recipe_file:
+            raw_content = recipe_file.read_text(encoding="utf-8")
             content = safe_load(raw_content)
 
             # Validate content and collect recipes
             if content:
                 content_list = content
-
-        inventory, meta = load_recipes_from_content(content_list)
+                inventory, meta = load_recipes_from_content(content_list)
         return (inventory, meta)
+
+    def find_specialization_file(self, game, specialization):
+        specialization = unquote(specialization)
+        path = Path(f"recipes/{game}")
+        fullPath = path.resolve()  # Get the absolute path
+
+        # Debugging: Check if the directory exists
+        if not fullPath.exists():
+            print(f"Error: The path {fullPath} does not exist.")
+            return None
+
+        print(f"Resolved full path: {fullPath}")  # Debug log
+
+        # Recursively search for the specialization file
+        specialization_file = None
+        for entry in fullPath.rglob(f"**/{specialization}.yml"):
+            if entry.is_file():
+                specialization_file = entry
+                break  # Stop at the first match
+
+        if specialization_file:
+            print(f"Found specialization file: {specialization_file}")
+        else:
+            print(f"Specialization file {specialization}.yml not found.")
+
+        return specialization_file
 
     def update_data_json_for_game(self, game):
         # Load the game's recipes

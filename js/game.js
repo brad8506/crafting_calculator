@@ -33,7 +33,7 @@ window.onload = function() {
         filterRecipes();  // Automatically filter when the page loads with query params
     }
 
-    loadGamesAndSpecialisations();
+    // loadGamesAndSpecialisations();
 };
 
 async function selectGame() {
