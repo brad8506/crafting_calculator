@@ -84,7 +84,7 @@
   rarity: green
 
 - name: Spine
-  source: turtle
+  source: turtle, wolf
   rarity: white
 
 - name: Wolf Skin

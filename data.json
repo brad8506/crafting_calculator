@@ -1,1007 +1,288 @@
 {
-    "Antelope": {
-        "name": "Antelope",
+    "Armor Plate": {
+        "name": "Armor Plate",
         "quantity": 1,
+        "source": "construction",
         "items": {
+            "Titanium Nugget": {
+                "name": "Titanium Nugget",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            },
+            "Iron Ingot": {
+                "name": "Iron Ingot",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Iron Ore": {
+                        "name": "Iron Ore",
+                        "quantity": 3,
+                        "source": "Celestial vein"
+                    }
+                }
+            }
+        }
+    },
+    "Assassin's Glove": {
+        "name": "Assassin's Glove",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Steroid Implant": {
+                "name": "Steroid Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
             "Isotope-238": {
                 "name": "Isotope-238",
                 "quantity": 1,
                 "rarity": "blue",
                 "source": "Metal vein"
             },
-            "Dark Horse": {
-                "name": "Dark Horse",
-                "quantity": 2,
-                "items": {
-                    "Composite Material": {
-                        "name": "Composite Material",
-                        "quantity": 1,
-                        "source": "herbalism",
-                        "rarity": "white",
-                        "items": {
-                            "Jute": {
-                                "name": "Jute",
-                                "quantity": 3,
-                                "source": "Weaver's Bush"
-                            }
-                        }
-                    },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
-                        "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
-                    },
-                    "Ceramics": {
-                        "name": "Ceramics",
-                        "quantity": 1,
-                        "source": "mining",
-                        "rarity": "white",
-                        "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
-                                "quantity": 3,
-                                "source": "Fossilized crystal vein"
-                            }
-                        }
-                    },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
-                        "quantity": 1,
-                        "source": "butchery",
-                        "rarity": "white",
-                        "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
-                                "quantity": 3,
-                                "source": "turtle",
-                                "rarity": "white"
-                            }
-                        }
-                    },
-                    "Gonad": {
-                        "name": "Gonad",
-                        "quantity": 1,
-                        "source": "boar",
-                        "rarity": "green"
-                    }
-                },
-                "rarity": "green"
-            }
-        }
-    },
-    "Brook": {
-        "name": "Brook",
-        "quantity": 1,
-        "items": {
-            "Composite Material": {
-                "name": "Composite Material",
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
                 "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Ceramics": {
-                "name": "Ceramics",
-                "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
-            }
-        }
-    },
-    "Cold Wind": {
-        "name": "Cold Wind",
-        "quantity": 1,
-        "items": {
-            "Elastic Membrane": {
-                "name": "Elastic Membrane",
-                "quantity": 1,
-                "rarity": "blue",
-                "source": "wolf"
-            },
-            "Wind": {
-                "name": "Wind",
-                "quantity": 2,
-                "items": {
-                    "Composite Material": {
-                        "name": "Composite Material",
-                        "quantity": 1,
-                        "source": "herbalism",
-                        "rarity": "white",
-                        "items": {
-                            "Jute": {
-                                "name": "Jute",
-                                "quantity": 3,
-                                "source": "Weaver's Bush"
-                            }
-                        }
-                    },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
-                        "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
-                    },
-                    "Ceramics": {
-                        "name": "Ceramics",
-                        "quantity": 1,
-                        "source": "mining",
-                        "rarity": "white",
-                        "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
-                                "quantity": 3,
-                                "source": "Fossilized crystal vein"
-                            }
-                        }
-                    },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
-                        "quantity": 1,
-                        "source": "butchery",
-                        "rarity": "white",
-                        "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
-                                "quantity": 3,
-                                "source": "turtle",
-                                "rarity": "white"
-                            }
-                        }
-                    }
-                },
-                "rarity": "green"
-            }
-        }
-    },
-    "Dark Horse": {
-        "name": "Dark Horse",
-        "quantity": 1,
-        "items": {
-            "Composite Material": {
-                "name": "Composite Material",
-                "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Ceramics": {
-                "name": "Ceramics",
-                "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
-            },
-            "Gonad": {
-                "name": "Gonad",
-                "quantity": 1,
-                "source": "boar",
-                "rarity": "green"
-            }
-        }
-    },
-    "Fast Brook": {
-        "name": "Fast Brook",
-        "quantity": 1,
-        "items": {
-            "Elastic Membrane": {
-                "name": "Elastic Membrane",
-                "quantity": 1,
-                "rarity": "blue",
-                "source": "wolf"
-            },
-            "Brook": {
-                "name": "Brook",
-                "quantity": 2,
-                "items": {
-                    "Composite Material": {
-                        "name": "Composite Material",
-                        "quantity": 1,
-                        "source": "herbalism",
-                        "rarity": "white",
-                        "items": {
-                            "Jute": {
-                                "name": "Jute",
-                                "quantity": 3,
-                                "source": "Weaver's Bush"
-                            }
-                        }
-                    },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
-                        "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
-                    },
-                    "Ceramics": {
-                        "name": "Ceramics",
-                        "quantity": 1,
-                        "source": "mining",
-                        "rarity": "white",
-                        "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
-                                "quantity": 3,
-                                "source": "Fossilized crystal vein"
-                            }
-                        }
-                    },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
-                        "quantity": 1,
-                        "source": "butchery",
-                        "rarity": "white",
-                        "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
-                                "quantity": 3,
-                                "source": "turtle",
-                                "rarity": "white"
-                            }
-                        }
-                    }
-                },
-                "rarity": "green"
-            }
-        }
-    },
-    "Flash": {
-        "name": "Flash",
-        "quantity": 1,
-        "items": {
-            "Composite Material": {
-                "name": "Composite Material",
-                "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Ceramics": {
-                "name": "Ceramics",
-                "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
-            }
-        }
-    },
-    "Fog": {
-        "name": "Fog",
-        "quantity": 1,
-        "items": {
-            "Composite Material": {
-                "name": "Composite Material",
-                "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Ceramics": {
-                "name": "Ceramics",
-                "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
-            }
-        }
-    },
-    "Hard Shell": {
-        "name": "Hard Shell",
-        "quantity": 1,
-        "items": {
-            "Elastic Membrane": {
-                "name": "Elastic Membrane",
-                "quantity": 1,
-                "rarity": "blue",
-                "source": "wolf"
-            },
-            "Shell": {
-                "name": "Shell",
-                "quantity": 2,
-                "items": {
-                    "Composite Material": {
-                        "name": "Composite Material",
-                        "quantity": 1,
-                        "source": "herbalism",
-                        "rarity": "white",
-                        "items": {
-                            "Jute": {
-                                "name": "Jute",
-                                "quantity": 3,
-                                "source": "Weaver's Bush"
-                            }
-                        }
-                    },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
-                        "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
-                    },
-                    "Ceramics": {
-                        "name": "Ceramics",
-                        "quantity": 1,
-                        "source": "mining",
-                        "rarity": "white",
-                        "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
-                                "quantity": 3,
-                                "source": "Fossilized crystal vein"
-                            }
-                        }
-                    },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
-                        "quantity": 1,
-                        "source": "butchery",
-                        "rarity": "white",
-                        "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
-                                "quantity": 3,
-                                "source": "turtle",
-                                "rarity": "white"
-                            }
-                        }
-                    }
-                },
-                "rarity": "green"
-            }
-        }
-    },
-    "Hungry Wolf": {
-        "name": "Hungry Wolf",
-        "quantity": 1,
-        "items": {
-            "Elastic Membrane": {
-                "name": "Elastic Membrane",
-                "quantity": 1,
-                "rarity": "blue",
-                "source": "wolf"
-            },
-            "Wolf": {
-                "name": "Wolf",
-                "quantity": 2,
-                "rarity": "green"
-            }
-        }
-    },
-    "Impregnable Barrier": {
-        "name": "Impregnable Barrier",
-        "quantity": 1,
-        "items": {
-            "Tungsten": {
-                "name": "Tungsten",
-                "quantity": 1,
-                "rarity": "blue",
+                "rarity": "purple",
                 "source": "Metal vein"
             },
-            "Steel Gates": {
-                "name": "Steel Gates",
-                "quantity": 2,
-                "items": {
-                    "Composite Material": {
-                        "name": "Composite Material",
-                        "quantity": 1,
-                        "source": "herbalism",
-                        "rarity": "white",
-                        "items": {
-                            "Jute": {
-                                "name": "Jute",
-                                "quantity": 3,
-                                "source": "Weaver's Bush"
-                            }
-                        }
-                    },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
-                        "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
-                    },
-                    "Ceramics": {
-                        "name": "Ceramics",
-                        "quantity": 1,
-                        "source": "mining",
-                        "rarity": "white",
-                        "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
-                                "quantity": 3,
-                                "source": "Fossilized crystal vein"
-                            }
-                        }
-                    },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
-                        "quantity": 1,
-                        "source": "butchery",
-                        "rarity": "white",
-                        "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
-                                "quantity": 3,
-                                "source": "turtle",
-                                "rarity": "white"
-                            }
-                        }
-                    },
-                    "Giant Feather": {
-                        "name": "Giant Feather",
-                        "quantity": 1,
-                        "rarity": "green",
-                        "source": "Magic tree"
-                    }
-                },
-                "rarity": "green"
-            }
-        }
-    },
-    "Intensity": {
-        "name": "Intensity",
-        "quantity": 1,
-        "items": {
-            "Petrified Spike": {
-                "name": "Petrified Spike",
+            "Welded Patterned": {
+                "name": "Welded Patterned",
                 "quantity": 1,
-                "rarity": "blue",
-                "source": "Thick Bush"
-            },
-            "Vigor": {
-                "name": "Vigor",
-                "quantity": 2,
+                "source": "weaponsmithing",
                 "items": {
-                    "Composite Material": {
-                        "name": "Composite Material",
-                        "quantity": 1,
-                        "source": "herbalism",
-                        "rarity": "white",
-                        "items": {
-                            "Jute": {
-                                "name": "Jute",
-                                "quantity": 3,
-                                "source": "Weaver's Bush"
-                            }
-                        }
-                    },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
-                        "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
-                    },
-                    "Ceramics": {
-                        "name": "Ceramics",
-                        "quantity": 1,
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 3,
                         "source": "mining",
                         "rarity": "white",
                         "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
+                            "Iron Ore": {
+                                "name": "Iron Ore",
                                 "quantity": 3,
-                                "source": "Fossilized crystal vein"
+                                "source": "Celestial vein"
                             }
                         }
                     },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
-                        "quantity": 1,
-                        "source": "butchery",
-                        "rarity": "white",
-                        "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
-                                "quantity": 3,
-                                "source": "turtle",
-                                "rarity": "white"
-                            }
-                        }
-                    },
-                    "Moonstone": {
-                        "name": "Moonstone",
+                    "Ruby": {
+                        "name": "Ruby",
                         "quantity": 1,
                         "rarity": "green",
                         "source": "Metal vein"
                     }
                 },
-                "rarity": "green"
+                "wiki": "https://corepunkers.com/i/weapon-welded-patterned-knuckle",
+                "rarity": "blue"
             }
-        }
+        },
+        "wiki": "https://corepunkers.com/i/artifact-assassins-glove"
     },
-    "Jagged Scar": {
-        "name": "Jagged Scar",
+    "Atomic Breastplate": {
+        "name": "Atomic Breastplate",
         "quantity": 1,
+        "source": "construction",
         "items": {
-            "Elastic Membrane": {
-                "name": "Elastic Membrane",
-                "quantity": 1,
-                "rarity": "blue",
-                "source": "wolf"
-            },
-            "Scar": {
-                "name": "Scar",
+            "Armor Plate": {
+                "name": "Armor Plate",
                 "quantity": 2,
+                "source": "construction",
                 "items": {
-                    "Composite Material": {
-                        "name": "Composite Material",
-                        "quantity": 1,
-                        "source": "herbalism",
-                        "rarity": "white",
-                        "items": {
-                            "Jute": {
-                                "name": "Jute",
-                                "quantity": 3,
-                                "source": "Weaver's Bush"
-                            }
-                        }
-                    },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
-                        "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
-                    },
-                    "Ceramics": {
-                        "name": "Ceramics",
-                        "quantity": 1,
-                        "source": "mining",
-                        "rarity": "white",
-                        "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
-                                "quantity": 3,
-                                "source": "Fossilized crystal vein"
-                            }
-                        }
-                    },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
-                        "quantity": 1,
-                        "source": "butchery",
-                        "rarity": "white",
-                        "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
-                                "quantity": 3,
-                                "source": "turtle",
-                                "rarity": "white"
-                            }
-                        }
-                    }
-                },
-                "rarity": "green"
-            }
-        }
-    },
-    "Lamprey": {
-        "name": "Lamprey",
-        "quantity": 1,
-        "items": {
-            "Composite Material": {
-                "name": "Composite Material",
-                "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Ceramics": {
-                "name": "Ceramics",
-                "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
-            },
-            "Transparent Leaf": {
-                "name": "Transparent Leaf",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree"
-            }
-        }
-    },
-    "Mantis": {
-        "name": "Mantis",
-        "quantity": 1,
-        "items": {
-            "Neon Mushroom": {
-                "name": "Neon Mushroom",
-                "quantity": 1,
-                "rarity": "blue",
-                "source": "Magic tree"
-            },
-            "Lamprey": {
-                "name": "Lamprey",
-                "quantity": 2,
-                "items": {
-                    "Composite Material": {
-                        "name": "Composite Material",
-                        "quantity": 1,
-                        "source": "herbalism",
-                        "rarity": "white",
-                        "items": {
-                            "Jute": {
-                                "name": "Jute",
-                                "quantity": 3,
-                                "source": "Weaver's Bush"
-                            }
-                        }
-                    },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
-                        "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
-                    },
-                    "Ceramics": {
-                        "name": "Ceramics",
-                        "quantity": 1,
-                        "source": "mining",
-                        "rarity": "white",
-                        "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
-                                "quantity": 3,
-                                "source": "Fossilized crystal vein"
-                            }
-                        }
-                    },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
-                        "quantity": 1,
-                        "source": "butchery",
-                        "rarity": "white",
-                        "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
-                                "quantity": 3,
-                                "source": "turtle",
-                                "rarity": "white"
-                            }
-                        }
-                    },
-                    "Transparent Leaf": {
-                        "name": "Transparent Leaf",
-                        "quantity": 1,
-                        "rarity": "green",
-                        "source": "Magic tree"
-                    }
-                },
-                "rarity": "green"
-            }
-        }
-    },
-    "Reflect": {
-        "name": "Reflect",
-        "quantity": 1,
-        "items": {
-            "Forest Berry": {
-                "name": "Forest Berry",
-                "quantity": 1
-            },
-            "Thorns": {
-                "name": "Thorns",
-                "quantity": 2,
-                "items": {
-                    "Composite Material": {
-                        "name": "Composite Material",
-                        "quantity": 1,
-                        "source": "herbalism",
-                        "rarity": "white",
-                        "items": {
-                            "Jute": {
-                                "name": "Jute",
-                                "quantity": 3,
-                                "source": "Weaver's Bush"
-                            }
-                        }
-                    },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
-                        "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
-                    },
-                    "Ceramics": {
-                        "name": "Ceramics",
-                        "quantity": 1,
-                        "source": "mining",
-                        "rarity": "white",
-                        "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
-                                "quantity": 3,
-                                "source": "Fossilized crystal vein"
-                            }
-                        }
-                    },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
-                        "quantity": 1,
-                        "source": "butchery",
-                        "rarity": "white",
-                        "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
-                                "quantity": 3,
-                                "source": "turtle",
-                                "rarity": "white"
-                            }
-                        }
-                    },
                     "Titanium Nugget": {
                         "name": "Titanium Nugget",
                         "quantity": 1,
                         "rarity": "green",
                         "source": "Metal vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
                     }
                 },
                 "rarity": "green"
+            },
+            "Tungsten": {
+                "name": "Tungsten",
+                "quantity": 2,
+                "rarity": "blue",
+                "source": "Metal vein"
             }
         }
     },
-    "Scar": {
-        "name": "Scar",
+    "Battle Mage Implant": {
+        "name": "Battle Mage Implant",
         "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Steroid Implant": {
+                "name": "Steroid Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Isotope-238": {
+                "name": "Isotope-238",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal vein"
+            },
+            "Neon Mushroom": {
+                "name": "Neon Mushroom",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic tree"
+            }
+        }
+    },
+    "Battle Sleeve": {
+        "name": "Battle Sleeve",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Steroid Implant": {
+                "name": "Steroid Implant",
+                "quantity": 2,
+                "source": "construction",
+                "items": {
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Petrified Spike": {
+                "name": "Petrified Spike",
+                "quantity": 2,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            }
+        }
+    },
+    "Body Scanner": {
+        "name": "Body Scanner",
+        "quantity": 1,
+        "source": "construction",
         "items": {
             "Composite Material": {
                 "name": "Composite Material",
@@ -1016,460 +297,380 @@
                     }
                 }
             },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
+            "Diamond": {
+                "name": "Diamond",
                 "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Ceramics": {
-                "name": "Ceramics",
-                "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
+                "rarity": "green",
+                "source": "Metal vein"
             }
         }
     },
-    "Screen": {
-        "name": "Screen",
+    "Cerebral Interface": {
+        "name": "Cerebral Interface",
         "quantity": 1,
+        "source": "construction",
         "items": {
-            "Elastic Membrane": {
-                "name": "Elastic Membrane",
+            "Steroid Implant": {
+                "name": "Steroid Implant",
                 "quantity": 1,
-                "rarity": "blue",
-                "source": "wolf"
-            },
-            "Stone Wall": {
-                "name": "Stone Wall",
-                "quantity": 2,
+                "source": "construction",
                 "items": {
-                    "Composite Material": {
-                        "name": "Composite Material",
+                    "Gonad": {
+                        "name": "Gonad",
                         "quantity": 1,
-                        "source": "herbalism",
-                        "rarity": "white",
-                        "items": {
-                            "Jute": {
-                                "name": "Jute",
-                                "quantity": 3,
-                                "source": "Weaver's Bush"
-                            }
-                        }
+                        "source": "boar",
+                        "rarity": "green"
                     },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
-                        "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
-                    },
-                    "Ceramics": {
-                        "name": "Ceramics",
-                        "quantity": 1,
-                        "source": "mining",
-                        "rarity": "white",
-                        "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
-                                "quantity": 3,
-                                "source": "Fossilized crystal vein"
-                            }
-                        }
-                    },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
                         "quantity": 1,
                         "source": "butchery",
-                        "rarity": "white",
                         "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
                                 "quantity": 3,
                                 "source": "turtle",
-                                "rarity": "white"
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
                             }
                         }
-                    },
+                    }
+                },
+                "rarity": "green"
+            },
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
                     "Amber": {
                         "name": "Amber",
                         "quantity": 1,
                         "rarity": "green",
                         "source": "Magic tree",
                         "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Petrified Spike": {
+                "name": "Petrified Spike",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            },
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            }
+        }
+    },
+    "Cyber Biker Arm": {
+        "name": "Cyber Biker Arm",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Steroid Implant": {
+                "name": "Steroid Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3,
+                                "source": "Timberheart tree"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Petrified Spike": {
+                "name": "Petrified Spike",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            },
+            "Mutated Leaf": {
+                "name": "Mutated Leaf",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic tree"
+            }
+        }
+    },
+    "Cyber Plate Carrier": {
+        "name": "Cyber Plate Carrier",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Tungsten": {
+                "name": "Tungsten",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal vein"
+            },
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            }
+        }
+    },
+    "Dragonscale Armor Plate": {
+        "name": "Dragonscale Armor Plate",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Isotype-238": {
+                "name": "Isotype-238",
+                "quantity": 1
+            },
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Steroid Implant": {
+                "name": "Steroid Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
                     }
                 },
                 "rarity": "green"
             }
         }
     },
-    "Shell": {
-        "name": "Shell",
+    "Emerald Cypher": {
+        "name": "Emerald Cypher",
         "quantity": 1,
+        "source": "construction",
         "items": {
-            "Composite Material": {
-                "name": "Composite Material",
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
                 "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Ceramics": {
-                "name": "Ceramics",
-                "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
-            }
-        }
-    },
-    "Steel Gates": {
-        "name": "Steel Gates",
-        "quantity": 1,
-        "items": {
-            "Composite Material": {
-                "name": "Composite Material",
-                "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Ceramics": {
-                "name": "Ceramics",
-                "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
-            },
-            "Giant Feather": {
-                "name": "Giant Feather",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree"
-            }
-        }
-    },
-    "Stone Wall": {
-        "name": "Stone Wall",
-        "quantity": 1,
-        "items": {
-            "Composite Material": {
-                "name": "Composite Material",
-                "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Ceramics": {
-                "name": "Ceramics",
-                "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
-            },
-            "Amber": {
-                "name": "Amber",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree",
-                "wiki": "https://corepunk.wiki/w/Amber"
-            }
-        }
-    },
-    "Thorns": {
-        "name": "Thorns",
-        "quantity": 1,
-        "items": {
-            "Composite Material": {
-                "name": "Composite Material",
-                "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Ceramics": {
-                "name": "Ceramics",
-                "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
-            },
-            "Titanium Nugget": {
-                "name": "Titanium Nugget",
-                "quantity": 1,
-                "rarity": "green",
+                "rarity": "purple",
                 "source": "Metal vein"
-            }
-        }
-    },
-    "Vigor": {
-        "name": "Vigor",
-        "quantity": 1,
-        "items": {
-            "Composite Material": {
-                "name": "Composite Material",
+            },
+            "Concentrated Mana": {
+                "name": "Concentrated Mana",
                 "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
+                "rarity": "purple"
+            },
+            "Granulation Tissue": {
+                "name": "Granulation Tissue",
+                "quantity": 1,
+                "rarity": "purple"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "source": "construction",
                 "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
                     }
-                }
+                },
+                "rarity": "blue"
             },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
+            "Mana Amulet": {
+                "name": "Mana Amulet",
                 "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
+                "source": "construction",
                 "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3,
+                                "source": "Timberheart tree"
+                            }
+                        }
                     }
-                }
+                },
+                "rarity": "blue"
             },
-            "Ceramics": {
-                "name": "Ceramics",
+            "Body Scanner": {
+                "name": "Body Scanner",
                 "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
-            },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
-                "quantity": 1,
-                "source": "butchery",
-                "rarity": "white",
-                "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
-                        "quantity": 3,
-                        "source": "turtle",
-                        "rarity": "white"
-                    }
-                }
-            },
-            "Moonstone": {
-                "name": "Moonstone",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Vivid Flash": {
-        "name": "Vivid Flash",
-        "quantity": 1,
-        "items": {
-            "Elastic Membrane": {
-                "name": "Elastic Membrane",
-                "quantity": 1,
-                "rarity": "blue",
-                "source": "wolf"
-            },
-            "Flash": {
-                "name": "Flash",
-                "quantity": 2,
+                "source": "construction",
                 "items": {
                     "Composite Material": {
                         "name": "Composite Material",
@@ -1484,107 +685,1839 @@
                             }
                         }
                     },
-                    "Jewellery Wood": {
-                        "name": "Jewellery Wood",
+                    "Diamond": {
+                        "name": "Diamond",
                         "quantity": 1,
-                        "source": "logging",
-                        "rarity": "white",
-                        "items": {
-                            "Tree Root": {
-                                "name": "Tree Root",
-                                "quantity": 3,
-                                "source": "Petrified tree"
-                            }
-                        }
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
+                "rarity": "blue"
+            }
+        }
+    },
+    "Flux Strike": {
+        "name": "Flux Strike",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Rainbow Snail": {
+                "name": "Rainbow Snail",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Thick Bush"
+            },
+            "Concentrated Mana": {
+                "name": "Concentrated Mana",
+                "quantity": 1,
+                "rarity": "purple"
+            },
+            "Granulation Tissue": {
+                "name": "Granulation Tissue",
+                "quantity": 1,
+                "rarity": "purple"
+            },
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
                     },
-                    "Ceramics": {
-                        "name": "Ceramics",
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
                         "quantity": 1,
                         "source": "mining",
                         "rarity": "white",
                         "items": {
-                            "Ancient Fossils": {
-                                "name": "Ancient Fossils",
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
                                 "quantity": 3,
-                                "source": "Fossilized crystal vein"
+                                "source": "Timberheart tree"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
                             }
                         }
                     },
-                    "Jewellery Bone": {
-                        "name": "Jewellery Bone",
+                    "Diamond": {
+                        "name": "Diamond",
                         "quantity": 1,
-                        "source": "butchery",
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
+                "rarity": "blue"
+            }
+        }
+    },
+    "Fusion Engine": {
+        "name": "Fusion Engine",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "source": "mining",
                         "rarity": "white",
                         "items": {
-                            "Large Bone": {
-                                "name": "Large Bone",
-                                "quantity": 3,
-                                "source": "turtle",
-                                "rarity": "white"
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
                             }
                         }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Neon Mushroom": {
+                "name": "Neon Mushroom",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic tree"
+            },
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            }
+        }
+    },
+    "Gadgetron Cube": {
+        "name": "Gadgetron Cube",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Metal vein"
+            },
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3,
+                                "source": "Timberheart tree"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Beating Heart": {
+                "name": "Beating Heart",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "wolf"
+            },
+            "Concentrated Mana": {
+                "name": "Concentrated Mana",
+                "quantity": 1,
+                "rarity": "purple"
+            }
+        }
+    },
+    "Hormone Booster": {
+        "name": "Hormone Booster",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
+                "rarity": "green"
+            },
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Forest berry": {
+                "name": "Forest berry",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            },
+            "Isotope-238": {
+                "name": "Isotope-238",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Immuno-Stimulating Implant": {
+        "name": "Immuno-Stimulating Implant",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Blue Lotus": {
+                "name": "Blue Lotus",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Thick Bush"
+            },
+            "Bio-compatible Material": {
+                "name": "Bio-compatible Material",
+                "quantity": 1,
+                "source": "butchery",
+                "items": {
+                    "Xiphoid Process": {
+                        "name": "Xiphoid Process",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                    }
+                }
+            }
+        }
+    },
+    "Magic Circle": {
+        "name": "Magic Circle",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Moonstone": {
+                "name": "Moonstone",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Metal vein"
+            },
+            "Meteoric Ingot": {
+                "name": "Meteoric Ingot",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Meteoric Metal": {
+                        "name": "Meteoric Metal",
+                        "quantity": 3
+                    }
+                }
+            }
+        }
+    },
+    "Magic Cube": {
+        "name": "Magic Cube",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Petrified Spike": {
+                "name": "Petrified Spike",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            },
+            "Isotype-238": {
+                "name": "Isotype-238",
+                "quantity": 1
+            },
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Magitech Visor": {
+        "name": "Magitech Visor",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Metal vein"
+            },
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Rainbow Snail": {
+                "name": "Rainbow Snail",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Thick Bush"
+            },
+            "Beating Heart": {
+                "name": "Beating Heart",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "wolf"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            }
+        }
+    },
+    "Mana Amulet": {
+        "name": "Mana Amulet",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Mana Resin": {
+                "name": "Mana Resin",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree"
+            },
+            "Treated Wood": {
+                "name": "Treated Wood",
+                "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
+                "items": {
+                    "Heartwood": {
+                        "name": "Heartwood",
+                        "quantity": 3,
+                        "source": "Timberheart tree"
+                    }
+                }
+            }
+        }
+    },
+    "Mana Phaser": {
+        "name": "Mana Phaser",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
+                "rarity": "green"
+            },
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3,
+                                "source": "Timberheart tree"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Isotope-238": {
+                "name": "Isotope-238",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal vein"
+            },
+            "Mutated Leaf": {
+                "name": "Mutated Leaf",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic tree"
+            }
+        }
+    },
+    "Matter Shaker": {
+        "name": "Matter Shaker",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 2,
+                "source": "construction",
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Isotope-238": {
+                "name": "Isotope-238",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Modular Glove": {
+        "name": "Modular Glove",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Steroid Implant": {
+                "name": "Steroid Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Tungsten": {
+                "name": "Tungsten",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal vein"
+            },
+            "Petrified Spike": {
+                "name": "Petrified Spike",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            }
+        }
+    },
+    "Nano Tissue": {
+        "name": "Nano Tissue",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Amber": {
+                "name": "Amber",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree",
+                "wiki": "https://corepunk.wiki/w/Amber"
+            },
+            "Cloth": {
+                "name": "Cloth",
+                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
+                "items": {
+                    "Silkworm Caterpillar": {
+                        "name": "Silkworm Caterpillar",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            }
+        }
+    },
+    "Neural Accelerator": {
+        "name": "Neural Accelerator",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Steroid Implant": {
+                "name": "Steroid Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Rainbow Snail": {
+                "name": "Rainbow Snail",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Thick Bush"
+            },
+            "Blood Honey": {
+                "name": "Blood Honey",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Magic tree"
+            },
+            "Granulation Tissue": {
+                "name": "Granulation Tissue",
+                "quantity": 1,
+                "rarity": "purple"
+            }
+        }
+    },
+    "Paramedic Bracer": {
+        "name": "Paramedic Bracer",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Isotope-238": {
+                "name": "Isotope-238",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Primal Energy Invertor": {
+        "name": "Primal Energy Invertor",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Neon Mushroom": {
+                "name": "Neon Mushroom",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic tree"
+            },
+            "Forest berry": {
+                "name": "Forest berry",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            }
+        }
+    },
+    "Psionic Backpack": {
+        "name": "Psionic Backpack",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 2,
+                "source": "construction",
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3,
+                                "source": "Timberheart tree"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Mutated Leaf": {
+                "name": "Mutated Leaf",
+                "quantity": 2,
+                "rarity": "blue",
+                "source": "Magic tree"
+            }
+        }
+    },
+    "Recovery Device": {
+        "name": "Recovery Device",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
+                "rarity": "green"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Isotype-238": {
+                "name": "Isotype-238",
+                "quantity": 1
+            },
+            "Tungsten": {
+                "name": "Tungsten",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal vein"
+            }
+        }
+    },
+    "Resonance Armor": {
+        "name": "Resonance Armor",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Isotype-238": {
+                "name": "Isotype-238",
+                "quantity": 2
+            },
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 2,
+                "source": "construction",
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
                     }
                 },
                 "rarity": "green"
             }
         }
     },
-    "Wind": {
-        "name": "Wind",
+    "Soldier's Implant": {
+        "name": "Soldier's Implant",
         "quantity": 1,
+        "source": "construction",
         "items": {
-            "Composite Material": {
-                "name": "Composite Material",
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
                 "quantity": 1,
-                "source": "herbalism",
-                "rarity": "white",
+                "source": "construction",
                 "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
                     }
-                }
+                },
+                "rarity": "green"
             },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
+            "Steroid Implant": {
+                "name": "Steroid Implant",
                 "quantity": 1,
-                "source": "logging",
-                "rarity": "white",
+                "source": "construction",
                 "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
                     }
-                }
+                },
+                "rarity": "green"
             },
-            "Ceramics": {
-                "name": "Ceramics",
+            "Petrified Spike": {
+                "name": "Petrified Spike",
                 "quantity": 1,
-                "source": "mining",
-                "rarity": "white",
-                "items": {
-                    "Ancient Fossils": {
-                        "name": "Ancient Fossils",
-                        "quantity": 3,
-                        "source": "Fossilized crystal vein"
-                    }
-                }
+                "rarity": "blue",
+                "source": "Thick Bush"
             },
-            "Jewellery Bone": {
-                "name": "Jewellery Bone",
+            "Forest berry": {
+                "name": "Forest berry",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            }
+        }
+    },
+    "Spellbound Dominance": {
+        "name": "Spellbound Dominance",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Steroid Implant": {
+                "name": "Steroid Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Dragon Shell": {
+                "name": "Dragon Shell",
+                "quantity": 1,
+                "rarity": "purple"
+            },
+            "Blood Honey": {
+                "name": "Blood Honey",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Magic tree"
+            },
+            "Rainbow Snail": {
+                "name": "Rainbow Snail",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Thick Bush"
+            }
+        }
+    },
+    "Stealth Cloak": {
+        "name": "Stealth Cloak",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 2,
+                "source": "construction",
+                "items": {
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 2,
+                "rarity": "blue",
+                "source": "wolf"
+            }
+        }
+    },
+    "Steam Cells Implant": {
+        "name": "Steam Cells Implant",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 2,
+                "source": "construction",
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Forest berry": {
+                "name": "Forest berry",
+                "quantity": 2,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            }
+        }
+    },
+    "Steroid Implant": {
+        "name": "Steroid Implant",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Gonad": {
+                "name": "Gonad",
+                "quantity": 1,
+                "source": "boar",
+                "rarity": "green"
+            },
+            "Bio-compatible Material": {
+                "name": "Bio-compatible Material",
                 "quantity": 1,
                 "source": "butchery",
-                "rarity": "white",
                 "items": {
-                    "Large Bone": {
-                        "name": "Large Bone",
+                    "Xiphoid Process": {
+                        "name": "Xiphoid Process",
                         "quantity": 3,
                         "source": "turtle",
-                        "rarity": "white"
+                        "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
                     }
                 }
+            }
+        }
+    },
+    "Techfort Shell": {
+        "name": "Techfort Shell",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Thermal Liquidum": {
+                "name": "Thermal Liquidum",
+                "quantity": 1,
+                "rarity": "purple",
+                "source": "Metal vein"
+            },
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Armor Plate": {
+                "name": "Armor Plate",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Iron Ingot": {
+                        "name": "Iron Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Iron Ore": {
+                                "name": "Iron Ore",
+                                "quantity": 3,
+                                "source": "Celestial vein"
+                            }
+                        }
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Body Scanner": {
+                "name": "Body Scanner",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Diamond": {
+                        "name": "Diamond",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
+                "rarity": "blue"
+            },
+            "Dragon Shell": {
+                "name": "Dragon Shell",
+                "quantity": 1,
+                "rarity": "purple"
+            },
+            "Granulation Tissue": {
+                "name": "Granulation Tissue",
+                "quantity": 1,
+                "rarity": "purple"
+            }
+        }
+    },
+    "Vital Nano Bracer": {
+        "name": "Vital Nano Bracer",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Nano Tissue": {
+                "name": "Nano Tissue",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    },
+                    "Cloth": {
+                        "name": "Cloth",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Silkworm Caterpillar": {
+                                "name": "Silkworm Caterpillar",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            },
+            "Forest berry": {
+                "name": "Forest berry",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            }
+        }
+    },
+    "Vitality Augmenter": {
+        "name": "Vitality Augmenter",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3,
+                                "source": "Timberheart tree"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Immuno-Stimulating Implant": {
+                "name": "Immuno-Stimulating Implant",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Blue Lotus": {
+                        "name": "Blue Lotus",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Thick Bush"
+                    },
+                    "Bio-compatible Material": {
+                        "name": "Bio-compatible Material",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "items": {
+                            "Xiphoid Process": {
+                                "name": "Xiphoid Process",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "wiki": "https://corepunk.wiki/w/Xiphoid_Process"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Mutated Leaf": {
+                "name": "Mutated Leaf",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic tree"
+            },
+            "Forest berry": {
+                "name": "Forest berry",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Thick Bush"
+            }
+        }
+    },
+    "Warlock's Lamp": {
+        "name": "Warlock's Lamp",
+        "quantity": 1,
+        "source": "construction",
+        "items": {
+            "Magic Circle": {
+                "name": "Magic Circle",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    },
+                    "Meteoric Ingot": {
+                        "name": "Meteoric Ingot",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Meteoric Metal": {
+                                "name": "Meteoric Metal",
+                                "quantity": 3
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Mana Amulet": {
+                "name": "Mana Amulet",
+                "quantity": 1,
+                "source": "construction",
+                "items": {
+                    "Mana Resin": {
+                        "name": "Mana Resin",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree"
+                    },
+                    "Treated Wood": {
+                        "name": "Treated Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Heartwood": {
+                                "name": "Heartwood",
+                                "quantity": 3,
+                                "source": "Timberheart tree"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            },
+            "Neon Mushroom": {
+                "name": "Neon Mushroom",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic tree"
+            },
+            "Mutated Leaf": {
+                "name": "Mutated Leaf",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic tree"
             }
         }
     }
