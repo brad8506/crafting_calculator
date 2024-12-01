@@ -116,7 +116,7 @@ def load_recipes_from_content(
 
     # Loop through inventory and fix child items that are using list type
     for item_name, details in inventory.items():
-        if item_name == "Plasma Launcher":
+        if item_name == "Apocalyptic Effigy":
             debug = True
         details["quantity"] = details.get("quantity", 1)
         child_items = details.get("items", None)
@@ -176,6 +176,8 @@ def process_inventory(inventory):
         if item_name in ("Steroid Implant"):
             debug = True
         if item_name in ("Vital Nano Bracer"):
+            debug = True
+        if item_name in ("Apocalyptic Effigy"):
             debug = True
         if item_name in (
             "Vital Nano Bracer",
@@ -243,7 +245,7 @@ def add_recipe_details_recursive(
         parent_dict (dict): The dictionary to accumulate the details.
     """
 
-    if item_name == "Armor Plate":
+    if item_name == "Apocalyptic Effigy":
         debug = True
 
     item_details = convert_item(item_name, item_details, inventory)
@@ -253,7 +255,6 @@ def add_recipe_details_recursive(
     child_details = {}
     for child_name, child_details in item_details.get("items", {}).items():
         child_details = convert_item(child_name, child_details, inventory)
-        # child_details['quantity'] = child_details['quantity'] * item_quantity
         child_details_new = add_recipe_details_recursive(
             child_name, child_details, inventory, item_details["items"]
         )

@@ -120,8 +120,12 @@ class MyRequestHandler(SimpleHTTPRequestHandler):
     def filter_recipes(self, game: str, specialization: str) -> Dict[str, Any]:
         path = Path(f"recipes/{game}")
         content_list = {}
+        filtered_inventory = {}
+        filtered_meta = {}
+
         inventory = {}
-        meta = {}
+        inventory, meta = self._load_recipes(game)
+        listCraftable, listGatherable = process_inventory(inventory)
 
         # Ensure the path exists
         if not path.exists() or not path.is_dir():
@@ -137,7 +141,9 @@ class MyRequestHandler(SimpleHTTPRequestHandler):
             # Validate content and collect recipes
             if content:
                 content_list = content
-                inventory, meta = load_recipes_from_content(content_list)
+                filtered_inventory, filtered_meta = load_recipes_from_content(content_list)
+                filtered_dict = {key: inventory[key] for key in filtered_inventory if key in inventory}
+                inventory = filtered_dict
         return (inventory, meta)
 
     def find_specialization_file(self, game, specialization):
@@ -169,6 +175,7 @@ class MyRequestHandler(SimpleHTTPRequestHandler):
     def update_data_json_for_game(self, game):
         # Load the game's recipes
         inventory, meta = self._load_recipes(game)
+        self.update_data_json_with_recipes
         listCraftable, listGatherable = process_inventory(inventory)
         listCraftableItems = sorted(list(listCraftable.keys()))
 
