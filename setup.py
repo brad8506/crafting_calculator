@@ -18,6 +18,7 @@ web_dir = os.path.join(os.path.dirname(__file__), "web")
 crafting_dir = os.path.join(os.path.dirname(__file__), "crafting")
 recipes_dir = os.path.join(os.path.dirname(__file__), "recipes")
 js_dir = os.path.join(os.path.dirname(__file__), "js")
+changelog_file = os.path.join(os.path.dirname(__file__), "CHANGELOG.md")  # Path to the changelog file
 
 # Options for cx_Freeze
 build_exe_options = {
@@ -28,6 +29,7 @@ build_exe_options = {
         (crafting_dir, "crafting"),  # Include the 'web' folder
         (recipes_dir, "recipes"),  # Include the 'recipes' folder
         (js_dir, "js"),  # Include the 'recipes' folder
+        (changelog_file, "CHANGELOG.md"),  # Include the CHANGELOG.md file
     ],
     "optimize": 2,
     "build_exe": f"build/exe.win-amd{ARCHITECTURE}-{PYTHON_VERSION}/crafting-calculator-{APP_VERSION}",  # Dynamic output path
