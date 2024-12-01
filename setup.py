@@ -30,7 +30,7 @@ build_exe_options = {
         (js_dir, "js"),  # Include the 'recipes' folder
     ],
     "optimize": 2,
-    "build_exe": f"build/exe.win-amd{ARCHITECTURE}-{PYTHON_VERSION}/{APP_VERSION}",  # Dynamic output path
+    "build_exe": f"build/exe.win-amd{ARCHITECTURE}-{PYTHON_VERSION}/crafting-calculator-{APP_VERSION}",  # Dynamic output path
 }
 
 # Base 'Win32GUI' is used for Windows applications without a console
