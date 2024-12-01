@@ -41,19 +41,19 @@ async function calculateTableList() {
                 : `<td class="item-name ${rarityClass} width30" data-source="${source}" data-wiki="${wiki}">${item.name}</td>`;
 
             const disabledAttr = depth > 0 ? 'disabled="disabled"' : '';
-            
+
             // td quantity start.
             rowHtml += `<td class="quantity">`;
-            
+
             if (depth === 0) {
                 rowHtml += `<button class="minus-btn">-</button>`
             }
             rowHtml += `<input class="quantity-input" type="text" size="4" ${disabledAttr} data-quantity-original="${itemQuantity}" value="${calculatedQuantity}"/>`
-            
+
             if (depth === 0) {
                 rowHtml += `<button class="plus-btn">+</button>`
             }
-            
+
             rowHtml += `</td>`;
             // td quantity end.
 

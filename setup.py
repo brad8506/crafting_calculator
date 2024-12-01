@@ -15,6 +15,7 @@ ARCHITECTURE = platform.architecture()[0]
 
 # Directory containing your assets
 web_dir = os.path.join(os.path.dirname(__file__), "web")
+crafting_dir = os.path.join(os.path.dirname(__file__), "crafting")
 recipes_dir = os.path.join(os.path.dirname(__file__), "recipes")
 js_dir = os.path.join(os.path.dirname(__file__), "js")
 
@@ -24,6 +25,7 @@ build_exe_options = {
     "excludes": [],
     "include_files": [
         (web_dir, "web"),  # Include the 'web' folder
+        (crafting_dir, "crafting"),  # Include the 'web' folder
         (recipes_dir, "recipes"),  # Include the 'recipes' folder
         (js_dir, "js"),  # Include the 'recipes' folder
     ],

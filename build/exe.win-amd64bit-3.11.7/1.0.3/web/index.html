@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="expires" content="-1">
+        <link rel="icon" href="data:,">
+        <title>Crafting Calculator GUI Live</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            table { border-collapse: collapse; width: 100%; }
+            th, td { text-align: left; padding: 8px 8px 8px 0; }
+            /* tr:nth-child(even) { background-color: #f2f2f2; } */
+            .expandable-row { cursor: pointer; }
+            /* .sub-table { width: 500px; margin-left: 20px; } */
+            .sub-table { margin-left: 20px; }
+            .sub-table-row > td { overflow: hidden; }
+            .sub-table .table-header-row { display: none; }
+            tr.sub-table-row { border-left: 1px solid #ccc; }
+            tr.depth-0 { border-top: 1px solid #ccc; }
+            td.item-name { display: inline-block; }
+            td.quantity { display: inline-block; }
+            .sub-table .quantity input { border: none; }
+            td.output-wrapper textarea { width: 100%; }
+            .no-expand td:first-child { padding-left: 2rem; }
+            .rarity-green td:first-child { color: green; }
+            .rarity-blue td:first-child { color: blue; }
+            .rarity-purple td:first-child { color: purple; }
+            span.expand-icon {
+                color: orange;
+                font-weight: 900;
+                background-color: #eee;
+                border: 1px solid orange;
+                border-radius: 12px;
+                padding: 0px 6px;
+                margin-right: 5px;
+                min-width: 11px;
+                display: inline-block;
+                text-align: center;
+            }
+        </style>
+        <!-- Reference external JS files -->
+        <script src="../js/main.js"></script>
+        <script src="../js/game.js"></script>
+    </head>
+    <body>
+        <h1>Crafting Calculator GUI Live</h1>
+
+        <label for="game-select">Select a game:</label>
+        <select id="game-select"></select>
+        <button onclick="loadAndAttachListeners();">Load Recipes</button>
+
+        <!-- <button onclick="calculateQuantities()">Calculate</button> -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Craftable Items</th>
+                    <th>Quantity Required</th>
+                </tr>
+            </thead>
+            <tbody id="js-data-table-list">
+                <!-- Dynamic content will be injected here -->
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+# https://corepunk.wiki/w/Weaponsmithing
+# https://corepunk.pro/professions/weaponsmithing
+# https://corepunkers.com/professions
+
+- name: Assault Launcher
+  buy_from_vendor: 139.66 # Buy from Ratchet
+  sell_to_vendor: 10 # Buy from Ratchet
+  items:
+    Iron Ingot: 1
+    Jewellery Wood: 2
+    Leather: 1
+    Amber: 1
+
+- name: Plasma Launcher
+  buy_from_vendor: 59.85 # Buy from Ratchet
+  items:
+    Iron Ingot: 4
+    Amber: 1
+
+- name: Welded Patterned
+  items:
+    Iron Ingot: 3
+    Ruby: 1
