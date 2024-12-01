@@ -1,0 +1,65 @@
+# https://corepunk.wiki/w/Mining
+# https://corepunk.pro/professions/mining
+# https://corepunkers.com/professions
+
+- name: Ancient Fossils
+  source: Fossilized crystal vein
+
+- name: Ceramics
+  items:
+    Ancient Fossils: 3
+
+- name: Diamond
+  rarity: green
+  source: Metal vein
+
+- name: Iron Ore
+  source: Celestial vein
+
+- name: Iron Ingot
+  items:
+    Iron Ore: 3
+
+- name: Isotope-238
+  rarity: blue
+  source: Metal vein
+
+- name: Meteoric Ore
+  source: Celestial vein
+
+- name: Meteoric Ingot
+  items:
+    Meteoric Metal: 3
+
+- name: Moonstone
+  rarity: green
+  source: Metal vein
+
+- name: Powder Filler
+  items:
+    Soft Crystal: 3
+
+- name: Ruby
+  rarity: green
+  source: Metal vein
+
+- name: Star Energy
+  items:
+    Meteoric Metal: 3
+  source: Metal vein
+
+- name: Soft Crystal
+  rarity: white
+  source: Fossilized crystal vein
+
+- name: Thermal Liquidum
+  rarity: purple
+  source: Metal vein
+
+- name: Titanium Nugget
+  rarity: green
+  source: Metal vein
+
+- name: Tungsten
+  rarity: blue
+  source: Metal vein

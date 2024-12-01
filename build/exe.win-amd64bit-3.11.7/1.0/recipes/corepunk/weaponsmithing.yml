@@ -1,0 +1,219 @@
+# https://corepunk.wiki/w/Weaponsmithing
+# https://corepunk.pro/professions/weaponsmithing
+# https://corepunkers.com/professions
+
+- name: Apocalyptic Effigy
+  items:
+    - name: Treated Wood
+      quantity: 2
+    - name: Strong Thread
+      quantity: 1
+    - name: Leather
+      quantity: 1
+    - name: Giant Feather
+      quantity: 1
+
+- name: Apocalyptic Scrap
+  items:
+    - name: Treated Wood
+      quantity: 2
+    - name: Strong Thread
+      quantity: 1
+    - name: Leather
+      quantity: 1
+    - name: Apocalyptic Sharp
+      quantity: 1
+      rarity: green
+    - name: Giant Feather
+      quantity: 1
+    - name: Petrified Spike
+      quantity: 1
+
+- name: Apocalyptic Sharp
+  items:
+    - name: Treated Wood
+      quantity: 2
+    - name: Strong Thread
+      quantity: 1
+    - name: Leather
+      quantity: 1
+    - name: Giant Feather
+      quantity: 1
+
+- name: Assault Launcher
+  buy_from_vendor: 139.66 # Buy from Ratchet
+  sell_to_vendor: 10 # Buy from Ratchet
+  items:
+    Iron Ingot: 1
+    Jewellery Wood: 2
+    Leather: 1
+    Amber: 1
+
+- name: Battered Gun
+  items:
+    Jewellery Wood: 1
+    Iron Ingot: 2
+    Leather: 1
+    Amber: 1
+
+- name: Blade Punk
+  items:
+    Iron Ingot: 2
+    Leather: 1
+    Diamond: 1
+
+- name: Blade Rusty
+  items:
+    Iron Ingot: 2
+    Iron Ore: 1
+    Leather: 1
+    Diamond: 1
+
+- name: Blade Soldier
+  items:
+    Iron Ingot: 2
+    Treated Wood: 1
+    Diamond: 1
+
+- name: Cyber
+  items:
+    Titanium Nugget: 1
+    Meteoric Ingot: 3
+
+- name: Dagger Marked
+  items:
+    Iron Ingot: 2
+    Leather: 1
+    Diamond: 1
+
+- name: Gladiator Shield
+  items:
+    Iron Ingot: 4
+
+- name: Gladiator Spear
+  items:
+    Iron Ingot: 3
+    Leather: 1
+    Titanium Nugget: 1
+
+- name: Iloth Shield
+  items:
+    Iron Ingot: 4
+
+- name: Jagged Needle
+  items:
+    Iron Ingot: 3
+    Leather: 1
+    Titanium Nugget: 1
+
+- name: Jagged Shield
+  items:
+    Iron Ingot: 4
+
+- name: Lacerator Sword
+  items:
+    Treated Wood: 2
+    Iron Ingot: 1
+    Leather: 1
+    Titanium Nugget: 1
+
+- name: Lumbergrip
+  items:
+    Jewellery Wood: 1
+    Iron Ingot: 3
+    Amber: 1
+
+- name: Metal
+  items:
+    Iron Ingot: 3
+    Ruby: 1
+
+- name: Obsolete
+  items:
+    Iron Ingot: 2
+    Leather: 1
+    Diamond: 1
+
+- name: Plasma Gun
+  items:
+    Iron Ingot: 4
+    Amber: 1
+
+- name: Plasma Launcher
+  buy_from_vendor: 59.85 # Buy from Ratchet
+  items:
+    Iron Ingot: 4
+    Amber: 1
+
+- name: Riveted Shield
+  items:
+    Iron Ingot: 4
+
+- name: Riveted Spear
+  items:
+    Iron Ingot: 3
+    Leather: 1
+    Titanium Nugget: 1
+
+- name: Rusty
+  items:
+    Iron Ingot: 2
+    Leather: 1
+    Ruby: 1
+
+- name: Rusty Bow
+  items:
+    Treated Wood: 2
+    Strong Thread: 1
+    Leather: 1
+    Giant Feather: 1
+
+- name: Rusty Sword
+  items:
+    Iron Ingot: 3
+    Leather: 1
+    Titanium Nugget: 1
+
+- name: Scavenger Shield
+  items:
+    Iron Ingot: 4
+
+- name: Scavenger Spear
+  items:
+    Treated Wood: 2
+    Iron Ingot: 1
+    Leather: 1
+    Titanium Nugget: 1
+
+- name: Shabby Wood
+  items:
+    Jewellery Wood: 2
+    Iron Ingot: 1
+    Leather: 1
+    Amber: 1
+
+- name: Spiked Spear
+  items:
+    Treated Wood: 2
+    Iron Ingot: 1
+    Leather: 1
+    Titanium Nugget: 1
+
+- name: Starshard
+  items:
+    Iron Ingot: 2
+    Strong Thread: 1
+    Leather: 1
+    Giant Feather: 1
+
+- name: Taser
+  items:
+    Iron Ingot: 2
+    Leather: 1
+    Ruby: 1
+
+- name: Welded Patterned
+  items:
+    Iron Ingot: 3
+    Ruby: 1
+  wiki: https://corepunkers.com/i/weapon-welded-patterned-knuckle

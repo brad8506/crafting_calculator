@@ -1,5 +1,17 @@
 from cx_Freeze import setup, Executable
 import os
+import platform
+import sys
+
+
+# Version of the application
+APP_VERSION = "1.1"
+
+# PYTHON_VERSION = sys.version_info
+PYTHON_VERSION = f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"
+
+# Get architecture (either 32-bit or 64-bit)
+ARCHITECTURE = platform.architecture()[0]
 
 # Directory containing your assets
 web_dir = os.path.join(os.path.dirname(__file__), "web")
@@ -16,6 +28,7 @@ build_exe_options = {
         (js_dir, "js"),  # Include the 'recipes' folder
     ],
     "optimize": 2,
+    "build_exe": f"build/exe.win-amd{ARCHITECTURE}-{PYTHON_VERSION}/{APP_VERSION}",  # Dynamic output path
 }
 
 # Base 'Win32GUI' is used for Windows applications without a console
@@ -24,7 +37,7 @@ base = None
 
 setup(
     name="Crafting Calculator GUI Server",
-    version="1.0",
+    version=APP_VERSION,
     description="A GUI server for the crafting calculator",
     options={"build_exe": build_exe_options},
     executables=[Executable("crafting_calculator_gui_html_server.py", base=base)],
