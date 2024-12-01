@@ -2,7 +2,186 @@
 # https://corepunk.pro/professions/mysticism
 # https://corepunkers.com/professions
 
-- name: Scar Rune
+- name: Antelope
+  items:
+    - name: Isotope-238
+      quantity: 1
+    - name: Dark Horse
+      quantity: 2
+      rarity: green
+
+- name: Brook
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+
+- name: Cold Wind
+  items:
+    - name: Elastic Membrane
+      quantity: 1
+    - name: Wind
+      quantity: 2
+      rarity: green
+
+- name: Dark Horse
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+    Gonad: 1
+
+- name: Fast Brook
+  items:
+    - name: Elastic Membrane
+      quantity: 1
+    - name: Brook
+      quantity: 2
+      rarity: green
+
+- name: Flash
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+
+- name: Fog
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+
+- name: Hard Shell
+  items:
+    - name: Elastic Membrane
+      quantity: 1
+    - name: Shell
+      quantity: 2
+      rarity: green
+
+- name: Hungry Wolf
+  items:
+    - name: Elastic Membrane
+      quantity: 1
+    - name: Wolf
+      quantity: 2
+      rarity: green
+
+- name: Impregnable Barrier
+  items:
+    - name: Tungsten
+      quantity: 1
+    - name: Steel Gates
+      quantity: 2
+      rarity: green
+
+- name: Intensity
+  items:
+    - name: Petrified Spike
+      quantity: 1
+    - name: Vigor
+      quantity: 2
+      rarity: green
+
+- name: Jagged Scar
+  items:
+    - name: Elastic Membrane
+      quantity: 1
+    - name: Scar
+      quantity: 2
+      rarity: green
+
+- name: Lamprey
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+    Transparent Leaf: 1
+
+- name: Mantis
+  items:
+    - name: Neon Mushroom
+      quantity: 1
+    - name: Lamprey
+      quantity: 2
+      rarity: green
+
+- name: Reflect
+  items:
+    - name: Forest Berry
+      quantity: 1
+    - name: Thorns
+      quantity: 2
+      rarity: green
+
+- name: Scar
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+
+- name: Screen
+  items:
+    - name: Elastic Membrane
+      quantity: 1
+    - name: Stone Wall
+      quantity: 2
+      rarity: green
+
+- name: Shell
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+
+- name: Steel Gates
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+    Giant Feather: 1
+
+- name: Stone Wall
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+    Amber: 1
+
+- name: Thorns
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+    Titanium Nugget: 1
+
+- name: Vigor
+  items:
+    Composite Material: 1
+    Jewellery Wood: 1
+    Ceramics: 1
+    Jewellery Bone: 1
+    Moonstone: 1
+
+- name: Vivid Flash
+  items:
+    - name: Elastic Membrane
+      quantity: 1
+    - name: Flash
+      quantity: 2
+      rarity: green
+
+- name: Wind
   items:
     Composite Material: 1
     Jewellery Wood: 1

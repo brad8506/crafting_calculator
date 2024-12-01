@@ -19,6 +19,8 @@
   source: Timberheart tree
 
 - name: Jewellery Wood
+  source: logging
+  rarity: white
   items:
     Tree Root: 3
 
@@ -35,6 +37,8 @@
   source: Magic tree
 
 - name: Silica
+  source: logging
+  rarity: white
   items:
     Stone Bark: 3
 
@@ -42,6 +46,8 @@
   source: Petrified tree
 
 - name: Tissue Paper
+  source: logging
+  rarity: white
   items:
     Wood: 3
 
@@ -50,6 +56,8 @@
   source: Magic tree
 
 - name: Treated Wood
+  source: logging
+  rarity: white
   items:
     Heartwood: 3
 

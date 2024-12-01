@@ -3,6 +3,7 @@
 # https://corepunkers.com/professions
 
 - name: Apocalyptic Effigy
+  source: weaponsmithing
   items:
     - name: Treated Wood
       quantity: 2
@@ -14,6 +15,7 @@
       quantity: 1
 
 - name: Apocalyptic Scrap
+  source: weaponsmithing
   items:
     - name: Treated Wood
       quantity: 2
@@ -30,6 +32,7 @@
       quantity: 1
 
 - name: Apocalyptic Sharp
+  source: weaponsmithing
   items:
     - name: Treated Wood
       quantity: 2
@@ -41,6 +44,7 @@
       quantity: 1
 
 - name: Assault Launcher
+  source: weaponsmithing
   buy_from_vendor: 139.66 # Buy from Ratchet
   sell_to_vendor: 10 # Buy from Ratchet
   items:
@@ -50,6 +54,7 @@
     Amber: 1
 
 - name: Battered Gun
+  source: weaponsmithing
   items:
     Jewellery Wood: 1
     Iron Ingot: 2
@@ -57,12 +62,14 @@
     Amber: 1
 
 - name: Blade Punk
+  source: weaponsmithing
   items:
     Iron Ingot: 2
     Leather: 1
     Diamond: 1
 
 - name: Blade Rusty
+  source: weaponsmithing
   items:
     Iron Ingot: 2
     Iron Ore: 1
@@ -70,47 +77,56 @@
     Diamond: 1
 
 - name: Blade Soldier
+  source: weaponsmithing
   items:
     Iron Ingot: 2
     Treated Wood: 1
     Diamond: 1
 
 - name: Cyber
+  source: weaponsmithing
   items:
     Titanium Nugget: 1
     Meteoric Ingot: 3
 
 - name: Dagger Marked
+  source: weaponsmithing
   items:
     Iron Ingot: 2
     Leather: 1
     Diamond: 1
 
 - name: Gladiator Shield
+  source: weaponsmithing
   items:
     Iron Ingot: 4
 
 - name: Gladiator Spear
+  source: weaponsmithing
   items:
     Iron Ingot: 3
     Leather: 1
     Titanium Nugget: 1
 
 - name: Iloth Shield
+  source: weaponsmithing
   items:
     Iron Ingot: 4
 
 - name: Jagged Needle
+  source: weaponsmithing
   items:
     Iron Ingot: 3
     Leather: 1
     Titanium Nugget: 1
 
 - name: Jagged Shield
+  source: weaponsmithing
   items:
     Iron Ingot: 4
 
 - name: Lacerator Sword
+  source: weaponsmithing
   items:
     Treated Wood: 2
     Iron Ingot: 1
@@ -118,50 +134,59 @@
     Titanium Nugget: 1
 
 - name: Lumbergrip
+  source: weaponsmithing
   items:
     Jewellery Wood: 1
     Iron Ingot: 3
     Amber: 1
 
 - name: Metal
+  source: weaponsmithing
   items:
     Iron Ingot: 3
     Ruby: 1
 
 - name: Obsolete
+  source: weaponsmithing
   items:
     Iron Ingot: 2
     Leather: 1
     Diamond: 1
 
 - name: Plasma Gun
+  source: weaponsmithing
   items:
     Iron Ingot: 4
     Amber: 1
 
 - name: Plasma Launcher
+  source: weaponsmithing
   buy_from_vendor: 59.85 # Buy from Ratchet
   items:
     Iron Ingot: 4
     Amber: 1
 
 - name: Riveted Shield
+  source: weaponsmithing
   items:
     Iron Ingot: 4
 
 - name: Riveted Spear
+  source: weaponsmithing
   items:
     Iron Ingot: 3
     Leather: 1
     Titanium Nugget: 1
 
 - name: Rusty
+  source: weaponsmithing
   items:
     Iron Ingot: 2
     Leather: 1
     Ruby: 1
 
 - name: Rusty Bow
+  source: weaponsmithing
   items:
     Treated Wood: 2
     Strong Thread: 1
@@ -169,16 +194,19 @@
     Giant Feather: 1
 
 - name: Rusty Sword
+  source: weaponsmithing
   items:
     Iron Ingot: 3
     Leather: 1
     Titanium Nugget: 1
 
 - name: Scavenger Shield
+  source: weaponsmithing
   items:
     Iron Ingot: 4
 
 - name: Scavenger Spear
+  source: weaponsmithing
   items:
     Treated Wood: 2
     Iron Ingot: 1
@@ -186,6 +214,7 @@
     Titanium Nugget: 1
 
 - name: Shabby Wood
+  source: weaponsmithing
   items:
     Jewellery Wood: 2
     Iron Ingot: 1
@@ -193,6 +222,7 @@
     Amber: 1
 
 - name: Spiked Spear
+  source: weaponsmithing
   items:
     Treated Wood: 2
     Iron Ingot: 1
@@ -200,6 +230,7 @@
     Titanium Nugget: 1
 
 - name: Starshard
+  source: weaponsmithing
   items:
     Iron Ingot: 2
     Strong Thread: 1
@@ -207,12 +238,14 @@
     Giant Feather: 1
 
 - name: Taser
+  source: weaponsmithing
   items:
     Iron Ingot: 2
     Leather: 1
     Ruby: 1
 
 - name: Welded Patterned
+  source: weaponsmithing
   items:
     Iron Ingot: 3
     Ruby: 1

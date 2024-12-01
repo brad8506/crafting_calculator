@@ -11,10 +11,14 @@
   source: Thick Bush
 
 - name: Cloth
+  source: herbalism
+  rarity: white
   items:
     Silkworm Caterpillar: 3
 
 - name: Composite Material
+  source: herbalism
+  rarity: white
   items:
     Jute: 3
 
@@ -33,10 +37,14 @@
   source: Thick Bush
 
 - name: Natural Oil
+  source: herbalism
+  rarity: white
   items:
     Hazelnut: 3
 
 - name: Organic Gel
+  source: herbalism
+  rarity: white
   items:
     Fragrant Root: 3
 
@@ -56,6 +64,8 @@
   source: Thick Bush
 
 - name: Strong Thread
+  source: herbalism
+  rarity: white
   items:
     Jute: 3
 

@@ -6,6 +6,8 @@
   source: Fossilized crystal vein
 
 - name: Ceramics
+  source: mining
+  rarity: white
   items:
     Ancient Fossils: 3
 
@@ -17,6 +19,8 @@
   source: Celestial vein
 
 - name: Iron Ingot
+  source: mining
+  rarity: white
   items:
     Iron Ore: 3
 
@@ -28,6 +32,8 @@
   source: Celestial vein
 
 - name: Meteoric Ingot
+  source: mining
+  rarity: white
   items:
     Meteoric Metal: 3
 
@@ -36,6 +42,8 @@
   source: Metal vein
 
 - name: Powder Filler
+  source: mining
+  rarity: white
   items:
     Soft Crystal: 3
 
@@ -44,6 +52,8 @@
   source: Metal vein
 
 - name: Star Energy
+  source: mining
+  rarity: white
   items:
     Meteoric Metal: 3
   source: Metal vein

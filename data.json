@@ -1,106 +1,23 @@
 {
-    "Apocalyptic Effigy": {
-        "name": "Apocalyptic Effigy",
+    "Antelope": {
+        "name": "Antelope",
         "quantity": 1,
         "items": {
-            "Treated Wood": {
-                "name": "Treated Wood",
+            "Isotope-238": {
+                "name": "Isotope-238",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal vein"
+            },
+            "Dark Horse": {
+                "name": "Dark Horse",
                 "quantity": 2,
                 "items": {
-                    "Heartwood": {
-                        "name": "Heartwood",
-                        "quantity": 3,
-                        "source": "Timberheart tree"
-                    }
-                }
-            },
-            "Strong Thread": {
-                "name": "Strong Thread",
-                "quantity": 1,
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Giant Feather": {
-                "name": "Giant Feather",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree"
-            }
-        }
-    },
-    "Apocalyptic Scrap": {
-        "name": "Apocalyptic Scrap",
-        "quantity": 1,
-        "items": {
-            "Treated Wood": {
-                "name": "Treated Wood",
-                "quantity": 2,
-                "items": {
-                    "Heartwood": {
-                        "name": "Heartwood",
-                        "quantity": 3,
-                        "source": "Timberheart tree"
-                    }
-                }
-            },
-            "Strong Thread": {
-                "name": "Strong Thread",
-                "quantity": 1,
-                "items": {
-                    "Jute": {
-                        "name": "Jute",
-                        "quantity": 3,
-                        "source": "Weaver's Bush"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Apocalyptic Sharp": {
-                "name": "Apocalyptic Sharp",
-                "quantity": 1,
-                "items": {
-                    "Treated Wood": {
-                        "name": "Treated Wood",
-                        "quantity": 2,
-                        "items": {
-                            "Heartwood": {
-                                "name": "Heartwood",
-                                "quantity": 3,
-                                "source": "Timberheart tree"
-                            }
-                        }
-                    },
-                    "Strong Thread": {
-                        "name": "Strong Thread",
+                    "Composite Material": {
+                        "name": "Composite Material",
                         "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
                         "items": {
                             "Jute": {
                                 "name": "Jute",
@@ -109,15 +26,596 @@
                             }
                         }
                     },
-                    "Leather": {
-                        "name": "Leather",
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
                         "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
                         "items": {
-                            "Wolf Skin": {
-                                "name": "Wolf Skin",
-                                "quantity": 2,
-                                "source": "wolf",
-                                "buy_from_vendor": 19.59
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
+                            }
+                        }
+                    },
+                    "Gonad": {
+                        "name": "Gonad",
+                        "quantity": 1,
+                        "source": "boar",
+                        "rarity": "green"
+                    }
+                },
+                "rarity": "green"
+            }
+        }
+    },
+    "Brook": {
+        "name": "Brook",
+        "quantity": 1,
+        "items": {
+            "Composite Material": {
+                "name": "Composite Material",
+                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
+                    }
+                }
+            }
+        }
+    },
+    "Cold Wind": {
+        "name": "Cold Wind",
+        "quantity": 1,
+        "items": {
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            },
+            "Wind": {
+                "name": "Wind",
+                "quantity": 2,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            }
+        }
+    },
+    "Dark Horse": {
+        "name": "Dark Horse",
+        "quantity": 1,
+        "items": {
+            "Composite Material": {
+                "name": "Composite Material",
+                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
+                    }
+                }
+            },
+            "Gonad": {
+                "name": "Gonad",
+                "quantity": 1,
+                "source": "boar",
+                "rarity": "green"
+            }
+        }
+    },
+    "Fast Brook": {
+        "name": "Fast Brook",
+        "quantity": 1,
+        "items": {
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            },
+            "Brook": {
+                "name": "Brook",
+                "quantity": 2,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            }
+        }
+    },
+    "Flash": {
+        "name": "Flash",
+        "quantity": 1,
+        "items": {
+            "Composite Material": {
+                "name": "Composite Material",
+                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
+                    }
+                }
+            }
+        }
+    },
+    "Fog": {
+        "name": "Fog",
+        "quantity": 1,
+        "items": {
+            "Composite Material": {
+                "name": "Composite Material",
+                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
+                    }
+                }
+            }
+        }
+    },
+    "Hard Shell": {
+        "name": "Hard Shell",
+        "quantity": 1,
+        "items": {
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            },
+            "Shell": {
+                "name": "Shell",
+                "quantity": 2,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
+                            }
+                        }
+                    }
+                },
+                "rarity": "green"
+            }
+        }
+    },
+    "Hungry Wolf": {
+        "name": "Hungry Wolf",
+        "quantity": 1,
+        "items": {
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            },
+            "Wolf": {
+                "name": "Wolf",
+                "quantity": 2,
+                "rarity": "green"
+            }
+        }
+    },
+    "Impregnable Barrier": {
+        "name": "Impregnable Barrier",
+        "quantity": 1,
+        "items": {
+            "Tungsten": {
+                "name": "Tungsten",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Metal vein"
+            },
+            "Steel Gates": {
+                "name": "Steel Gates",
+                "quantity": 2,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
                             }
                         }
                     },
@@ -129,39 +627,168 @@
                     }
                 },
                 "rarity": "green"
-            },
-            "Giant Feather": {
-                "name": "Giant Feather",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree"
-            },
+            }
+        }
+    },
+    "Intensity": {
+        "name": "Intensity",
+        "quantity": 1,
+        "items": {
             "Petrified Spike": {
                 "name": "Petrified Spike",
                 "quantity": 1,
                 "rarity": "blue",
                 "source": "Thick Bush"
+            },
+            "Vigor": {
+                "name": "Vigor",
+                "quantity": 2,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
+                            }
+                        }
+                    },
+                    "Moonstone": {
+                        "name": "Moonstone",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
+                "rarity": "green"
             }
         }
     },
-    "Apocalyptic Sharp": {
-        "name": "Apocalyptic Sharp",
+    "Jagged Scar": {
+        "name": "Jagged Scar",
         "quantity": 1,
         "items": {
-            "Treated Wood": {
-                "name": "Treated Wood",
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            },
+            "Scar": {
+                "name": "Scar",
                 "quantity": 2,
                 "items": {
-                    "Heartwood": {
-                        "name": "Heartwood",
-                        "quantity": 3,
-                        "source": "Timberheart tree"
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
+                            }
+                        }
                     }
-                }
-            },
-            "Strong Thread": {
-                "name": "Strong Thread",
+                },
+                "rarity": "green"
+            }
+        }
+    },
+    "Lamprey": {
+        "name": "Lamprey",
+        "quantity": 1,
+        "items": {
+            "Composite Material": {
+                "name": "Composite Material",
                 "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
                 "items": {
                     "Jute": {
                         "name": "Jute",
@@ -170,15 +797,459 @@
                     }
                 }
             },
-            "Leather": {
-                "name": "Leather",
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
                 "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
                 "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
+                    }
+                }
+            },
+            "Transparent Leaf": {
+                "name": "Transparent Leaf",
+                "quantity": 1,
+                "rarity": "green",
+                "source": "Magic tree"
+            }
+        }
+    },
+    "Mantis": {
+        "name": "Mantis",
+        "quantity": 1,
+        "items": {
+            "Neon Mushroom": {
+                "name": "Neon Mushroom",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "Magic tree"
+            },
+            "Lamprey": {
+                "name": "Lamprey",
+                "quantity": 2,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
+                            }
+                        }
+                    },
+                    "Transparent Leaf": {
+                        "name": "Transparent Leaf",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree"
+                    }
+                },
+                "rarity": "green"
+            }
+        }
+    },
+    "Reflect": {
+        "name": "Reflect",
+        "quantity": 1,
+        "items": {
+            "Forest Berry": {
+                "name": "Forest Berry",
+                "quantity": 1
+            },
+            "Thorns": {
+                "name": "Thorns",
+                "quantity": 2,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
+                            }
+                        }
+                    },
+                    "Titanium Nugget": {
+                        "name": "Titanium Nugget",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Metal vein"
+                    }
+                },
+                "rarity": "green"
+            }
+        }
+    },
+    "Scar": {
+        "name": "Scar",
+        "quantity": 1,
+        "items": {
+            "Composite Material": {
+                "name": "Composite Material",
+                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
+                    }
+                }
+            }
+        }
+    },
+    "Screen": {
+        "name": "Screen",
+        "quantity": 1,
+        "items": {
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            },
+            "Stone Wall": {
+                "name": "Stone Wall",
+                "quantity": 2,
+                "items": {
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
+                            }
+                        }
+                    },
+                    "Amber": {
+                        "name": "Amber",
+                        "quantity": 1,
+                        "rarity": "green",
+                        "source": "Magic tree",
+                        "wiki": "https://corepunk.wiki/w/Amber"
+                    }
+                },
+                "rarity": "green"
+            }
+        }
+    },
+    "Shell": {
+        "name": "Shell",
+        "quantity": 1,
+        "items": {
+            "Composite Material": {
+                "name": "Composite Material",
+                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
+                    }
+                }
+            }
+        }
+    },
+    "Steel Gates": {
+        "name": "Steel Gates",
+        "quantity": 1,
+        "items": {
+            "Composite Material": {
+                "name": "Composite Material",
+                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
+                "items": {
+                    "Jute": {
+                        "name": "Jute",
+                        "quantity": 3,
+                        "source": "Weaver's Bush"
+                    }
+                }
+            },
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
+                "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
                     }
                 }
             },
@@ -190,682 +1261,15 @@
             }
         }
     },
-    "Assault Launcher": {
-        "name": "Assault Launcher",
-        "quantity": 1,
-        "buy_from_vendor": 139.66,
-        "sell_to_vendor": 10,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 1,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 2,
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Amber": {
-                "name": "Amber",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree",
-                "wiki": "https://corepunk.wiki/w/Amber"
-            }
-        }
-    },
-    "Battered Gun": {
-        "name": "Battered Gun",
+    "Stone Wall": {
+        "name": "Stone Wall",
         "quantity": 1,
         "items": {
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
+            "Composite Material": {
+                "name": "Composite Material",
                 "quantity": 1,
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 2,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Amber": {
-                "name": "Amber",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree",
-                "wiki": "https://corepunk.wiki/w/Amber"
-            }
-        }
-    },
-    "Blade Punk": {
-        "name": "Blade Punk",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 2,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Diamond": {
-                "name": "Diamond",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Blade Rusty": {
-        "name": "Blade Rusty",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 2,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Iron Ore": {
-                "name": "Iron Ore",
-                "quantity": 1,
-                "source": "Celestial vein"
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Diamond": {
-                "name": "Diamond",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Blade Soldier": {
-        "name": "Blade Soldier",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 2,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Treated Wood": {
-                "name": "Treated Wood",
-                "quantity": 1,
-                "items": {
-                    "Heartwood": {
-                        "name": "Heartwood",
-                        "quantity": 3,
-                        "source": "Timberheart tree"
-                    }
-                }
-            },
-            "Diamond": {
-                "name": "Diamond",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Cyber": {
-        "name": "Cyber",
-        "quantity": 1,
-        "items": {
-            "Titanium Nugget": {
-                "name": "Titanium Nugget",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            },
-            "Meteoric Ingot": {
-                "name": "Meteoric Ingot",
-                "quantity": 3,
-                "items": {
-                    "Meteoric Metal": {
-                        "name": "Meteoric Metal",
-                        "quantity": 3
-                    }
-                }
-            }
-        }
-    },
-    "Dagger Marked": {
-        "name": "Dagger Marked",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 2,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Diamond": {
-                "name": "Diamond",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Gladiator Shield": {
-        "name": "Gladiator Shield",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 4,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            }
-        }
-    },
-    "Gladiator Spear": {
-        "name": "Gladiator Spear",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 3,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Titanium Nugget": {
-                "name": "Titanium Nugget",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Iloth Shield": {
-        "name": "Iloth Shield",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 4,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            }
-        }
-    },
-    "Jagged Needle": {
-        "name": "Jagged Needle",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 3,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Titanium Nugget": {
-                "name": "Titanium Nugget",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Jagged Shield": {
-        "name": "Jagged Shield",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 4,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            }
-        }
-    },
-    "Lacerator Sword": {
-        "name": "Lacerator Sword",
-        "quantity": 1,
-        "items": {
-            "Treated Wood": {
-                "name": "Treated Wood",
-                "quantity": 2,
-                "items": {
-                    "Heartwood": {
-                        "name": "Heartwood",
-                        "quantity": 3,
-                        "source": "Timberheart tree"
-                    }
-                }
-            },
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 1,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Titanium Nugget": {
-                "name": "Titanium Nugget",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Lumbergrip": {
-        "name": "Lumbergrip",
-        "quantity": 1,
-        "items": {
-            "Jewellery Wood": {
-                "name": "Jewellery Wood",
-                "quantity": 1,
-                "items": {
-                    "Tree Root": {
-                        "name": "Tree Root",
-                        "quantity": 3,
-                        "source": "Petrified tree"
-                    }
-                }
-            },
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 3,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Amber": {
-                "name": "Amber",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree",
-                "wiki": "https://corepunk.wiki/w/Amber"
-            }
-        }
-    },
-    "Metal": {
-        "name": "Metal",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 3,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Ruby": {
-                "name": "Ruby",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Obsolete": {
-        "name": "Obsolete",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 2,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Diamond": {
-                "name": "Diamond",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Plasma Gun": {
-        "name": "Plasma Gun",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 4,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Amber": {
-                "name": "Amber",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree",
-                "wiki": "https://corepunk.wiki/w/Amber"
-            }
-        }
-    },
-    "Plasma Launcher": {
-        "name": "Plasma Launcher",
-        "quantity": 1,
-        "buy_from_vendor": 59.85,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 4,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Amber": {
-                "name": "Amber",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree",
-                "wiki": "https://corepunk.wiki/w/Amber"
-            }
-        }
-    },
-    "Riveted Shield": {
-        "name": "Riveted Shield",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 4,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            }
-        }
-    },
-    "Riveted Spear": {
-        "name": "Riveted Spear",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 3,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Titanium Nugget": {
-                "name": "Titanium Nugget",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Rusty": {
-        "name": "Rusty",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 2,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Ruby": {
-                "name": "Ruby",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Rusty Bow": {
-        "name": "Rusty Bow",
-        "quantity": 1,
-        "items": {
-            "Treated Wood": {
-                "name": "Treated Wood",
-                "quantity": 2,
-                "items": {
-                    "Heartwood": {
-                        "name": "Heartwood",
-                        "quantity": 3,
-                        "source": "Timberheart tree"
-                    }
-                }
-            },
-            "Strong Thread": {
-                "name": "Strong Thread",
-                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
                 "items": {
                     "Jute": {
                         "name": "Jute",
@@ -874,131 +1278,11 @@
                     }
                 }
             },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Giant Feather": {
-                "name": "Giant Feather",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Magic tree"
-            }
-        }
-    },
-    "Rusty Sword": {
-        "name": "Rusty Sword",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 3,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Titanium Nugget": {
-                "name": "Titanium Nugget",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Scavenger Shield": {
-        "name": "Scavenger Shield",
-        "quantity": 1,
-        "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 4,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            }
-        }
-    },
-    "Scavenger Spear": {
-        "name": "Scavenger Spear",
-        "quantity": 1,
-        "items": {
-            "Treated Wood": {
-                "name": "Treated Wood",
-                "quantity": 2,
-                "items": {
-                    "Heartwood": {
-                        "name": "Heartwood",
-                        "quantity": 3,
-                        "source": "Timberheart tree"
-                    }
-                }
-            },
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 1,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Titanium Nugget": {
-                "name": "Titanium Nugget",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
-            }
-        }
-    },
-    "Shabby Wood": {
-        "name": "Shabby Wood",
-        "quantity": 1,
-        "items": {
             "Jewellery Wood": {
                 "name": "Jewellery Wood",
-                "quantity": 2,
+                "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
                 "items": {
                     "Tree Root": {
                         "name": "Tree Root",
@@ -1007,26 +1291,30 @@
                     }
                 }
             },
-            "Iron Ingot": {
-                "name": "Iron Ingot",
+            "Ceramics": {
+                "name": "Ceramics",
                 "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
                 "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
                         "quantity": 3,
-                        "source": "Celestial vein"
+                        "source": "Fossilized crystal vein"
                     }
                 }
             },
-            "Leather": {
-                "name": "Leather",
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
                 "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
                 "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
                     }
                 }
             },
@@ -1039,41 +1327,60 @@
             }
         }
     },
-    "Spiked Spear": {
-        "name": "Spiked Spear",
+    "Thorns": {
+        "name": "Thorns",
         "quantity": 1,
         "items": {
-            "Treated Wood": {
-                "name": "Treated Wood",
-                "quantity": 2,
+            "Composite Material": {
+                "name": "Composite Material",
+                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
                 "items": {
-                    "Heartwood": {
-                        "name": "Heartwood",
+                    "Jute": {
+                        "name": "Jute",
                         "quantity": 3,
-                        "source": "Timberheart tree"
+                        "source": "Weaver's Bush"
                     }
                 }
             },
-            "Iron Ingot": {
-                "name": "Iron Ingot",
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
                 "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
                 "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
+                    "Tree Root": {
+                        "name": "Tree Root",
                         "quantity": 3,
-                        "source": "Celestial vein"
+                        "source": "Petrified tree"
                     }
                 }
             },
-            "Leather": {
-                "name": "Leather",
+            "Ceramics": {
+                "name": "Ceramics",
                 "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
                 "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
                     }
                 }
             },
@@ -1085,24 +1392,15 @@
             }
         }
     },
-    "Starshard": {
-        "name": "Starshard",
+    "Vigor": {
+        "name": "Vigor",
         "quantity": 1,
         "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 2,
-                "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
-                    }
-                }
-            },
-            "Strong Thread": {
-                "name": "Strong Thread",
+            "Composite Material": {
+                "name": "Composite Material",
                 "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
                 "items": {
                     "Jute": {
                         "name": "Jute",
@@ -1111,83 +1409,183 @@
                     }
                 }
             },
-            "Leather": {
-                "name": "Leather",
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
                 "quantity": 1,
+                "source": "logging",
+                "rarity": "white",
                 "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
                     }
                 }
             },
-            "Giant Feather": {
-                "name": "Giant Feather",
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
+                    }
+                }
+            },
+            "Moonstone": {
+                "name": "Moonstone",
                 "quantity": 1,
                 "rarity": "green",
-                "source": "Magic tree"
+                "source": "Metal vein"
             }
         }
     },
-    "Taser": {
-        "name": "Taser",
+    "Vivid Flash": {
+        "name": "Vivid Flash",
         "quantity": 1,
         "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
+            "Elastic Membrane": {
+                "name": "Elastic Membrane",
+                "quantity": 1,
+                "rarity": "blue",
+                "source": "wolf"
+            },
+            "Flash": {
+                "name": "Flash",
                 "quantity": 2,
                 "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
-                        "quantity": 3,
-                        "source": "Celestial vein"
+                    "Composite Material": {
+                        "name": "Composite Material",
+                        "quantity": 1,
+                        "source": "herbalism",
+                        "rarity": "white",
+                        "items": {
+                            "Jute": {
+                                "name": "Jute",
+                                "quantity": 3,
+                                "source": "Weaver's Bush"
+                            }
+                        }
+                    },
+                    "Jewellery Wood": {
+                        "name": "Jewellery Wood",
+                        "quantity": 1,
+                        "source": "logging",
+                        "rarity": "white",
+                        "items": {
+                            "Tree Root": {
+                                "name": "Tree Root",
+                                "quantity": 3,
+                                "source": "Petrified tree"
+                            }
+                        }
+                    },
+                    "Ceramics": {
+                        "name": "Ceramics",
+                        "quantity": 1,
+                        "source": "mining",
+                        "rarity": "white",
+                        "items": {
+                            "Ancient Fossils": {
+                                "name": "Ancient Fossils",
+                                "quantity": 3,
+                                "source": "Fossilized crystal vein"
+                            }
+                        }
+                    },
+                    "Jewellery Bone": {
+                        "name": "Jewellery Bone",
+                        "quantity": 1,
+                        "source": "butchery",
+                        "rarity": "white",
+                        "items": {
+                            "Large Bone": {
+                                "name": "Large Bone",
+                                "quantity": 3,
+                                "source": "turtle",
+                                "rarity": "white"
+                            }
+                        }
                     }
-                }
-            },
-            "Leather": {
-                "name": "Leather",
-                "quantity": 1,
-                "items": {
-                    "Wolf Skin": {
-                        "name": "Wolf Skin",
-                        "quantity": 2,
-                        "source": "wolf",
-                        "buy_from_vendor": 19.59
-                    }
-                }
-            },
-            "Ruby": {
-                "name": "Ruby",
-                "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
+                },
+                "rarity": "green"
             }
         }
     },
-    "Welded Patterned": {
-        "name": "Welded Patterned",
+    "Wind": {
+        "name": "Wind",
         "quantity": 1,
         "items": {
-            "Iron Ingot": {
-                "name": "Iron Ingot",
-                "quantity": 3,
+            "Composite Material": {
+                "name": "Composite Material",
+                "quantity": 1,
+                "source": "herbalism",
+                "rarity": "white",
                 "items": {
-                    "Iron Ore": {
-                        "name": "Iron Ore",
+                    "Jute": {
+                        "name": "Jute",
                         "quantity": 3,
-                        "source": "Celestial vein"
+                        "source": "Weaver's Bush"
                     }
                 }
             },
-            "Ruby": {
-                "name": "Ruby",
+            "Jewellery Wood": {
+                "name": "Jewellery Wood",
                 "quantity": 1,
-                "rarity": "green",
-                "source": "Metal vein"
+                "source": "logging",
+                "rarity": "white",
+                "items": {
+                    "Tree Root": {
+                        "name": "Tree Root",
+                        "quantity": 3,
+                        "source": "Petrified tree"
+                    }
+                }
+            },
+            "Ceramics": {
+                "name": "Ceramics",
+                "quantity": 1,
+                "source": "mining",
+                "rarity": "white",
+                "items": {
+                    "Ancient Fossils": {
+                        "name": "Ancient Fossils",
+                        "quantity": 3,
+                        "source": "Fossilized crystal vein"
+                    }
+                }
+            },
+            "Jewellery Bone": {
+                "name": "Jewellery Bone",
+                "quantity": 1,
+                "source": "butchery",
+                "rarity": "white",
+                "items": {
+                    "Large Bone": {
+                        "name": "Large Bone",
+                        "quantity": 3,
+                        "source": "turtle",
+                        "rarity": "white"
+                    }
+                }
             }
-        },
-        "wiki": "https://corepunkers.com/i/weapon-welded-patterned-knuckle"
+        }
     }
 }

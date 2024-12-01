@@ -6,11 +6,16 @@
   source: boar
   rarity: green
 
+- name: Animal Fat
+  source: boar
+  rarity: white
+
 - name: Beating Heart
   rarity: purple
   source: wolf
 
 - name: Bio-compatible Material
+  source: butchery
   items:
     Xiphoid Process: 3
 
@@ -19,7 +24,7 @@
   rarity: blue
 
 - name: Cosmetic Fat
-  source: boar
+  source: butchery
   rarity: white
   wiki: https://corepunk.wiki/w/Cosmetic_Fat
   items:
@@ -45,11 +50,18 @@
   rarity: blue
 
 - name: Jewellery Bone
-  source: turtle
+  source: butchery
+  rarity: white
   items:
     Large Bone: 3
 
+- name: Large Bone
+  source: turtle
+  rarity: white
+
 - name: Leather
+  source: butchery
+  rarity: white
   items:
     Wolf Skin: 2
 
@@ -58,15 +70,22 @@
   rarity: green
 
 - name: Nerve Endings
+  source: butchery
+  rarity: white
   items:
     Spine: 3
 
 - name: Neurotoxin
+  rarity: white
   items:
     Poisonous Gland: 3
 
 - name: Poisonous Gland
-  rarity: blue
+  rarity: green
+
+- name: Spine
+  source: turtle
+  rarity: white
 
 - name: Wolf Skin
   source: wolf
