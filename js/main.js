@@ -231,8 +231,8 @@ function updateOutput(event) {
         const newQuantity = parseInt(input.value || 1);
         const multiplicationFactor = newQuantity / originalQuantity;
 
-        let gatherItems = [];
-        let craftItems = [];
+        const gatherMap = new Map();
+        const craftMap = new Map();
 
         subItems.forEach(subItemRow => {
             const subItemNameElement = subItemRow.querySelector('.item-name');
@@ -243,31 +243,36 @@ function updateOutput(event) {
 
             const subItemQuantityInput = subItemRow.querySelector('.quantity input');
             const subItemOriginalQuantity = parseInt(subItemQuantityInput.value || 1);
-            const adjustedQuantity = subItemOriginalQuantity * newQuantity; // Adjust quantity based on the factor
+            const adjustedQuantity = subItemOriginalQuantity * multiplicationFactor;
 
-            if (subItemRow.classList.contains('expandable-row')) {
-                // Add to craft items group
-                const rarityClass = [...subItemRow.classList].find(cls => cls.startsWith('rarity-'));
-                const rarity = rarityClass ? `rarity: ${rarityClass.split('-')[1]}` : ''; // Extract rarity from class, e.g., 'rarity-green' becomes 'rarity: green'
-                const source = subItemNameElement.dataset.source || ''
-                const wiki = subItemNameElement.dataset.wiki || ''
-                craftItems.push(` - ${subItemName}: ${adjustedQuantity}${rarity ? ', ' + rarity : ''}${source ? ', source: ' + source : ''}${wiki ? ', wiki: ' + wiki : ''}`);
-            } else if (subItemRow.classList.contains('no-expand')) {
-                // Add to gather items group
-                const rarityClass = [...subItemRow.classList].find(cls => cls.startsWith('rarity-'));
-                const rarity = rarityClass ? `rarity: ${rarityClass.split('-')[1]}` : ''; // Extract rarity from class, e.g., 'rarity-green' becomes 'rarity: green'
-                const source = subItemNameElement.dataset.source || ''
-                const wiki = subItemNameElement.dataset.wiki || ''
-                gatherItems.push(` - ${subItemName}: ${adjustedQuantity}${rarity ? ', ' + rarity : ''}${source ? ', source: ' + source : ''}${wiki ? ', wiki: ' + wiki : ''}`);
+            const rarityClass = [...subItemRow.classList].find(cls => cls.startsWith('rarity-'));
+            const rarity = rarityClass ? `rarity: ${rarityClass.split('-')[1]}` : '';
+            const source = subItemNameElement.dataset.source || '';
+            const wiki = subItemNameElement.dataset.wiki || '';
+            const key = `${subItemName}|${rarity}|${source}|${wiki}`;
+
+            const targetMap = subItemRow.classList.contains('expandable-row') ? craftMap : gatherMap;
+
+            if (targetMap.has(key)) {
+                targetMap.set(key, targetMap.get(key) + adjustedQuantity);
+            } else {
+                targetMap.set(key, adjustedQuantity);
             }
         });
 
-        // Sort the items alphabetically
-        gatherItems.sort();
-        craftItems.sort();
+        // Convert maps to sorted arrays
+        const gatherItems = Array.from(gatherMap).map(([key, quantity]) => {
+            const [name, rarity, source, wiki] = key.split('|');
+            return ` - ${name}: ${quantity}${rarity ? `, ${rarity}` : ''}${source ? `, source: ${source}` : ''}${wiki ? `, wiki: ${wiki}` : ''}`;
+        }).sort();
 
-        let toCraftItem = row.querySelector('.item-name').textContent.trim()
-        // Remove leading '+' or '-' character if present.
+        const craftItems = Array.from(craftMap).map(([key, quantity]) => {
+            const [name, rarity, source, wiki] = key.split('|');
+            return ` - ${name}: ${quantity}${rarity ? `, ${rarity}` : ''}${source ? `, source: ${source}` : ''}${wiki ? `, wiki: ${wiki}` : ''}`;
+        }).sort();
+
+        let toCraftItem = row.querySelector('.item-name').textContent.trim();
+        // Remove leading '+' or '-' character if present
         toCraftItem = toCraftItem.replace(/^[+-]/, '').trim();
 
         const toCraftQuantity = row.querySelector('.quantity input').value;
@@ -282,12 +287,13 @@ function updateOutput(event) {
             outputTextarea.style.height = 'auto'; // Reset height
             outputTextarea.style.height = `${outputTextarea.scrollHeight}px`; // Set height based on content
 
-            // Show the copy button.
+            // Show the copy button
             const closestTableRow = outputTextarea.closest("tr");
             closestTableRow.querySelector('.copy-btn').style.display = "block";
         }
     }
 }
+
 
 function processQuantityButtonClick(event) {
     const button = event.target;

@@ -21,11 +21,28 @@
             tr.depth-0 {
                 border-top: 1px solid #ccc;
             }
+            tr.depth-0 td.quantity {
+                float: right;
+                margin: 0;
+                padding: 0;
+                border: none;
+                box-sizing: border-box;
+                margin-right: 15px;
+                margin-top: 7px;
+            }
             td.item-name { display: inline-block; }
-            td.quantity { display: inline-block; }
+            td.quantity { 
+                display: inline-block;
+                font-size: 1rem;
+            }
             .quantity-input {
                 height: 28px;
-                width: 31px;
+                width: 35px;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .quantity button {
+                padding: 3px 10px 2px;
             }
             .sub-table .quantity input { border: none; }
             td.output-wrapper textarea { width: 100%; }
@@ -48,16 +65,29 @@
             .plus-btn,
             .minus-btn {
                 font-size: 18px;
-                padding: 5px 10px;
+                padding: 6px 10px 5px;
                 margin: 0;
                 cursor: pointer;
+                position: relative;
+                border: 1px solid #666;
+                top: 1px;
+            }
+            .plus-btn {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                margin-left: -1px;
+            }
+            .minus-btn {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                margin-right: -1px;
             }
             .mb-1 { margin-bottom: 1rem; }
             .specialisation-wrapper { display: none; }
             .copy-btn { 
                 display: none; 
                 cursor: pointer;
-                margin-left: 10px;
+                margin-bottom: 3px;
                 padding: 5px 10px;
                 background-color: #007BFF;
                 color: white;
