@@ -2,6 +2,10 @@
 # https://corepunk.pro/professions/herbalism
 # https://corepunkers.com/professions
 
+- name: Blood Honey
+  rarity: purple
+  source: Dendroid Guard
+
 - name: Blue Lotus
   rarity: green
   source: Thick Bush
@@ -54,7 +58,7 @@
 
 - name: Rainbow Snail
   rarity: purple
-  source: Thick Bush
+  source: Wooden Deer, Wood Raptor
 
 - name: Silkworm Caterpillar
   source: Weaver's Bush

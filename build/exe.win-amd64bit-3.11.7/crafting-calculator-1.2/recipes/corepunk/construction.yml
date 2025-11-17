@@ -1,0 +1,500 @@
+# https://corepunk.wiki/w/Constructor
+# https://corepunk.pro/professions/construction
+# https://corepunkers.com/professions
+
+- name: Armor Plate
+  source: construction
+  items:
+    Titanium Nugget: 1
+    Iron Ingot: 1
+
+- name: Assassin's Glove
+  source: construction
+  items:
+    - name: Steroid Implant
+      quantity: 1
+      rarity: blue
+    - name: Armor Plate
+      quantity: 1
+      rarity: blue
+    - name: Isotope-238
+      quantity: 1
+    - name: Thermal Liquidum
+      quantity: 1
+    - name: Welded Patterned
+      quantity: 1
+      rarity: blue
+  wiki: https://corepunkers.com/i/artifact-assassins-glove
+
+- name: Atomic Breastplate
+  source: construction
+  items:
+    - name: Armor Plate
+      quantity: 2
+      rarity: green
+    - name: Tungsten
+      quantity: 2
+
+- name: Battle Mage Implant
+  source: construction
+  items:
+    - name: Magic Circle
+      quantity: 1
+      rarity: green
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+    - name: Petrified Spike
+      quantity: 1
+    - name: Neon Mushroom
+      quantity: 1
+
+- name: Battle Sleeve
+  source: construction
+  items:
+    - name: Steroid Implant
+      quantity: 2
+      rarity: green
+    - name: Petrified Spike
+      quantity: 2
+
+- name: Body Scanner
+  source: construction
+  items:
+    Composite Material: 1
+    Diamond: 1
+
+- name: Cerebral Interface
+  source: construction
+  items:
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+    - name: Nano Tissue
+      quantity: 1
+      rarity: green
+    - name: Petrified Spike
+      quantity: 1
+    - name: Elastic Membrane
+      quantity: 1
+
+- name: Cyber Biker Arm
+  source: construction
+  items:
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+    - name: Mana Amulet
+      quantity: 1
+      rarity: green
+    - name: Petrified Spike
+      quantity: 1
+    - name: Mutated Leaf
+      quantity: 1
+
+- name: Cyber Plate Carrier
+  source: construction
+  items:
+    - name: Armor Plate
+      quantity: 1
+      rarity: green
+    - name: Nano Tissue
+      quantity: 1
+      rarity: green
+    - name: Tungsten
+      quantity: 1
+    - name: Elastic Membrane
+      quantity: 1
+
+- name: Dragonscale Armor Plate
+  source: construction
+  items:
+    - name: Isotype-238
+      quantity: 1
+    - name: Nano Tissue
+      quantity: 1
+      rarity: green
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+
+- name: Emerald Cypher
+  source: construction
+  items:
+    - name: Thermal Liquidum
+      quantity: 1
+    - name: Concentrated Mana
+      quantity: 1
+      rarity: purple
+    - name: Granulation Tissue
+      quantity: 1
+    - name: Armor Plate
+      quantity: 1
+      rarity: blue
+    - name: Mana Amulet
+      quantity: 1
+      rarity: blue
+    - name: Body Scanner
+      quantity: 1
+      rarity: blue
+
+- name: Flux Strike
+  source: construction
+  items:
+    - name: Rainbow Snail
+      quantity: 1
+    - name: Concentrated Mana
+      quantity: 1
+      rarity: purple
+    - name: Granulation Tissue
+      quantity: 1
+    - name: Magic Circle
+      quantity: 1
+      rarity: blue
+    - name: Mana Amulet
+      quantity: 1
+      rarity: blue
+    - name: Body Scanner
+      quantity: 1
+      rarity: blue
+
+- name: Fusion Engine
+  source: construction
+  items:
+    - name: Magic Circle
+      quantity: 1
+      rarity: green
+    - name: Nano Tissue
+      quantity: 1
+      rarity: green
+    - name: Neon Mushroom
+      quantity: 1
+    - name: Elastic Membrane
+      quantity: 1
+
+- name: Gadgetron Cube
+  source: construction
+  items:
+    - name: Thermal Liquidum
+      quantity: 1
+    - name: Mana Amulet
+      quantity: 1
+      rarity: blue
+    - name: Armor Plate
+      quantity: 1
+      rarity: blue
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: blue
+    - name: Beating Heart
+      quantity: 1
+    - name: Concentrated Mana
+      quantity: 1
+      rarity: purple
+
+- name: Hormone Booster
+  source: construction
+  items:
+    - name: Body Scanner
+      quantity: 1
+      rarity: green
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Forest berry
+      quantity: 1
+    - name: Isotope-238
+      quantity: 1
+
+- name: Immuno-Stimulating Implant
+  source: construction
+  items:
+    Blue Lotus: 1
+    Bio-compatible Material: 1
+
+- name: Magic Circle
+  source: construction
+  items:
+    Moonstone: 1
+    Meteoric Ingot: 1
+
+- name: Magic Cube
+  source: construction
+  items:
+    - name: Body Scanner
+      quantity: 1
+      rarity: blue
+    - name: Petrified Spike
+      quantity: 1
+    - name: Isotype-238
+      quantity: 1
+    - name: Magic Circle
+      quantity: 1
+      rarity: blue
+    - name: Thermal Liquidum
+      quantity: 1
+
+- name: Magitech Visor
+  source: construction
+  items:
+    - name: Thermal Liquidum
+      quantity: 1
+    - name: Magic Circle
+      quantity: 1
+      rarity: blue
+    - name: Rainbow Snail
+      quantity: 1
+    - name: Beating Heart
+      quantity: 1
+    - name: Armor Plate
+      quantity: 1
+      rarity: blue
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: blue
+
+- name: Mana Amulet
+  source: construction
+  items:
+    Mana Resin: 1
+    Treated Wood: 1
+
+- name: Mana Phaser
+  source: construction
+  items:
+    - name: Body Scanner
+      quantity: 1
+      rarity: green
+    - name: Mana Amulet
+      quantity: 1
+      rarity: green
+    - name: Isotope-238
+      quantity: 1
+    - name: Mutated Leaf
+      quantity: 1
+
+- name: Matter Shaker
+  source: construction
+  items:
+    - name: Magic Circle
+      quantity: 2
+      rarity: green
+    - name: Isotope-238
+      quantity: 1
+
+- name: Modular Glove
+  source: construction
+  items:
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+    - name: Armor Plate
+      quantity: 1
+      rarity: green
+    - name: Tungsten
+      quantity: 1
+    - name: Petrified Spike
+      quantity: 1
+
+- name: Nano Tissue
+  source: construction
+  items:
+    Amber: 1
+    Cloth: 1
+
+- name: Neural Accelerator
+  source: construction
+  items:
+    - name: Steroid Implant
+      quantity: 1
+      rarity: blue
+    - name: Body Scanner
+      quantity: 1
+      rarity: blue
+    - name: Magic Circle
+      quantity: 1
+      rarity: blue
+    - name: Rainbow Snail
+      quantity: 1
+    - name: Blood Honey
+      quantity: 1
+    - name: Granulation Tissue
+      quantity: 1
+
+- name: Paramedic Bracer
+  source: construction
+  items:
+    - name: Armor Plate
+      quantity: 1
+      rarity: green
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Isotope-238
+      quantity: 1
+
+- name: Primal Energy Invertor
+  source: construction
+  items:
+    - name: Magic Circle
+      quantity: 1
+      rarity: green
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Neon Mushroom
+      quantity: 1
+    - name: Forest berry
+      quantity: 1
+
+- name: Psionic Backpack
+  source: construction
+  items:
+    - name: Mana Amulet
+      quantity: 2
+      rarity: green
+    - name: Mutated Leaf
+      quantity: 2
+
+- name: Recovery Device
+  source: construction
+  items:
+    - name: Body Scanner
+      quantity: 1
+      rarity: green
+    - name: Armor Plate
+      quantity: 1
+      rarity: green
+    - name: Isotype-238
+      quantity: 1
+    - name: Tungsten
+      quantity: 1
+
+- name: Resonance Armor
+  source: construction
+  items:
+    - name: Isotype-238
+      quantity: 2
+    - name: Body Scanner
+      quantity: 2
+      rarity: green
+
+- name: Soldier's Implant
+  source: construction
+  items:
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Steroid Implant
+      quantity: 1
+      rarity: green
+    - name: Petrified Spike
+      quantity: 1
+    - name: Forest berry
+      quantity: 1
+
+- name: Spellbound Dominance
+  source: construction
+  items:
+    - name: Steroid Implant
+      quantity: 1
+      rarity: blue
+    - name: Magic Circle
+      quantity: 1
+      rarity: blue
+    - name: Nano Tissue
+      quantity: 1
+      rarity: blue
+    - name: Dragon Shell
+      quantity: 1
+      rarity: purple
+    - name: Blood Honey
+      quantity: 1
+    - name: Rainbow Snail
+      quantity: 1
+
+- name: Stealth Cloak
+  source: construction
+  items:
+    - name: Nano Tissue
+      quantity: 2
+      rarity: green
+    - name: Elastic Membrane
+      quantity: 2
+
+- name: Steam Cells Implant
+  source: construction
+  items:
+    - name: Immuno-Stimulating Implant
+      quantity: 2
+      rarity: green
+    - name: Forest berry
+      quantity: 2
+
+- name: Steroid Implant
+  source: construction
+  items:
+    Gonad: 1
+    Bio-compatible Material: 1
+
+- name: Techfort Shell
+  source: construction
+  items:
+    - name: Thermal Liquidum
+      quantity: 1
+    - name: Nano Tissue
+      quantity: 1
+      rarity: blue
+    - name: Armor Plate
+      quantity: 1
+      rarity: blue
+    - name: Body Scanner
+      quantity: 1
+      rarity: blue
+    - name: Dragon Shell
+      quantity: 1
+      rarity: purple
+    - name: Granulation Tissue
+      quantity: 1
+
+- name: Vital Nano Bracer
+  source: construction
+  items:
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Nano Tissue
+      quantity: 1
+      rarity: green
+    - name: Elastic Membrane
+      quantity: 1
+    - name: Forest berry
+      quantity: 1
+
+- name: Vitality Augmenter
+  source: construction
+  items:
+    - name: Mana Amulet
+      quantity: 1
+      rarity: green
+    - name: Immuno-Stimulating Implant
+      quantity: 1
+      rarity: green
+    - name: Mutated Leaf
+      quantity: 1
+    - name: Forest berry
+      quantity: 1
+
+- name: Warlock's Lamp
+  source: construction
+  items:
+    - name: Magic Circle
+      quantity: 1
+      rarity: green
+    - name: Mana Amulet
+      quantity: 1
+      rarity: green
+    - name: Neon Mushroom
+      quantity: 1
+    - name: Mutated Leaf
+      quantity: 1

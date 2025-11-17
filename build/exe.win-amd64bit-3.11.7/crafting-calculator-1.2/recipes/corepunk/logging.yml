@@ -1,0 +1,72 @@
+# https://corepunk.wiki/w/Logging
+# https://corepunk.pro/professions/logging
+# https://corepunkers.com/professions
+
+- name: Amber
+  rarity: green
+  source: Magic tree
+  wiki: https://corepunk.wiki/w/Amber
+
+- name: Blood Honey
+  rarity: purple
+  source: Dendroid Guard
+
+- name: Dragon Shell
+  rarity: purple
+  source: Archosaur
+
+- name: Giant Feather
+  rarity: green
+  source: Magic tree
+
+- name: Heartwood
+  source: Timberheart tree
+
+- name: Jewellery Wood
+  source: logging
+  rarity: white
+  items:
+    Tree Root: 3
+
+- name: Mana Resin
+  rarity: green
+  source: Magic tree
+
+- name: Mutated Leaf
+  rarity: blue
+  source: Magic tree
+
+- name: Neon Mushroom
+  rarity: blue
+  source: Magic tree
+
+- name: Silica
+  source: logging
+  rarity: white
+  items:
+    Stone Bark: 3
+
+- name: Stone Bark
+  source: Petrified tree
+
+- name: Tissue Paper
+  source: logging
+  rarity: white
+  items:
+    Wood: 3
+
+- name: Transparent Leaf
+  rarity: green
+  source: Magic tree
+
+- name: Treated Wood
+  source: logging
+  rarity: white
+  items:
+    Heartwood: 3
+
+- name: Tree Root
+  source: Petrified tree
+
+- name: Wood
+  source: Timberheart tree

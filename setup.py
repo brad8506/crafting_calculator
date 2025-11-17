@@ -5,10 +5,12 @@ import sys
 
 
 # Version of the application
-APP_VERSION = "1.1"
+APP_VERSION = "1.2"
 
 # PYTHON_VERSION = sys.version_info
-PYTHON_VERSION = f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"
+PYTHON_VERSION = (
+    f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"
+)
 
 # Get architecture (either 32-bit or 64-bit)
 ARCHITECTURE = platform.architecture()[0]
@@ -18,7 +20,11 @@ web_dir = os.path.join(os.path.dirname(__file__), "web")
 crafting_dir = os.path.join(os.path.dirname(__file__), "crafting")
 recipes_dir = os.path.join(os.path.dirname(__file__), "recipes")
 js_dir = os.path.join(os.path.dirname(__file__), "js")
-changelog_file = os.path.join(os.path.dirname(__file__), "CHANGELOG.md")  # Path to the changelog file
+changelog_file = os.path.join(
+    # Path to the changelog file
+    os.path.dirname(__file__),
+    "CHANGELOG.md",
+)
 
 # Options for cx_Freeze
 build_exe_options = {

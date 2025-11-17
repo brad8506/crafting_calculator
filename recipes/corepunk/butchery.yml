@@ -12,7 +12,7 @@
 
 - name: Beating Heart
   rarity: purple
-  source: wolf
+  source: Armored Hyena Alpha, Lizard Draco
 
 - name: Bio-compatible Material
   source: butchery
@@ -44,6 +44,7 @@
 
 - name: Granulation Tissue
   rarity: purple
+  source: Troll, Yaga, Envy Sin
 
 - name: Green Shell
   source: turtle

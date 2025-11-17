@@ -11,6 +11,10 @@
   items:
     Ancient Fossils: 3
 
+- name: Concentrated Mana
+  rarity: purple
+  source: Golem (Tall)
+
 - name: Diamond
   rarity: green
   source: Metal vein
@@ -64,7 +68,7 @@
 
 - name: Thermal Liquidum
   rarity: purple
-  source: Metal vein
+  source: Golem (Big)
 
 - name: Titanium Nugget
   rarity: green

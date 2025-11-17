@@ -143,7 +143,7 @@ class ShoppingList:
 
         # Collect items to be added or removed
         for item_name, details in self.items.items():
-            item_quantity = details.get('quantity')
+            item_quantity = details.get("quantity")
             child_items = details.get("items", {})
             if child_items:
                 child_items = update_amounts_recursively(child_items, item_quantity)
@@ -169,7 +169,7 @@ class ShoppingList:
         recipe = process_child_items(recipe)
         details = process_child_items(details)
         details = {**recipe, **details}
-        child_items = recipe.get('items', {})
+        child_items = recipe.get("items", {})
         if child_items:
             for child_item_name, child_details in child_items.items():
                 a = self.get_recipe_recursive(child_item_name, child_details)
@@ -186,7 +186,7 @@ class ShoppingList:
 
     def to_json(self) -> str:
         """Return ShoppingList contents as JSON."""
-        
+
         output = {
             "shopping_list": self.items,
             "intermediates": self.intermediate_steps,
@@ -194,10 +194,10 @@ class ShoppingList:
             "target_amount": self.target_amount,
         }
         return output
-    
+
     def to_json_string(self) -> str:
         """Return ShoppingList contents as a JSON formatted string."""
-        
+
         output = {
             "shopping_list": self.items,
             "intermediates": self.intermediate_steps,
@@ -208,10 +208,19 @@ class ShoppingList:
         # Serialize to a JSON formatted string with sorting of keys and indentation
         json_str = dumps(output, sort_keys=True, indent=4)
         return json_str
-    
+
     def inventory_to_json(self) -> str:
         """Return ShoppingList inventory as JSON."""
         return self.inventory
+
+    def get_ordered_keys(details, key_order, ignore_keys):
+        # Keys in key_order that exist in details
+        primary_keys = [k for k in key_order if k in details]
+        # Remaining keys, skipping ignored ones
+        secondary_keys = [
+            k for k in details if k not in key_order and k not in ignore_keys
+        ]
+        return list(chain(primary_keys, secondary_keys))
 
     def format_for_text_display(self) -> str:
         """Format the ShoppingList for printing to stdout."""
@@ -220,37 +229,29 @@ class ShoppingList:
         key_order = ["quantity", "rarity", "source", "wiki"]
         ignore_keys = ["name", "items"]
 
-        target_items_formatted = "\n".join(
-            f"{item}: " + ", ".join(
-                f"{k}: {details[k]}"
-                for k in key_order + [k for k in details if k not in key_order and k not in ignore_keys]
-                if k in details
-            )
-            for item, details in sorted(self.target_items.items())
-        )
-        # target_items_formatted = "\n".join(self.target_items.keys())
+        # Format target items
+        target_items_lines = []
+        for item, details in sorted(self.target_items.items()):
+            ordered_keys = self.get_ordered_keys(details, key_order, ignore_keys)
+            kv_pairs = [f"{k}: {details[k]}" for k in ordered_keys]
+            target_items_lines.append(f"{item}: " + ", ".join(kv_pairs))
+        target_items_formatted = "\n".join(target_items_lines)
 
-        items_formatted = "\n".join(
-            f"{item}: "
-            + ", ".join(
-                f"{k}: {details[k]}"
-                for k in key_order
-                + [k for k in details if k not in key_order and k not in ignore_keys]
-                if k in details
-            )
-            for item, details in sorted(self.items.items())
-        )
+        # Format main items
+        lines = []
+        for item, details in sorted(self.items.items()):
+            ordered_keys = self.get_ordered_keys(details, key_order, ignore_keys)
+            kv_pairs = [f"{k}: {details[k]}" for k in ordered_keys]
+            lines.append(f"{item}: " + ", ".join(kv_pairs))
+        items_formatted = "\n".join(lines)
 
-        intermediate_items_formatted = "\n".join(
-            f"{item}: "
-            + ", ".join(
-                f"{k}: {details[k]}"
-                for k in key_order
-                + [k for k in details if k not in key_order and k not in ignore_keys]
-                if k in details
-            )
-            for item, details in sorted(self.intermediate_steps.items())
-        )
+        # Format intermediate items
+        lines = []
+        for item, details in sorted(self.intermediate_steps.items()):
+            ordered_keys = self.get_ordered_keys(details, key_order, ignore_keys)
+            kv_pairs = [f"{k}: {details[k]}" for k in ordered_keys]
+            lines.append(f"{item}: " + ", ".join(kv_pairs))
+        intermediate_items_formatted = "\n".join(lines)
 
         message_parts = [
             f"You selected:",

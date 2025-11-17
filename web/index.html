@@ -12,16 +12,23 @@
             body { font-family: Arial, sans-serif; margin: 20px; }
             table { border-collapse: collapse; width: 100%; }
             th, td { text-align: left; padding: 8px 8px 8px 0; }
-            tr.depth-0:nth-child(even) { background-color: #ddd; }
+            tr.expandable-row.depth-0:nth-child(even) { background-color: #ddd; }
             .expandable-row .item-name { cursor: pointer; }
             .sub-table { margin-left: 20px; }
             .sub-table-row > td { overflow: hidden; }
             .sub-table .table-header-row { display: none; }
             tr.sub-table-row { border-left: 1px solid #ccc; }
-            tr.depth-0 {
+            tr.expandable-row.depth-0 {
                 border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
             }
-            tr.depth-0 td.quantity {
+            tr:nth-last-child(1 of .depth-0.expandable-row.collapsed) {
+                border-bottom: 1px solid #ccc;
+            }
+            tr:nth-last-child(1 of .depth-0.sub-table-row) {
+                border-bottom: 1px solid #ccc;
+            }
+            tr.expandable-row.depth-0 td.quantity {
                 float: right;
                 margin: 0;
                 padding: 0;

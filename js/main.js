@@ -67,7 +67,7 @@ async function calculateTableList() {
             rowHtml += `</tr>`;
 
             if (item.items) {
-                rowHtml += `<tr class="sub-table-row collapse" style="display: none;">
+                rowHtml += `<tr class="sub-table-row collapse ${depthClass}" style="display: none;">
                             <td colspan="3">
                                 <table class="sub-table ${subTableDepthClass}">
                                     <tr class="table-header-row"><th class="sub-item">Sub-Item</th><th class="quantity-required">Quantity Required</th></tr>`;
@@ -97,11 +97,17 @@ function toggleSubTable(element) {
     const outputWrapperTextarea = row.querySelector('.output-wrapper textarea');
 
     if (subTableRow.style.display === 'none') {
+        // Expand
         subTableRow.style.display = '';
         icon.textContent = '-';
+        row.classList.add('expanded');
+        row.classList.remove('collapsed');
     } else {
+        // Collapse
         subTableRow.style.display = 'none';
         icon.textContent = '+';
+        row.classList.add('collapsed');
+        row.classList.remove('expanded');
     }
 
     if (outputWrapperTextarea) {

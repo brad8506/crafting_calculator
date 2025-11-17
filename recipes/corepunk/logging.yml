@@ -9,7 +9,11 @@
 
 - name: Blood Honey
   rarity: purple
-  source: Magic tree
+  source: Dendroid Guard
+
+- name: Dragon Shell
+  rarity: purple
+  source: Archosaur
 
 - name: Giant Feather
   rarity: green

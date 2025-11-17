@@ -1,0 +1,91 @@
+# https://corepunk.wiki/w/Alchemy#Resources
+# https://corepunk.pro/professions/alchemy
+# https://corepunkers.com/professions/alchemy
+
+- name: Adrenaline Shot
+  source: alchemy
+  items:
+    - name: Adrenaline Bladder
+      quantity: 1
+    - name: Natural Oil
+      quantity: 1
+
+- name: Biosteroids Shot
+  source: alchemy
+  items:
+    - name: Gonad
+      quantity: 1
+    - name: Natural Oil
+      quantity: 1
+
+- name: Burn Relief
+  source: alchemy
+  items:
+    - name: Amber
+      quantity: 1
+    - name: Cosmetic Fat
+      quantity: 1
+
+- name: Counterfeit Painkillers
+  source: alchemy
+  items:
+    - name: Blue Lotus
+      quantity: 1
+    - name: Powder Filler
+      quantity: 1
+
+- name: Funny Pills
+  source: alchemy
+  items:
+    - name: Six-leaf Clover
+      quantity: 1
+    - name: Powder Filler
+      quantity: 1
+
+- name: Magic Pills
+  source: alchemy
+  items:
+    - name: Moonstone
+      quantity: 1
+    - name: Powder Filler
+      quantity: 1
+
+- name: Mana Pipe
+  source: alchemy
+  items:
+    - name: Magic Weeds
+      quantity: 1
+    - name: Jewellery Wood
+      quantity: 1
+
+- name: Mana Vial
+  source: alchemy
+  items:
+    - name: Magic Weeds
+      quantity: 1
+    - name: Jewellery Wood
+      quantity: 1
+
+- name: Restorative Ointment
+  source: alchemy
+  items:
+    - name: Living Blood
+      quantity: 1
+    - name: Cosmetic Fat
+      quantity: 1
+
+- name: Small Joint
+  source: alchemy
+  items:
+    - name: Transparent Leaf
+      quantity: 1
+    - name: Tissue Paper
+      quantity: 1
+
+- name: Titanium Ointment
+  source: alchemy
+  items:
+    - name: Titanium Nugget
+      quantity: 1
+    - name: Cosmetic Fat
+      quantity: 1
