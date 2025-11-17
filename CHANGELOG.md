@@ -1,4 +1,4 @@
-# 1.1 2025-11-17
+# 1.2 2025-11-17
 - Update Corepunk recipes, specifically sources for purple materials based on game updates
 - Add extra classes to tr elements for styling
 - Add tr:last-child border-bottom

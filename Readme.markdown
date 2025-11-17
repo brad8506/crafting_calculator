@@ -15,10 +15,10 @@ Simple text output
 <img src="./images/simple-text-output.png">
 
 ## build executable
-Update CHANGELOG.md
-Increment setup.py APP_VERSION
-pip install cx_Freeze
-python setup.py build
+Update CHANGELOG.md  
+Increment setup.py APP_VERSION  
+pip install cx_Freeze  
+python setup.py build  
 
 Outputs to ./build directory
 
